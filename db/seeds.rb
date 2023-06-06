@@ -24,6 +24,8 @@ lesly = User.new(
   linkedin_url: 'https://linkedin.com/',
   kitt_username: 'lesly75'
 )
+lesly.competence_list.add("ruby on rails", "javascript", "vue.js", "html", "css", "front-end")
+lesly.language_list.add("french", "english")
 lesly.save
 puts "User 1 created"
 
@@ -45,6 +47,8 @@ eugenie = User.new(
   linkedin_url: 'https://linkedin.com/',
   kitt_username: 'Effendir'
 )
+eugenie.competence_list.add("ruby on rails", "stimulus js", "javascript", "html", "css", "front-end")
+eugenie.language_list.add("french", "english")
 eugenie.save
 puts "User 2 created"
 
@@ -66,6 +70,8 @@ helene = User.new(
   linkedin_url: 'https://www.linkedin.com/in/h%C3%A9l%C3%A8ne-becquembois-66592a118/',
   kitt_username: 'Hbecquembois'
 )
+helene.competence_list.add("ruby on rails", "javascript", "bootstrap", "html", "css", "front-end")
+helene.language_list.add("french", "english")
 helene.save
 puts "User 3 created"
 
@@ -87,6 +93,8 @@ lucie = User.new(
   linkedin_url: 'https://www.linkedin.com/in/lucie-gaget-03a0b196/',
   kitt_username: 'luciegaget'
 )
+lucie.competence_list.add("ruby on rails", "javascript", "html", "css", "front-end")
+lucie.language_list.add("french", "english")
 lucie.save
 puts "User 4 created"
 
@@ -108,6 +116,9 @@ wangari = User.new(
   linkedin_url: 'https://www.linkedin.com/',
   kitt_username: 'mamamici'
 )
+wangari.competence_list.add("python", "machine learning", "data base", "artificial intelligence")
+wangari.language_list.add("arabic", "french", "english")
+wangari.mentor_skill_list.add("python", "machine learning", "data base", "artificial intelligence")
 wangari.save
 puts "User 5 created"
 
@@ -129,6 +140,9 @@ hypatia = User.new(
   linkedin_url: 'https://www.linkedin.com/',
   kitt_username: 'Patty'
 )
+hypatia.competence_list.add("python", "statistics", "data vizualisation", "freelance")
+hypatia.language_list.add("arabic", "french", "english")
+hypatia.mentor_skill_list.add("python", "statistics", "data vizualisation")
 hypatia.save
 puts "User 6 created"
 
@@ -150,6 +164,9 @@ chiaki = User.new(
   linkedin_url: 'https://www.linkedin.com/',
   kitt_username: 'chiakimukai'
 )
+chiaki.competence_list.add("python", "statistics", "sql", "data vizualisation", "freelance")
+chiaki.language_list.add("english", "japanese")
+chiaki.mentor_skill_list.add("python", "statistics", "data vizualisation")
 chiaki.save
 puts "User 7 created"
 
@@ -171,6 +188,9 @@ ada = User.new(
   linkedin_url: 'https://www.linkedin.com/',
   kitt_username: 'Ada Lovelace'
 )
+ada.competence_list.add("ruby on rails", "python", "javascript", "react", "stimulus js", "back-end", "front-end", "bootstrap", "management", "debugging", "github")
+ada.language_list.add("english")
+ada.mentor_skill_list.add("ruby on rails", "javascript", "stimulus js", "back-end", "front-end", "management", "debugging", "github")
 ada.save
 puts "User 8 created"
 
@@ -192,6 +212,8 @@ rosa = User.new(
   linkedin_url: 'https://www.linkedin.com/',
   kitt_username: 'Rosaparks'
 )
+rosa.competence_list.add("ruby on rails", "python", "back-end", "freelance")
+rosa.language_list.add("english")
 rosa.save
 puts "User 9 created"
 
@@ -213,7 +235,10 @@ simone = User.new(
   linkedin_url: 'https://www.linkedin.com',
   kitt_username: 'Simooone'
 )
+simone.competence_list.add("python", "statistics", "data vizualisation", "management")
+simone.language_list.add("french", "english")
 simone.save
+
 puts "User 10 created"
 
 puts "Seeding done"
