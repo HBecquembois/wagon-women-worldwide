@@ -10,3 +10,40 @@
 .navbar-lewagon .navbar-brand img {
   width: 40px;
 }
+
+.navbar-home {
+  position: fixed;
+  width: 100%;
+  background: transparent;
+  box-shadow: none;
+  // .navbar-wagon-link {
+  //   color: white;
+  //   font-weight: bold;
+  // }
+}
+.nav-link {
+  color: $white;
+  &:hover {
+    color: $light-indigo;
+  }
+}
+
+.general-icon {
+  padding-left: 3px;
+  padding-right: 3px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 60px;
+  width: 60px;
+  border-radius: 15px;
+  background-color: $indigo;
+  &:hover {
+    background-color: $indigo;
+  }
+}
+.adaicon {
+  width: 50px;
+  height: 50px;
+  justify-content: center;
+}
