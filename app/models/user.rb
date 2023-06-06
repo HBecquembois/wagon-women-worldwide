@@ -5,5 +5,9 @@ class User < ApplicationRecord
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
   has_many :projects
+
+  acts_as_taggable_on :competences, :languages, :mentor_skills
+  validates :last_name, presence: true
+  validates :first_name, presence: true
 end
 

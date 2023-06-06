@@ -1,2 +1,30 @@
-<h1>Users#show</h1>
-<p>Find me in app/views/users/show.html.erb</p>
+<div class= "container">
+  <div class="card-container justify-content">
+    <div class="container pt-2">
+      <br>
+        <h1><%= @user.first_name %> <%= @user.last_name %></h1>
+      <br>
+    </div>
+      <div class="container card-container justify-content">
+        <div class="main-container-show">
+
+        </div>
+      </div>
+
+      <div class="card-profile">
+      
+        <%#= cl_image_tag @user.photo.key, crop: :fill, class: "user-photo" %>
+        <div class="card-profile-infos">
+          <h3><%= @user.title %></h2>
+          <h2><%= @user.city %> - <%= @user.country %></h2>
+          <p><%= @user.description %></p>
+        </div>
+
+        <div class="card-footer text-muted">
+          She was part of the batch n°<%= @user.batch_number %> in <%= @user.graduation_year %>
+        </div>
+
+      </div>
+    </div>
+  </div>
+</div>

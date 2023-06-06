@@ -1,0 +1,15 @@
+.banner {
+  height: 100vh;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  background-image: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)), image-url("banner_image.jpg");
+  background-size: cover;
+  background-position: center;
+  h1 {
+    color: $white;
+  }
+  p {
+    color: $white;
+  }
+}
