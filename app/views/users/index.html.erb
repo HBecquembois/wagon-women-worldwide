@@ -9,12 +9,14 @@
             <img src="https://upload.wikimedia.org/wikipedia/commons/c/c4/Rosaparks.jpg" alt="">
       </div>
       <div class="user-card-content">
-        <div class="user-card-title">
-          <p><%= user.first_name %></p>
-          <p><%= user.last_name%></p>
+          <h3><%= user.first_name %>
           <br>
+          <%= user.last_name%></h3>
           <p><%= user.title %></p>
-          <%= link_to "See profile", user_path(user)%>
+          <p class="competence"><%= user.competence_list.first(3).join(", ") %>
+          <br> & more</p>
+        <div class="user-button d-flex justify-content-end">
+          <%= link_to "See profile", user_path(user), class: "btn-indigo-index" %>
         </div>
       </div>
     </div>
