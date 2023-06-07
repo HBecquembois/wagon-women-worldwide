@@ -1,0 +1,51 @@
+.container-side {
+  margin-left: 20px;
+}
+
+.side-bar {
+  position: sticky;
+  top: 50px;
+  background-color: $light-red;
+  height: 85vh;
+  width:287px;
+  border-radius: 10px;
+  margin-left: 20px;
+  margin-top: 60px;
+  margin-bottom: 50px;
+
+  img {
+    position: absolute;
+    width: 100px;
+    height: 100px;
+    object-fit: cover;
+    border-radius: 10px;
+    margin: 10px;
+    margin-left: 82px;
+    margin-top: -45px;
+  }
+  h3 {
+    font-size: 18px;
+    text-align: center;
+    margin-top: 60px;
+    margin-bottom: 30px;
+  }
+  ul {
+    margin-top: 50px;
+    list-style-type: none;
+    font-size: 18px;
+  }
+  li {
+    margin-top: 20px;
+  }
+  .button-center {
+    text-align: center;
+  }
+  a {
+    text-decoration: none;
+    color: black;
+  }
+  .fa-solid {
+    color: $indigo;
+    font-size: 15px;
+  }
+}
