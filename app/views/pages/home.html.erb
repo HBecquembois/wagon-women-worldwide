@@ -3,28 +3,48 @@
   <div class="banner-content text-center">
 
     <h1>Wagon Women Worldwide</h1>
-    <p>Connecting women</p>
+    <h3>Connecting women</h3>
   </div>
 </div>
 
-<div class="container-fluid">
-  <h2 class="text-center mb-2">Join the program!</h2>
-</div>
-
-<div class="container-fluid bg-lightred p-3">
-  <div class="container">
-    <h2 class="text-center mb-2">Advantages of our mentoring program</h2>
+<div class="container-fluid p-3">
+  <div class="container my-4">
+    <h2 class="text-center">Advantages of our mentoring program</h2>
     <div class="d-flex justify-content-between">
       <ul>
-        <li>advantage 1</li>
-        <li>advantage 2</li>
-        <li>advantage 3</li>
-        <li>advantage 4</li>
+        <li>Rejoin a support community of the Le Wagon's women!</li>
+        <li>As a junior, benefit from other women experiences!</li>
+        <li>As a senior, share your experience or look for a collaborator!</li>
+        <li>Exchange and chat!</li>
       </ul>
-      <div>
-        testimony-card
+      <div class="testimony-card">
+        <div class="testimony-card-image">
+          <img src="https://upload.wikimedia.org/wikipedia/commons/c/c4/Rosaparks.jpg" alt="">
+        </div>
+        <div class="testimony-card-content">
+          <h3>Rosa Parks</h3>
+          <p>Senior web developer</p>
+          <p class="testimony-text">"Thanks to Wagon Women Worldwide, I was contacted by a recent alumni looking for a code review. We then worked together on a common project.  It was very rewarding for the 2 of us!"</p>
+        </div>
       </div>
     </div>
   </div>
 </div>
 
+<div class="container-fluid bg-lightred p-3">
+  <div class="container my-4">
+    <h2 class="text-center">Join the program!</h2>
+    <div class="d-flex justify-content-between">
+      <div class="home-card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://images.unsplash.com/photo-1610473068514-276d33c606dd?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80)">
+        <div class="home-card-btn">
+          <%= link_to "Need a mentor?", users_path, class: "btn-card-home" %>
+        </div>
+      </div>
+      <div class="home-card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://images.unsplash.com/photo-1527689368864-3a821dbccc34?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=870&q=80)">
+        <div class="home-card-btn">
+          <%= link_to "Want to be a mentor?", users_path, class: "btn-card-home" %>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
