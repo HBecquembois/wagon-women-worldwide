@@ -8,16 +8,20 @@
     <%= csp_meta_tag %>
 
     <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
+    <script src="https://kit.fontawesome.com/45e38e596f.js" crossorigin="anonymous"></script>
     <%= javascript_importmap_tags %>
   </head>
 
   <body>
-    <%= render "shared/navbar" %>
+    <%= render "shared/navbar" if action_name == 'home' %>
+    <%= render "shared/navbar2" if action_name != 'home' %>
     <%= render "shared/flashes" %>
-
-
-
-    <%= yield %>
-    <%= render "shared/footer" %>
+    <div class="main-container">
+      <%= render "shared/sidebar" if action_name != 'home' %>
+      <section class="main-content">
+        <%= yield %>
+      </section>
+    </div>
+    <%= render "shared/footer" if action_name == 'home' %>
   </body>
 </html>
