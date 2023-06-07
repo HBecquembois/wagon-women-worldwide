@@ -1,12 +1,14 @@
 # Cleaning DB
 puts "Cleaning up database..."
 User.destroy_all
+Project.destroy_all
 puts "Database cleaned"
 
 # Creating Users
 puts "Creating users"
 
 puts "Creating user 1"
+#file = "TEMPLATE DE PY" test
 lesly = User.new(
   first_name: 'Lesly',
   last_name: 'Urie',
@@ -26,6 +28,7 @@ lesly = User.new(
 )
 lesly.competence_list.add("ruby on rails", "javascript", "vue.js", "html", "css", "front-end")
 lesly.language_list.add("french", "english")
+#lesly.photo.attach(io: file, filename: "lesly.jpg", content_type: "image/jpg")
 lesly.save
 puts "User 1 created"
 
@@ -240,5 +243,64 @@ simone.language_list.add("french", "english")
 simone.save
 
 puts "User 10 created"
+
+# seeding projects
+
+puts "Creating projects..."
+
+puts "Creating project 1"
+internship = Project.new(
+  title: "2 months internship at Le Wagon Paris",
+  description: "Come to Paris and test your coding and teaching skills at Le Wagon Paris. As an alumni, you will have to review code and teach coding skills. 1 year experience in rails needed.",
+  repo_url: 'https://github.com/Lewagon',
+  type_of_mission: 0,
+  user_id: ada.id
+)
+internship.save
+puts "Project 1 created"
+
+puts "Creating project 2"
+job_offer = Project.new(
+  title: "Job offer for a web-dev position in a startup",
+  description: "Hi, we're a young startup in Paris and we are looking for a web-dev for our project, feel free to contact me or visit our repo for more information.",
+  repo_url: 'https://github.com/Effendir/bonzai-zone',
+  type_of_mission: 1,
+  user_id: chiaki.id
+)
+job_offer.save
+puts "Project 2 created"
+
+puts "Creating project 3"
+code_review = Project.new(
+  title: "Code review offer for a young dev",
+  description: "Hello everyone! If any junior dev is looking for code reviewing from a senior dev it'll be my pleasure to help you out!",
+  repo_url: "",
+  type_of_mission: 3,
+  user_id: chiaki.id
+)
+code_review.save
+puts "Project 3 created"
+
+puts "Creating project 4"
+peer_programming = Project.new(
+  title: "Looking for a senior dev for peer-programming",
+  description: "Hi! As a wagon alumni and junior dev I'm looking for an experienced developper for peer-programming sessions in order to keep enhancing my coding skills in ruby",
+  repo_url: "",
+  type_of_mission: 2,
+  user_id: lesly.id
+)
+peer_programming.save
+puts "Project 4 created"
+
+puts "Creating project 5"
+code_review_two = Project.new(
+  title: "Looking for a fullstack senior dev",
+  description: "Hello there! I'm a junior dev from batch #1210 and I'm looking for a senior dev to review my rails app, from back to front. Feel free to contact me or take a peek at my repo",
+  repo_url: "https://github.com/luciegaget",
+  type_of_mission: 3,
+  user_id: lucie.id
+)
+code_review_two.save
+puts "Project 5 created"
 
 puts "Seeding done"
