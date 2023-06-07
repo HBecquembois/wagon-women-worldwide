@@ -29,8 +29,12 @@ gem "jbuilder"
 
 gem 'acts-as-taggable-on', '~> 9.0'
 
-# gem "Cloudinary"
+# gem "cloudinary"
 gem "cloudinary"
+
+# gem "faker"
+gem "faker"
+
 
 # Use Redis adapter to run Action Cable in production
 # gem "redis", "~> 4.0"
