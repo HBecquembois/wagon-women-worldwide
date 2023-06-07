@@ -8,7 +8,7 @@ puts "Database cleaned"
 puts "Creating users"
 
 puts "Creating user 1"
-#file = "TEMPLATE DE PY" test
+# file = "TEMPLATE DE PY" test
 lesly = User.new(
   first_name: 'Lesly',
   last_name: 'Urie',
@@ -28,7 +28,7 @@ lesly = User.new(
 )
 lesly.competence_list.add("ruby on rails", "javascript", "vue.js", "html", "css", "front-end")
 lesly.language_list.add("french", "english")
-#lesly.photo.attach(io: file, filename: "lesly.jpg", content_type: "image/jpg")
+# lesly.photo.attach(io: file, filename: "lesly.jpg", content_type: "image/jpg")
 lesly.save
 puts "User 1 created"
 
