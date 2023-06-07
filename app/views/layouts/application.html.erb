@@ -17,7 +17,7 @@
     <%= render "shared/navbar2" if action_name != 'home' %>
     <%= render "shared/flashes" %>
     <div class="main-container">
-      <%= render "shared/sidebar" if action_name != 'home' %>
+      <%= render "shared/sidebar" if action_name != 'home' && controller_name != 'sessions'%>
       <section class="main-content">
         <%= yield %>
       </section>
