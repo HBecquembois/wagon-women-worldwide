@@ -12,33 +12,15 @@
   </head>
 
   <body>
-    <%= render "shared/navbar" %>
+    <%= render "shared/navbar" if action_name == 'home' %>
+    <%= render "shared/navbar2" if action_name != 'home' %>
     <%= render "shared/flashes" %>
-
-<div class="container-side d-flex justify-content">
-  <div class="row">
-
-    <div class="col-6 col-sm-3 side-bar">
-     <div class="user-side-bar-image">
-        <img src="https://upload.wikimedia.org/wikipedia/commons/c/c4/Rosaparks.jpg" alt="">
-     </div>
-        <h3><%= current_user.first_name  %> <%= current_user.last_name  %></h3>
-        <div class="button-center">
-          <button class="btn-indigo-sidebar align-center">View my profile</button>
-        </div>
-      <ul>
-        <li><i class="fa-solid fa-arrow-right"></i> <%= link_to "My dashboard", "#" %></li>
-        <li><i class="fa-solid fa-arrow-right"></i> <%= link_to "Find a mentor", users_path %></li>
-        <li><i class="fa-solid fa-arrow-right"></i> <%= link_to "My inbox", "#" %></li>
-        <li><i class="fa-solid fa-arrow-right"></i> <%= link_to "My projects", "#" %></li>
-      </ul>
+    <div class="main-container">
+      <%= render "shared/sidebar" if action_name != 'home' %>
+      <section class="main-content">
+        <%= yield %>
+      </section>
     </div>
-
-    <div class="col-6 col-sm-9">
-       <%= yield %>
-    </div>
-  </div>
-</div>
-    <%= render "shared/footer" %>
+    <%= render "shared/footer" if action_name == 'home' %>
   </body>
 </html>
