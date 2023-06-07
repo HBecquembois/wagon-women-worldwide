@@ -1,0 +1,14 @@
+<div class="sidebar">
+
+  <img src="https://upload.wikimedia.org/wikipedia/commons/c/c4/Rosaparks.jpg" alt="" class="user-side-bar-image">
+  <h3><%= current_user.first_name  %> <%= current_user.last_name  %></h3>
+  <div class="button-center">
+    <button class="btn-indigo-sidebar align-center">View my profile</button>
+  </div>
+  <ul>
+    <li><i class="fa-solid fa-arrow-right"></i> <%= link_to "My dashboard", "#" %></li>
+    <li><i class="fa-solid fa-arrow-right"></i> <%= link_to "Find a mentor", users_path %></li>
+    <li><i class="fa-solid fa-arrow-right"></i> <%= link_to "My inbox", "#" %></li>
+    <li><i class="fa-solid fa-arrow-right"></i> <%= link_to "My projects", "#" %></li>
+  </ul>
+</div>

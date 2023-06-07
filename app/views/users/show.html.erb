@@ -1,4 +1,16 @@
-<div class= "container">
+<%#= cl_image_tag @user.photo.key, crop: :fill, class: "user-photo" %>
+
+<img src="https://upload.wikimedia.org/wikipedia/commons/c/c4/Rosaparks.jpg" class="img">
+
+
+<h1><%= @user.first_name %> <%= @user.last_name %></h1>
+  <h2><%= @user.title %></h2>
+    <h3><%= @user.city %> - <%= @user.country %></h3>
+
+
+
+
+
   <div class="card-container justify-content">
     <div class="container pt-2">
       <br>
@@ -7,13 +19,11 @@
     </div>
       <div class="container card-container justify-content">
         <div class="main-container-show">
-
         </div>
       </div>
 
       <div class="card-profile">
 
-        <%#= cl_image_tag @user.photo.key, crop: :fill, class: "user-photo" %>
         <div class="card-profile-infos">
           <h3><%= @user.title %></h2>
           <h2><%= @user.city %> - <%= @user.country %></h2>
@@ -23,8 +33,6 @@
         <div class="card-footer text-muted">
           She was part of the batch n°<%= @user.batch_number %> in <%= @user.graduation_year %>
         </div>
-
       </div>
     </div>
   </div>
-</div>

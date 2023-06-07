@@ -10,4 +10,14 @@
 // Your CSS partials
 @import "components/index";
 @import "pages/index";
-@import "users/show"
+@import "users/show";
+
+.main-container {
+  display: flex;
+}
+
+.main-content {
+  height: calc(100vh - 76px);
+  overflow-y: auto;
+  margin-left: 42px;
+}

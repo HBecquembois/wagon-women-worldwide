@@ -47,3 +47,24 @@
   height: 50px;
   justify-content: center;
 }
+
+
+.navbar-site {
+  justify-content: space-between;
+  background: $light-red;
+  flex-grow: 0;
+  .nav-link {
+    color: $indigo;
+    &:hover {
+      color: $light-indigo;
+    }
+  }
+}
+
+.navbar-site .navbar-collapse {
+  flex-grow: 0;
+}
+
+.navbar-site .navbar-brand img {
+  width: 40px;
+}
