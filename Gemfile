@@ -28,6 +28,7 @@ gem "stimulus-rails"
 gem "jbuilder"
 
 gem 'acts-as-taggable-on', '~> 9.0'
+gem 'acts_as_favoritor'
 
 # gem "cloudinary"
 gem "cloudinary"

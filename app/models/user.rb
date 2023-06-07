@@ -1,4 +1,7 @@
 class User < ApplicationRecord
+  acts_as_favoritable
+  acts_as_favoritor
+
   include PgSearch::Model
 
     # Include default devise modules. Others available are:
@@ -22,3 +25,4 @@ class User < ApplicationRecord
       base_tags: [:name]
     }
 end
+
