@@ -13,6 +13,20 @@
   }
 }
 
+.btn-card-home {
+  color: $white;
+  font-size: 18px;
+  font-weight: 600;
+  padding: 6px 7px;
+  border-radius: 6px;
+  background: $red;
+  transition: background 0.3s ease;
+  text-decoration: none;
+  &:hover {
+    color: $red;
+    background: $white;
+  }
+} 
 
 .btn-indigo-sidebar {
   color: $light-red;
@@ -23,9 +37,8 @@
   background: $indigo;
   transition: background 0.3s ease;
   text-decoration: none;
-
   &:hover {
     color: $indigo;
     background: $light-red;
-}
+  }
 }
