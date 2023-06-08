@@ -8,7 +8,6 @@ class PagesController < ApplicationController
   end
 end
 
-
 def index
   @projects = Project.all
   @users = User.all

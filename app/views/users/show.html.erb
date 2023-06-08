@@ -1,39 +1,50 @@
+<div class="card-container">
+  <div class="container-photo-title pt-2">
+    <br>
+      <%= cl_image_tag @user.photo.key, width: 150, height: 150, crop: :thumb, gravity: :face, class: "user-photo" %>
+      <div class="name-city">
+        <h1><%= @user.first_name %> <%= @user.last_name %></h1>
+        <p><%= @user.city %> - <%= @user.country %></p>
+      </div>
+
+        <button class="btn-indigo-profile"><i class="fa-regular fa-comments"></i> Chat with <%= @user.first_name %></button>
+     <br>
+  </div>
 
 
+  <div class="card-profile">
+    <div class="card-profile-infos">
+      <h3><%= @user.title %></h3>
+      <ul>
+        <% @user.competence_list.each do |skill| %>
+        <li class="tag-list"><%= skill %></li>
+          <% end %>
+      </ul>
+      <p><%= @user.description %></p>
+    </div>
+    </div>
+  </div>
 
-<div class="profile-header">
-  <%= cl_image_tag @user.photo.key, width: 150, height: 150, crop: :thumb, gravity: :face, class: "user-photo" %>
-  <h1><%= @user.first_name %> <%= @user.last_name %></h1>
-  <h2><%= @user.title %></h2>
-  <h3><%= @user.city %> - <%= @user.country %></h3>
+<div class="card-footer text-muted">
+She was part of the batch n°<%= @user.batch_number %> in <%= @user.graduation_year %>
 </div>
 
 
+<div class="projects-card">
+   <h2>Projects</h2>
+    <ul>
+      <% @user_projects.each do |project| %>
+        <li><%= project.title %></li>
+        <% end %>
+    </ul>
+</div>
+<p>Has competences in:</p>
 
 
-
-  <div class="card-container justify-content">
-    <div class="container pt-2">
-      <br>
-        <h1><%= @user.first_name %> <%= @user.last_name %></h1>
-      <br>
-    </div>
-      <div class="container card-container justify-content">
-        <div class="main-container-show">
-        </div>
-      </div>
-
-      <div class="card-profile">
-
-        <div class="card-profile-infos">
-          <h3><%= @user.title %></h2>
-          <h2><%= @user.city %> - <%= @user.country %></h2>
-          <p><%= @user.description %></p>
-        </div>
-
-        <div class="card-footer text-muted">
-          She was part of the batch n°<%= @user.batch_number %> in <%= @user.graduation_year %>
-        </div>
-      </div>
-    </div>
+Offers her mentor skills for:
+<ul>
+  <% @user.mentor_skill_list.each do |skill| %>
+  <li class="tag-list"><%= skill %></li>
+    <% end %>
+</ul>
   </div>
