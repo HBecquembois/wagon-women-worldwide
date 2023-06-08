@@ -2,6 +2,10 @@ class User < ApplicationRecord
   acts_as_favoritable
   acts_as_favoritor
 
+  def chatroom_with(another_user)
+    Chatroom.where(user_a: self, user_b: another_user).or(Chatroom.where(user_b: self, user_a: another_user)).first
+  end
+
   include PgSearch::Model
 
     # Include default devise modules. Others available are:
@@ -25,4 +29,3 @@ class User < ApplicationRecord
       base_tags: [:name]
     }
 end
-

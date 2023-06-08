@@ -4,6 +4,7 @@ Rails.application.routes.draw do
   resources :users, only: [:index, :show]
   get "/dashboard", to: "pages#dashboard"
   get "/pages", to: "pages#index"
+  resources :chatrooms, only: :show
 
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
 
