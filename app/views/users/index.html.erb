@@ -1,17 +1,23 @@
-<div class="m-5">
+
+<link
+rel="stylesheet"
+href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.1/css/all.min.css"
+/><div class="m-5">
 <div class ="form">
   <h1 class="my-9" class="my-5">Find your mentor</h1>
-    <%= form_with url: users_path, method: :get, class: "d-flex"  do %>
-      <%= text_field_tag :query,
+    <%= form_with url: users_path, method: :get, class: "d-flex" do %>
+      <%#= text_field_tag :query,
         params[:query],
         class: "form-control",
         placeholder: "Search"
       %>
+      <%= select_tag :choices, options_for_select(@competences, ""), data: {controller: "autocomplete"} %>
       <%= submit_tag "Search", class: "btn btn-primary" %>
     <% end %>
   </div>
 
 
+  <h2>We've found <%= @users.count %> <%= "mentor".pluralize(@users.count) %></h2>
   <div class="user-cards-container">
     <% @users.each do |user| %>
       <div class="user-card mt-4">
@@ -23,7 +29,7 @@
             <span class="badge"><%= competence %></span>
           <% end %>
           <div class="user-button d-flex justify-content-end">
-            <%= link_to "See profile", user_path(user), class: "btn-indigo-index" %>
+            <%= link_to "See profile", user_path(user), class: "btn-indigo-index mt-4" %>
           </div>
         </div>
       </div>

@@ -1,15 +1,15 @@
 .btn-indigo-index {
+  color: $light-red;
+  font-size: 12px;
+  padding: 3px 5px;
+  border: 1px solid $indigo;
+  border-radius: 6px;
+  background: $indigo;
+  transition: background 0.3s ease;
+  text-decoration: none;
+  &:hover {
     color: $indigo;
-    font-size: 12px;
-    padding: 6px 7px;
-    border-radius: 6px;
-    background: $light-indigo;
-    transition: background 0.3s ease;
-    text-decoration: none;
-
-    &:hover {
-      color: $light-indigo;
-      background: $indigo;
+    background: $light-red;
   }
 }
 

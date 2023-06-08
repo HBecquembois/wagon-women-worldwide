@@ -1,14 +1,9 @@
 .badge {
   color: $indigo;
-  font-size: 12px;
+  font-size: 11px;
   padding: 6px 7px;
   border-radius: 6px;
   background: $light-indigo;
   transition: background 0.3s ease;
   text-decoration: none;
-
-  &:hover {
-    color: $light-indigo;
-    background: $indigo;
-}
 }
