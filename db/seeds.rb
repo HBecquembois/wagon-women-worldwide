@@ -2,6 +2,14 @@ require "faker"
 require "open-uri"
 
 titles = ["Data-analyst", "Fullstack web-developper", "Front-end web-developper", "Back-end web-developper", "Data-scientist"]
+frontone = ["html", "css", "vue.js", "photoshop", "figma"]
+fronttwo = ["html", "css", "stimulus", "react", "ajax"]
+back = ["ruby", "rails", "SQL", "python", "C", "javascript"]
+fullstack = fronttwo + back
+analyst = ["digital marketing", "product management", "python", "SQL"]
+scientist = ["aws", "docker", "css", "html", "cloud", "javascript"]
+allskills = fullstack + analyst + scientist
+languages = ["french", "german", "italian", "english", "greek", "russian", "japanese", "portugese", "esperanto", "vietnamese", "wolof"]
 
 # Cleaning DB
 puts "Cleaning up database..."
@@ -33,7 +41,7 @@ lesly = User.new(
   linkedin_url: 'https://linkedin.com/',
   kitt_username: 'lesly75'
 )
-lesly.competence_list.add("ruby on rails", "javascript", "vue.js", "html", "css", "front-end")
+lesly.competence_list.add(frontone)
 lesly.language_list.add("french", "english")
 lesly.photo.attach(io: file, filename: "lesly", content_type: "image/jpeg")
 lesly.save
@@ -58,8 +66,8 @@ eugenie = User.new(
   linkedin_url: 'https://linkedin.com/',
   kitt_username: 'Effendir'
 )
-eugenie.competence_list.add("ruby on rails", "stimulus js", "javascript", "html", "css", "front-end")
-eugenie.language_list.add("french", "english")
+eugenie.competence_list.add(back)
+eugenie.language_list.add("french", "english", "italian")
 eugenie.photo.attach(io: file, filename: "eugenie", content_type: "image/jpeg")
 eugenie.save
 puts "User 2 created"
@@ -83,8 +91,8 @@ helene = User.new(
   linkedin_url: 'https://www.linkedin.com/in/h%C3%A9l%C3%A8ne-becquembois-66592a118/',
   kitt_username: 'Hbecquembois'
 )
-helene.competence_list.add("ruby on rails", "javascript", "bootstrap", "html", "css", "front-end")
-helene.language_list.add("french", "english")
+helene.competence_list.add(fullstack)
+helene.language_list.add("french", "english", "greek")
 helene.photo.attach(io: file, filename: "helene", content_type: "image/jpeg")
 helene.save
 puts "User 3 created"
@@ -108,7 +116,7 @@ lucie = User.new(
   linkedin_url: 'https://www.linkedin.com/in/lucie-gaget-03a0b196/',
   kitt_username: 'luciegaget'
 )
-lucie.competence_list.add("ruby on rails", "javascript", "html", "css", "front-end")
+lucie.competence_list.add(fullstack)
 lucie.language_list.add("french", "english")
 lucie.photo.attach(io: file, filename: "lucie", content_type: "image/jpeg")
 lucie.save
@@ -133,8 +141,8 @@ amal = User.new(
   linkedin_url: 'https://linkedin.com/',
   kitt_username: 'AmalRabbani'
 )
-amal.competence_list.add("ruby on rails", "javascript", "vue.js", "html", "css", "front-end")
-amal.language_list.add("french", "english")
+amal.competence_list.add(analyst)
+amal.language_list.add("french", "english", "spanish")
 amal.photo.attach(io: file, filename: "amal", content_type: "image/jpeg")
 amal.save
 puts "User 5 created"
@@ -158,8 +166,8 @@ celine = User.new(
   linkedin_url: 'https://linkedin.com/',
   kitt_username: 'celine-chader'
 )
-celine.competence_list.add("ruby on rails", "javascript", "vue.js", "html", "css", "front-end")
-celine.language_list.add("french", "english")
+celine.competence_list.add(scientist)
+celine.language_list.add("french", "english", "german")
 celine.photo.attach(io: file, filename: "celine", content_type: "image/jpeg")
 celine.save
 puts "User 6 created"
@@ -183,193 +191,197 @@ stephanie = User.new(
   linkedin_url: 'https://linkedin.com/',
   kitt_username: 'boubouboubs'
 )
-stephanie.competence_list.add("ruby on rails", "javascript", "vue.js", "html", "css", "front-end")
-stephanie.language_list.add("french", "english")
+stephanie.competence_list.add(frontone)
+stephanie.language_list.add("french", "english", "russian")
 stephanie.photo.attach(io: file, filename: "stephanie", content_type: "image/jpeg")
 stephanie.save
 puts "User 7 created"
 
-# puts "Creating user 8"
-# file = URI.open("https://kitt.lewagon.com/placeholder/users/XXX")
-# XXX = User.new(
-#   first_name: 'XXX',
-#   last_name: 'XXX',
-#   email: Faker::Internet.unique.email,
-#   password: 'azerty',
-#   password_confirmation: 'azerty',
-#   city: 'XXX',
-#   country: 'France',
-#   mentor: false,
-#   title: 'XXX',
-#   description: "XXX",
-#   batch_number: 000,
-#   graduation_year: 000,
-#   github_url: 'https://github.com/',
-#   linkedin_url: 'https://linkedin.com/',
-#   kitt_username: 'XXX'
-# )
-# XXX.competence_list.add("ruby on rails", "javascript", "vue.js", "html", "css", "front-end")
-# XXX.language_list.add("french", "english")
-# XXX.photo.attach(io: file, filename: "XXX", content_type: "image/jpeg")
-# XXX.save
-# puts "User 8 created"
+puts "Creating user 8"
+file = URI.open("https://kitt.lewagon.com/placeholder/users/bineleon")
+nelbi = User.new(
+  first_name: 'Nelbi',
+  last_name: 'Léon',
+  email: Faker::Internet.unique.email,
+  password: 'azerty',
+  password_confirmation: 'azerty',
+  city: 'Paris',
+  country: 'France',
+  mentor: true,
+  title: titles[1],
+  description: "I love solving problems, fixing, understanding stuff and value creativity as well as teamwork. Other interests : Cycling, yoga, music, adventure and much more",
+  batch_number: 1000,
+  graduation_year: 2022,
+  github_url: 'https://github.com/',
+  linkedin_url: 'https://linkedin.com/',
+  kitt_username: 'bineleon'
+)
+nelbi.competence_list.add(fronttwo)
+nelbi.language_list.add("french", "english")
+nelbi.photo.attach(io: file, filename: "nelbi", content_type: "image/jpeg")
+nelbi.mentor_skill_list.add(frontone.sample(2))
+nelbi.save
+puts "User 8 created"
 
-# puts "Creating user 9"
-# file = URI.open("https://kitt.lewagon.com/placeholder/users/XXX")
-# XXX = User.new(
-#   first_name: 'XXX',
-#   last_name: 'XXX',
-#   email: Faker::Internet.unique.email,
-#   password: 'azerty',
-#   password_confirmation: 'azerty',
-#   city: 'XXX',
-#   country: 'France',
-#   mentor: false,
-#   title: 'XXX',
-#   description: "XXX",
-#   batch_number: 000,
-#   graduation_year: 000,
-#   github_url: 'https://github.com/',
-#   linkedin_url: 'https://linkedin.com/',
-#   kitt_username: 'XXX'
-# )
-# XXX.competence_list.add("ruby on rails", "javascript", "vue.js", "html", "css", "front-end")
-# XXX.language_list.add("french", "english")
-# XXX.photo.attach(io: file, filename: "XXX", content_type: "image/jpeg")
-# XXX.save
-# puts "User 9 created"
+puts "Creating user 9"
+file = URI.open("https://kitt.lewagon.com/placeholder/users/lisamillet")
+lisa = User.new(
+  first_name: 'Lisa',
+  last_name: 'Millet',
+  email: Faker::Internet.unique.email,
+  password: 'azerty',
+  password_confirmation: 'azerty',
+  city: 'Paris',
+  country: 'France',
+  mentor: true,
+  title: titles[1],
+  description: "Hello, my name is Lisa! Passionate about craftsmanship, for the past 5 years I have been focused on supporting artisans and developing solutions for them. In addition to my future web development job, I am the president of the association 'Histoires d'Artisans,' which works towards promoting their expertise, including through the eponymous podcast.",
+  batch_number: 1115,
+  graduation_year: 2023,
+  github_url: 'https://github.com/',
+  linkedin_url: 'https://linkedin.com/',
+  kitt_username: 'lisamillet'
+)
+lisa.competence_list.add(fullstack)
+lisa.language_list.add("french", "english", "spanish")
+lisa.photo.attach(io: file, filename: "lisa", content_type: "image/jpeg")
+lisa.mentor_skill_list.add(frontone.sample(3))
+lisa.save
+puts "User 9 created"
 
-# puts "Creating user 10"
-# file = URI.open("https://kitt.lewagon.com/placeholder/users/XXX")
-# XXX = User.new(
-#   first_name: 'XXX',
-#   last_name: 'XXX',
-#   email: Faker::Internet.unique.email,
-#   password: 'azerty',
-#   password_confirmation: 'azerty',
-#   city: 'XXX',
-#   country: 'France',
-#   mentor: false,
-#   title: 'XXX',
-#   description: "XXX",
-#   batch_number: 000,
-#   graduation_year: 000,
-#   github_url: 'https://github.com/',
-#   linkedin_url: 'https://linkedin.com/',
-#   kitt_username: 'XXX'
-# )
-# XXX.competence_list.add("ruby on rails", "javascript", "vue.js", "html", "css", "front-end")
-# XXX.language_list.add("french", "english")
-# XXX.photo.attach(io: file, filename: "XXX", content_type: "image/jpeg")
-# XXX.save
-# puts "User 10 created"
+puts "Creating user 10"
+file = URI.open("https://kitt.lewagon.com/placeholder/users/dianejroussillon")
+diane = User.new(
+  first_name: 'Diane',
+  last_name: 'Johnston Roussillon',
+  email: Faker::Internet.unique.email,
+  password: 'azerty',
+  password_confirmation: 'azerty',
+  city: 'London',
+  country: 'UK',
+  mentor: true,
+  title: fullstack,
+  description: "I worked at Le Collectionist for 3 years as head of Supply - i was in charge of developing the owner network, and the portfolio of properties that we suggest on our platform. This job was also about the e-merchandising of the properties on our platform. I joined Le wagon in order to learn the technical skills to work closer to the development team and because I am looking for something more creative.",
+  batch_number: 200,
+  graduation_year: 2018,
+  github_url: 'https://github.com/',
+  linkedin_url: 'https://linkedin.com/',
+  kitt_username: 'dianejroussillon'
+)
+diane.competence_list.add(fullstack)
+diane.language_list.add("french", "english", "german")
+diane.photo.attach(io: file, filename: "diane", content_type: "image/jpeg")
+diane.save
+diane.mentor_skill_list.add(fullstack.sample(5))
+puts "User 10 created"
 
-# puts "Creating user 11"
-# file = URI.open("https://kitt.lewagon.com/placeholder/users/XXX")
-# XXX = User.new(
-#   first_name: 'XXX',
-#   last_name: 'XXX',
-#   email: Faker::Internet.unique.email,
-#   password: 'azerty',
-#   password_confirmation: 'azerty',
-#   city: 'XXX',
-#   country: 'France',
-#   mentor: false,
-#   title: 'XXX',
-#   description: "XXX",
-#   batch_number: 000,
-#   graduation_year: 000,
-#   github_url: 'https://github.com/',
-#   linkedin_url: 'https://linkedin.com/',
-#   kitt_username: 'XXX'
-# )
-# XXX.competence_list.add("ruby on rails", "javascript", "vue.js", "html", "css", "front-end")
-# XXX.language_list.add("french", "english")
-# XXX.photo.attach(io: file, filename: "XXX", content_type: "image/jpeg")
-# XXX.save
-# puts "User 11 created"
+puts "Creating user 11"
+file = URI.open("https://kitt.lewagon.com/placeholder/users/cveneziani")
+cecile = User.new(
+  first_name: 'Cécile',
+  last_name: 'Veneziani',
+  email: Faker::Internet.unique.email,
+  password: 'azerty',
+  password_confirmation: 'azerty',
+  city: 'Florence',
+  country: 'Italy',
+  mentor: true,
+  title: titles[3],
+  description: "Teaching / Coaching / Remote working trip",
+  batch_number: 1,
+  graduation_year: 2014,
+  github_url: 'https://github.com/',
+  linkedin_url: 'https://linkedin.com/',
+  kitt_username: 'cveneziani'
+)
+cecile.competence_list.add(back)
+cecile.language_list.add("french", "english", "italian")
+cecile.photo.attach(io: file, filename: "cecile", content_type: "image/jpeg")
+cecile.mentor_skill_list.add(back.sample(4))
+cecile.save
+puts "User 11 created"
 
-# puts "Creating user 12"
-# file = URI.open("https://kitt.lewagon.com/placeholder/users/XXX")
-# XXX = User.new(
-#   first_name: 'XXX',
-#   last_name: 'XXX',
-#   email: Faker::Internet.unique.email,
-#   password: 'azerty',
-#   password_confirmation: 'azerty',
-#   city: 'XXX',
-#   country: 'France',
-#   mentor: false,
-#   title: 'XXX',
-#   description: "XXX",
-#   batch_number: 000,
-#   graduation_year: 000,
-#   github_url: 'https://github.com/',
-#   linkedin_url: 'https://linkedin.com/',
-#   kitt_username: 'XXX'
-# )
-# XXX.competence_list.add("ruby on rails", "javascript", "vue.js", "html", "css", "front-end")
-# XXX.language_list.add("french", "english")
-# XXX.photo.attach(io: file, filename: "XXX", content_type: "image/jpeg")
-# XXX.save
-# puts "User 12 created"
+puts "Creating user 12"
+file = URI.open("https://kitt.lewagon.com/placeholder/users/sarahdechance")
+sarah = User.new(
+  first_name: 'Sarah',
+  last_name: 'Dechancé',
+  email: Faker::Internet.unique.email,
+  password: 'azerty',
+  password_confirmation: 'azerty',
+  city: 'Bordeaux',
+  country: 'France',
+  mentor: true,
+  title: titles[3],
+  description: "Hi there! I'm a former product development marketer turned into junior Full Stack Developer thanks to Le Wagon (batch #1115, brand new :) ). Looking forwards to learn some more!",
+  batch_number: 1115,
+  graduation_year: 2023,
+  github_url: 'https://github.com/',
+  linkedin_url: 'https://linkedin.com/',
+  kitt_username: 'sarahdechance'
+)
+sarah.competence_list.add(back)
+sarah.language_list.add("french", "english")
+sarah.photo.attach(io: file, filename: "sarah", content_type: "image/jpeg")
+sarah.save
+sarah.mentor_skill_list.add(back.sample(3))
+puts "User 12 created"
 
-# puts "Creating user 13"
-# file = URI.open("https://kitt.lewagon.com/placeholder/users/XXX")
-# XXX = User.new(
-#   first_name: 'XXX',
-#   last_name: 'XXX',
-#   email: Faker::Internet.unique.email,
-#   password: 'azerty',
-#   password_confirmation: 'azerty',
-#   city: 'XXX',
-#   country: 'France',
-#   mentor: false,
-#   title: 'XXX',
-#   description: "XXX",
-#   batch_number: 000,
-#   graduation_year: 000,
-#   github_url: 'https://github.com/',
-#   linkedin_url: 'https://linkedin.com/',
-#   kitt_username: 'XXX'
-# )
-# XXX.competence_list.add("ruby on rails", "javascript", "vue.js", "html", "css", "front-end")
-# XXX.language_list.add("french", "english")
-# XXX.photo.attach(io: file, filename: "XXX", content_type: "image/jpeg")
-# XXX.save
-# puts "User 13 created"
+puts "Creating user 13"
+file = URI.open("https://kitt.lewagon.com/placeholder/users/mylhouse")
+mylene = User.new(
+  first_name: 'Mylene',
+  last_name: 'Moreau',
+  email: Faker::Internet.unique.email,
+  password: 'azerty',
+  password_confirmation: 'azerty',
+  city: 'Toulon',
+  country: 'France',
+  mentor: true,
+  title: titles[2],
+  description: "Artistic director in print graphic design, I choose web development to improve my digital skills and be able to create and develop applications",
+  batch_number: 550,
+  graduation_year: 2021,
+  github_url: 'https://github.com/',
+  linkedin_url: 'https://linkedin.com/',
+  kitt_username: 'mylhouse'
+)
+mylene.competence_list.add(fronttwo)
+mylene.language_list.add("french", "english")
+mylene.photo.attach(io: file, filename: "mylene", content_type: "image/jpeg")
+mylene.mentor_skill_list.add(fronttwo.sample(3))
+mylene.save
+puts "User 13 created"
 
-# puts "Creating user 15"
-# file = URI.open("https://kitt.lewagon.com/placeholder/users/XXX")
-# XXX = User.new(
-#   first_name: 'XXX',
-#   last_name: 'XXX',
-#   email: Faker::Internet.unique.email,
-#   password: 'azerty',
-#   password_confirmation: 'azerty',
-#   city: 'XXX',
-#   country: 'France',
-#   mentor: false,
-#   title: 'XXX',
-#   description: "XXX",
-#   batch_number: 000,
-#   graduation_year: 000,
-#   github_url: 'https://github.com/',
-#   linkedin_url: 'https://linkedin.com/',
-#   kitt_username: 'XXX'
-# )
-# XXX.competence_list.add("ruby on rails", "javascript", "vue.js", "html", "css", "front-end")
-# XXX.language_list.add("french", "english")
-# XXX.photo.attach(io: file, filename: "XXX", content_type: "image/jpeg")
-# XXX.save
-# puts "User 15 created"
+puts "Creating user 15"
+file = URI.open("https://kitt.lewagon.com/placeholder/users/sabrinaassya")
+sabrina = User.new(
+  first_name: 'Sabrina',
+  last_name: 'Achab',
+  email: Faker::Internet.unique.email,
+  password: 'azerty',
+  password_confirmation: 'azerty',
+  city: 'Paris',
+  country: 'France',
+  mentor: true,
+  title: titles[0],
+  description: "Assistant Program Manager @ Le Wagon - Paris",
+  batch_number: 1003,
+  graduation_year: 2023,
+  github_url: 'https://github.com/',
+  linkedin_url: 'https://linkedin.com/',
+  kitt_username: 'sabrinaassya'
+)
+sabrina.competence_list.add(frontone)
+sabrina.language_list.add("french", "english")
+sabrina.photo.attach(io: file, filename: "sabrina", content_type: "image/jpeg")
+sabrina.mentor_skill_list.add(frontone.sample(3))
+sabrina.save
+puts "User 15 created"
 
 puts "Created real users"
 
-
-
 puts "Creating fake users"
-
 
 30.times do
   file = URI.open(fake_avatar_url)
@@ -390,8 +402,8 @@ puts "Creating fake users"
     linkedin_url: 'https://linkedin.com/',
     kitt_username: :first_name
   )
-  user.competence_list.add("ruby on rails", "javascript", "vue.js", "html", "css", "front-end")
-  user.language_list.add("french", "english")
+  user.competence_list.add(allskills.sample(4))
+  user.language_list.add(languages.sample(3))
   user.photo.attach(io: file, filename: :first_name, content_type: "image/jpeg")
   user.save
 end
@@ -408,8 +420,9 @@ internship = Project.new(
   description: "Come to Paris and test your coding and teaching skills at Le Wagon Paris. As an alumni, you will have to review code and teach coding skills. 1 year experience in rails needed.",
   repo_url: 'https://github.com/Lewagon',
   type_of_mission: 0,
-  user_id: lesly.id
+  user_id: cecile.id
 )
+internship.requested_skill_list.add(allskills.sample(4))
 internship.save
 puts "Project 1 created"
 
@@ -419,8 +432,9 @@ job_offer = Project.new(
   description: "Hi, we're a young startup in Paris and we are looking for a web-dev for our project, feel free to contact me or visit our repo for more information.",
   repo_url: 'https://github.com/Effendir/bonzai-zone',
   type_of_mission: 1,
-  user_id: eugenie.id
+  user_id: lisa.id
 )
+job_offer.requested_skill_list.add(allskills.sample(3))
 job_offer.save
 puts "Project 2 created"
 
@@ -430,7 +444,7 @@ code_review = Project.new(
   description: "Hello everyone! If any junior dev is looking for code reviewing from a senior dev it'll be my pleasure to help you out!",
   repo_url: "",
   type_of_mission: 3,
-  user_id: helene.id
+  user_id: diane.id
 )
 code_review.save
 puts "Project 3 created"
@@ -441,8 +455,9 @@ peer_programming = Project.new(
   description: "Hi! As a wagon alumni and junior dev I'm looking for an experienced developper for peer-programming sessions in order to keep enhancing my coding skills in ruby",
   repo_url: "",
   type_of_mission: 2,
-  user_id: helene.id
+  user_id: lesly.id
 )
+peer_programming.requested_skill_list.add(allskills.sample(6))
 peer_programming.save
 puts "Project 4 created"
 
@@ -454,6 +469,7 @@ code_review_two = Project.new(
   type_of_mission: 3,
   user_id: lucie.id
 )
+code_review_two.requested_skill_list.add(allskills.sample(8))
 code_review_two.save
 puts "Project 5 created"
 
