@@ -16,6 +16,8 @@
   <h2>We've found <%= @users.count %> <%= "mentor".pluralize(@users.count) %></h2>
   <div class="user-cards-container">
     <% @users.each do |user| %>
+      <% next if user == current_user %>
+      <% next if user.mentor == false %>
       <div class="user-card mt-4">
         <%= cl_image_tag user.photo.key, class: "user-card-image" %>
         <div class="user-card-content">
