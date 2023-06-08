@@ -1,34 +1,32 @@
-<div class="container m-5">
+<div class="m-5">
+<div class ="form">
+  <h1 class="my-9" class="my-5">Find your mentor</h1>
+    <%= form_with url: users_path, method: :get, class: "d-flex"  do %>
+      <%= text_field_tag :query,
+        params[:query],
+        class: "form-control",
+        placeholder: "Search"
+      %>
+      <%= submit_tag "Search", class: "btn btn-primary" %>
+    <% end %>
+  </div>
 
-<h1 class="my-5">Find your mentor</h1>
-<%= form_with url: users_path, method: :get, class: "d-flex" do %>
-   <%= text_field_tag :query,
-    params[:query],
-    class: "form-control",
-    placeholder: "Search"
-  %>
-  <%= submit_tag "Search", class: "btn btn-primary" %>
-<% end %>
 
-
-<div class="user-cards-container">
-  <% @users.each do |user| %>
-    <div class="user-card">
-      <div class="user-card-image">
-            <img src="https://upload.wikimedia.org/wikipedia/commons/c/c4/Rosaparks.jpg" alt="">
-      </div>
-      <div class="user-card-content">
-          <h3><%= user.first_name %>
-          <br>
-          <%= user.last_name%></h3>
-          <p><%= user.title %></p>
-          <p class="competence"><%= user.competence_list.first(3).join(", ") %>
-          <br> & more</p>
-        <div class="user-button d-flex justify-content-end">
-          <%= link_to "See profile", user_path(user), class: "btn-indigo-index" %>
+  <div class="user-cards-container">
+    <% @users.each do |user| %>
+      <div class="user-card mt-4">
+        <%= cl_image_tag user.photo.key, class: "user-card-image" %>
+        <div class="user-card-content">
+          <h3><%= user.first_name %> <%= user.last_name%></h3>
+          <p class="fw-bold"><%= user.title %></p>
+          <% user.competence_list.first(3).each do |competence| %>
+            <span class="badge"><%= competence %></span>
+          <% end %>
+          <div class="user-button d-flex justify-content-end">
+            <%= link_to "See profile", user_path(user), class: "btn-indigo-index" %>
+          </div>
         </div>
       </div>
-    </div>
     <% end %>
-</div>
+  </div>
 </div>

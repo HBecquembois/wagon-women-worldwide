@@ -17,7 +17,7 @@ class User < ApplicationRecord
     has_one_attached :photo
 
     pg_search_scope :search_by_competences_and_users,
-    against: [:first_name, :title],
+    against: [:first_name,:title,:last_name],
     using: {
       tsearch: { prefix: true }
     },
