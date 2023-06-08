@@ -26,7 +26,7 @@
     color: $red;
     background: $white;
   }
-} 
+}
 
 .btn-indigo-sidebar {
   color: $light-red;
@@ -40,5 +40,23 @@
   &:hover {
     color: $indigo;
     background: $light-red;
+  }
+}
+
+
+.btn-indigo-profile {
+  color: $indigo;
+  font-size: 14px;
+  padding: 6px 7px;
+  margin: 50px;
+  border: solid 1px $light-indigo;
+  border-radius: 10px;
+  background: $light-indigo;
+  transition: background 0.3s ease;
+  text-decoration: none;
+
+  &:hover {
+    color: $light-indigo;
+    background: $indigo;
   }
 }
