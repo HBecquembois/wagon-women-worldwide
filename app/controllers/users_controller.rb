@@ -1,9 +1,9 @@
 class UsersController < ApplicationController
 
-
   def index
-    if params[:query].present?
-      @users = User.search_by_competences_and_users(params[:query])
+    @competences = ActsAsTaggableOn::Tag.for_context(:competences).map{ |tag| tag.name }
+    if params[:choices].present?
+      @users = User.search_by_competences_and_users(params[:choices])
     else
       @users = User.all
     end
