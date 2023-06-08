@@ -1,5 +1,5 @@
 class UsersController < ApplicationController
-  
+
 
   def index
     if params[:query].present?
@@ -12,6 +12,7 @@ class UsersController < ApplicationController
   def show
     @user = User.new
     @user = User.find(params[:id])
+    @user_projects = Project.where(user_id: @user.id)
   end
 
   private

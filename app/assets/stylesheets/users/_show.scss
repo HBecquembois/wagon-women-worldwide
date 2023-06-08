@@ -1,8 +1,7 @@
 .card-profile {
   overflow: hidden;
-  height: 120px;
-  width: 100%;
-  background: $light-red;
+  width: 80%;
+  background: white;
   box-shadow: 0 0 15px rgba(0,0,0,0.2);
   display: flex;
   align-items: center;
@@ -21,7 +20,6 @@
 }
 
 .card-profile p {
-  font-size: 12px;
   line-height: 1.4;
   opacity: .7;
   margin-bottom: 0;
@@ -30,4 +28,36 @@
 
 .card-profile .card-profile-infos {
   padding: 16px;
+}
+
+.container-photo-title {
+  display: flex;
+  .name-city {
+    padding: 20px;
+  }
+}
+
+.user-photo {
+  border-radius: 10px;
+  width: 120px;
+  height: 120px;
+}
+
+.projects-card {
+  padding: 10px;
+  border-radius: 10px;
+}
+
+.tag-list {
+  display: inline;
+  text-align: center;
+  margin-right: 6px;
+  padding: 1px 4px;
+  color: $indigo;
+  font-size: 14px;
+  border: solid 1px $light-indigo;
+  border-radius: 10px;
+  background: $light-indigo;
+  transition: background 0.3s ease;
+  text-decoration: none;
 }
