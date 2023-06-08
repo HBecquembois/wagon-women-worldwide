@@ -3,14 +3,13 @@
   grid-template-columns: repeat(3, 1fr);
   grid-gap: 2em;
   img {
-   height: 120px;
-   width: 120px;
+   width: 300px;
    object-fit: cover;
    }
  }
 
 .user-card {
-  display: flex;
+  flex-direction: column;
   overflow: hidden;
   box-shadow: 0 0 4px rgba(0,0,0,0.2);
   border-radius: 5px;
@@ -18,12 +17,12 @@
 
 .user-card-content {
   padding: 7px;
-  width: 55%;
+
   h3 {
     font-size: 18px;
   }
   p {
-    font-size: 14px;
+    font-size: 10px;
   }
   .competence {
     font-size: 10px;
@@ -88,3 +87,7 @@
   }
 }
 
+
+.card-container-profile {
+  margin-top: 55px;
+}

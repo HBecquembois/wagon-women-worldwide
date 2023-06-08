@@ -1,5 +1,5 @@
-<div class="card-container">
-  <div class="container-photo-title pt-2">
+<div class="card-container-profile">
+  <div class="container-photo-title justify-content-between">
     <br>
       <%= cl_image_tag @user.photo.key, width: 150, height: 150, crop: :thumb, gravity: :face, class: "user-photo" %>
       <div class="name-city">
@@ -14,44 +14,41 @@
         <%= button_to user_chatrooms_path(@user), class: "btn-indigo-profile" do %>
           <i class="fa-regular fa-comments"></i> Chat with <%= @user.first_name %>
         <% end %>
-      <% end %>
+      <% end %>        
      <br>
   </div>
 
-
   <div class="card-profile">
     <div class="card-profile-infos">
-      <h3><%= @user.title %></h3>
-      <ul>
+      <h3><%= @user.first_name %> is a <%= @user.title %></h3>
+      <ul class="tags">
         <% @user.competence_list.each do |skill| %>
         <li class="tag-list"><%= skill %></li>
           <% end %>
+      <p><i class="fa-solid fa-lightbulb"></i> She was part of the batch n°<strong><%= @user.batch_number %></strong> in <%= @user.graduation_year %></p>
       </ul>
+      <br>
+      <h3 class="smaller-h3"><%= @user.first_name  %>'s description:</h3>
       <p><%= @user.description %></p>
     </div>
     </div>
   </div>
 
-<div class="card-footer text-muted">
-She was part of the batch n°<%= @user.batch_number %> in <%= @user.graduation_year %>
-</div>
 
 
-<div class="projects-card">
-   <h2>Projects</h2>
+<div class="card-profile">
+   <h3>Mentoring offers:</h3>
+   <ul class="tags">
+  <% @user.mentor_skill_list.each do |skill| %>
+  <li class="tag-list"><%= skill %></li>
+    <% end %>
+  </ul>
+  <br>
+   <h3 class="smaller-h3">Her projects:</h3>
     <ul>
       <% @user_projects.each do |project| %>
         <li><%= project.title %></li>
         <% end %>
     </ul>
-</div>
-<p>Has competences in:</p>
-
-
-Offers her mentor skills for:
-<ul>
-  <% @user.mentor_skill_list.each do |skill| %>
-  <li class="tag-list"><%= skill %></li>
-    <% end %>
-</ul>
   </div>
+</div>
