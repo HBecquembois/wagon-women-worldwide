@@ -1,0 +1,6 @@
+ <h3>Her mentoring skills:</h3>
+   <ul class="tags">
+  <% @user.mentor_skill_list.each do |skill| %>
+  <li class="tag-list"><%= skill %></li>
+    <% end %>
+  </ul>

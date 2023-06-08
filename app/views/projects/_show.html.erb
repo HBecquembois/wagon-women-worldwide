@@ -1,0 +1,43 @@
+    <ul class="project-list">
+      <% @user_projects.each do |project| %>
+      <li><button type="button" class="btn btn-indigo-projects" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
+       <i class="fa-solid fa-computer"></i> <%= project.title %>
+      </button></li>
+
+<div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="staticBackdropLabel"><i class="fa-solid fa-computer"></i> <%= project.title %></h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <p><strong>Type of mission:</strong>
+        <br>
+         <%= project.type_of_mission %></p>
+        <p><strong>Description:
+        <br>
+        </strong> <%= project.description %></p>
+        <p><strong>URL: </strong>
+        <br>
+        <%= project.repo_url %></p>
+        <p><strong>Resquested competences for this mission:</strong>
+        <br>
+        <ul class="tags">
+        <% project.requested_skill_list.each do |projectskill| %>
+        <li class="tag-list"><%= projectskill %></li>
+          <% end %>
+        </ul>
+      </div>
+      <div class="modal-footer justify-content-around">
+      <div>
+       <p> Offer made by <%= @user.first_name %> <%= @user.last_name  %>  <%= cl_image_tag @user.photo.key, width: 20, height: 20, crop: :thumb, gravity: :face, class: "rounded" %></p>
+        <p><strong>Interested by this project?</strong></p>
+      </div>
+         <button class="btn-indigo-modal"><i class="fa-regular fa-comments"></i> Let <%= @user.first_name %> know</button>
+      </div>
+    </div>
+  </div>
+</div>
+        <% end %>
+    </ul>

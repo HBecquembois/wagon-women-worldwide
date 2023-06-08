@@ -26,7 +26,7 @@
 
 .container-photo-title {
   display: flex;
-  margin-left: 15px;
+
 
   .name-city {
     text-align: center;
@@ -72,6 +72,39 @@
   list-style-type: none;
 }
 
-.fa-solid {
+.fa-lightbulb {
   color: $red;
+}
+
+.fa-computer {
+  color: $indigo;
+}
+
+.project-list {
+  padding: 0;
+  list-style-type: none;
+}
+
+.cta {
+  text-align: center;
+}
+
+.modal-content {
+  width: 120%;
+}
+
+.modal-header {
+  background-color: $light-red;
+}
+
+.modal-body {
+  margin: 10px;
+  p {
+    line-height: 2;
+  }
+}
+
+.modal-footer {
+margin: 20px 0px;
+text-align: center;
 }
