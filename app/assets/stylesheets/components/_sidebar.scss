@@ -5,7 +5,11 @@
 .sidebar {
   background-color: $light-red;
   height: 85vh;
+
+  flex: 0 0 290px;
+
   width: 15%;
+
   border-radius: 10px;
   margin-left: 20px;
   margin-top: 60px;
@@ -31,7 +35,7 @@
   ul {
     margin-top: 60px;
     list-style-type: none;
-    font-size: 16px;
+    font-size: 20px;
     text-align: left;
   }
   li {
