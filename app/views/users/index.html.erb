@@ -1,4 +1,8 @@
-<div class="m-5">
+
+<link
+rel="stylesheet"
+href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.1/css/all.min.css"
+/><div class="m-5">
 <div class ="form">
   <h1 class="my-9" class="my-5">Find your mentor</h1>
     <%= form_with url: users_path, method: :get, class: "d-flex"  do %>
@@ -23,7 +27,7 @@
             <span class="badge"><%= competence %></span>
           <% end %>
           <div class="user-button d-flex justify-content-end">
-            <%= link_to "See profile", user_path(user), class: "btn-indigo-index" %>
+            <%= link_to "See profile", user_path(user), class: "btn-indigo-index mt-4" %>
           </div>
         </div>
       </div>
