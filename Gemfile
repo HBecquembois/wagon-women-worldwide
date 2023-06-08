@@ -35,6 +35,8 @@ gem "cloudinary"
 
 # gem "faker"
 gem "faker"
+gem 'tom-select-rails'
+
 
 
 # Use Redis adapter to run Action Cable in production
