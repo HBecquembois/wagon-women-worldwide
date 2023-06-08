@@ -1,12 +1,22 @@
 <div class="card-container-profile">
-  <div class="container-photo-title justify-content-between">
+
+  <div class="container-photo-title justify-content-around">
     <br>
       <%= cl_image_tag @user.photo.key, width: 150, height: 150, crop: :thumb, gravity: :face, class: "user-photo" %>
       <div class="name-city">
         <h1><%= @user.first_name %> <%= @user.last_name %></h1>
         <p><%= @user.city %> - <%= @user.country %></p>
+      <p><i class="fa-solid fa-lightbulb"></i> She was part of the batch n°<strong><%= @user.batch_number %></strong> in <%= @user.graduation_year %></p>
       </div>
-        <button class="btn-indigo-profile"><i class="fa-regular fa-comments"></i> Chat with <%= @user.first_name %></button>
+      <% if current_user.chatroom_with(@user) %>
+        <%= link_to chatroom_path(current_user.chatroom_with(@user)), class: "btn-indigo-profile" do %>
+          <i class="fa-regular fa-comments"></i> Chat with <%= @user.first_name %>
+        <% end %>
+      <% else %>
+        <%= button_to user_chatrooms_path(@user), class: "btn-indigo-profile" do %>
+          <i class="fa-regular fa-comments"></i> Chat with <%= @user.first_name %>
+        <% end %>
+      <% end %>        
      <br>
   </div>
 
@@ -17,7 +27,6 @@
         <% @user.competence_list.each do |skill| %>
         <li class="tag-list"><%= skill %></li>
           <% end %>
-      <p><i class="fa-solid fa-lightbulb"></i> She was part of the batch n°<strong><%= @user.batch_number %></strong> in <%= @user.graduation_year %></p>
       </ul>
       <br>
       <h3 class="smaller-h3"><%= @user.first_name  %>'s description:</h3>
@@ -26,21 +35,16 @@
     </div>
   </div>
 
-
-
 <div class="card-profile">
-   <h3>Mentoring offers:</h3>
-   <ul class="tags">
-  <% @user.mentor_skill_list.each do |skill| %>
-  <li class="tag-list"><%= skill %></li>
-    <% end %>
+ <%= render "shared/mentors" if @user.mentor == true %>
   </ul>
-  <br>
-   <h3 class="smaller-h3">Her projects:</h3>
-    <ul>
-      <% @user_projects.each do |project| %>
-        <li><%= project.title %></li>
-        <% end %>
-    </ul>
+    <h3 class="smaller-h3">Her projects:</h3>
+
+    <% if @user_projects.exists? %>
+      <%= render "projects/show" %>
+    <% else %>
+      <%= "No projects yet..."  %>
+    <% end %>
+
   </div>
 </div>

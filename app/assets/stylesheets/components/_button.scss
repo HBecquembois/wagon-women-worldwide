@@ -48,7 +48,7 @@
   color: $indigo;
   position: right;
   font-size: 14px;
-  padding: 6px 7px;
+  padding: 7px 8px;
   margin: 50px;
   border: solid 1px $light-indigo;
   border-radius: 10px;
@@ -61,3 +61,36 @@
     background: $indigo;
   }
 }
+
+.btn-indigo-projects {
+  color: $indigo;
+  font-size: 18px;
+  padding: 6px 7px;
+  border: solid 1px transparent;
+  border-radius: 10px;
+  background: white;
+  transition: background 0.3s ease;
+  text-decoration: none;
+  &:hover {
+    color: $light-indigo;
+    background: white;
+  }
+}
+
+.btn-indigo-modal {
+  color: $indigo;
+  position: right;
+  font-size: 16px;
+  padding: 8px 10px;
+  border: solid 1px $light-indigo;
+  border-radius: 10px;
+  background: $light-indigo;
+  transition: background 0.3s ease;
+  text-decoration: none;
+
+  &:hover {
+    color: $light-indigo;
+    background: $indigo;
+  }
+}
+

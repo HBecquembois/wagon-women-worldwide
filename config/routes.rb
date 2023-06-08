@@ -1,10 +1,14 @@
 Rails.application.routes.draw do
   devise_for :users
   root to: "pages#home"
-  resources :users, only: [:index, :show]
+  resources :users, only: [:index, :show] do
+    resources :chatrooms, only: :create
+  end
   get "/dashboard", to: "pages#dashboard"
   get "/pages", to: "pages#index"
-  resources :chatrooms, only: :show
+  resources :chatrooms, only: :show do
+    resources :messages, only: :create
+  end
 
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
 
