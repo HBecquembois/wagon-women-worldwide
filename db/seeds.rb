@@ -8,6 +8,8 @@ back = ["ruby", "rails", "SQL", "python", "C", "javascript"]
 fullstack = fronttwo + back
 analyst = ["digital marketing", "product management", "python", "SQL"]
 scientist = ["aws", "docker", "css", "html", "cloud", "javascript"]
+allskills = fullstack + analyst + scientist
+languages = ["french", "german", "italian", "english", "greek", "russian", "japanese", "portugese", "esperanto", "vietnamese", "wolof"]
 
 # Cleaning DB
 puts "Cleaning up database..."
@@ -217,6 +219,7 @@ nelbi = User.new(
 nelbi.competence_list.add(fronttwo)
 nelbi.language_list.add("french", "english")
 nelbi.photo.attach(io: file, filename: "nelbi", content_type: "image/jpeg")
+nelbi.mentor_skill_list.add(frontone.sample(2))
 nelbi.save
 puts "User 8 created"
 
@@ -242,7 +245,7 @@ lisa = User.new(
 lisa.competence_list.add(fullstack)
 lisa.language_list.add("french", "english", "spanish")
 lisa.photo.attach(io: file, filename: "lisa", content_type: "image/jpeg")
-lisa.mentor_skills.add(frontone.sample(3))
+lisa.mentor_skill_list.add(frontone.sample(3))
 lisa.save
 puts "User 9 created"
 
@@ -269,7 +272,7 @@ diane.competence_list.add(fullstack)
 diane.language_list.add("french", "english", "german")
 diane.photo.attach(io: file, filename: "diane", content_type: "image/jpeg")
 diane.save
-diane.mentor_skills.add(fullstack.sample(5))
+diane.mentor_skill_list.add(fullstack.sample(5))
 puts "User 10 created"
 
 puts "Creating user 11"
@@ -294,7 +297,7 @@ cecile = User.new(
 cecile.competence_list.add(back)
 cecile.language_list.add("french", "english", "italian")
 cecile.photo.attach(io: file, filename: "cecile", content_type: "image/jpeg")
-cecile.mentor_skills.add(back.sample(4))
+cecile.mentor_skill_list.add(back.sample(4))
 cecile.save
 puts "User 11 created"
 
@@ -321,7 +324,7 @@ sarah.competence_list.add(back)
 sarah.language_list.add("french", "english")
 sarah.photo.attach(io: file, filename: "sarah", content_type: "image/jpeg")
 sarah.save
-sarah.mentor_skills.add(back.sample(3))
+sarah.mentor_skill_list.add(back.sample(3))
 puts "User 12 created"
 
 puts "Creating user 13"
@@ -346,7 +349,7 @@ mylene = User.new(
 mylene.competence_list.add(fronttwo)
 mylene.language_list.add("french", "english")
 mylene.photo.attach(io: file, filename: "mylene", content_type: "image/jpeg")
-mylene.mentor_skills.add(fronttwo.sample(3))
+mylene.mentor_skill_list.add(fronttwo.sample(3))
 mylene.save
 puts "User 13 created"
 
@@ -372,7 +375,7 @@ sabrina = User.new(
 sabrina.competence_list.add(frontone)
 sabrina.language_list.add("french", "english")
 sabrina.photo.attach(io: file, filename: "sabrina", content_type: "image/jpeg")
-sabrina.mentor_skills.add(frontone.sample(3))
+sabrina.mentor_skill_list.add(frontone.sample(3))
 sabrina.save
 puts "User 15 created"
 
@@ -399,8 +402,8 @@ puts "Creating fake users"
     linkedin_url: 'https://linkedin.com/',
     kitt_username: :first_name
   )
-  user.competence_list.add("ruby on rails", "javascript", "vue.js", "html", "css", "front-end")
-  user.language_list.add("french", "english")
+  user.competence_list.add(allskills.sample(4))
+  user.language_list.add(languages.sample(3))
   user.photo.attach(io: file, filename: :first_name, content_type: "image/jpeg")
   user.save
 end
@@ -419,6 +422,7 @@ internship = Project.new(
   type_of_mission: 0,
   user_id: cecile.id
 )
+internship.requested_skill_list.add(allskills.sample(4))
 internship.save
 puts "Project 1 created"
 
@@ -430,6 +434,7 @@ job_offer = Project.new(
   type_of_mission: 1,
   user_id: lisa.id
 )
+job_offer.requested_skill_list.add(allskills.sample(3))
 job_offer.save
 puts "Project 2 created"
 
@@ -452,6 +457,7 @@ peer_programming = Project.new(
   type_of_mission: 2,
   user_id: lesly.id
 )
+peer_programming.requested_skill_list.add(allskills.sample(6))
 peer_programming.save
 puts "Project 4 created"
 
@@ -463,6 +469,7 @@ code_review_two = Project.new(
   type_of_mission: 3,
   user_id: lucie.id
 )
+code_review_two.requested_skill_list.add(allskills.sample(8))
 code_review_two.save
 puts "Project 5 created"
 
