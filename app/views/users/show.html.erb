@@ -6,8 +6,15 @@
         <h1><%= @user.first_name %> <%= @user.last_name %></h1>
         <p><%= @user.city %> - <%= @user.country %></p>
       </div>
-
-        <button class="btn-indigo-profile"><i class="fa-regular fa-comments"></i> Chat with <%= @user.first_name %></button>
+      <% if current_user.chatroom_with(@user) %>
+        <%= link_to chatroom_path(current_user.chatroom_with(@user)), class: "btn-indigo-profile" do %>
+          <i class="fa-regular fa-comments"></i> Chat with <%= @user.first_name %>
+        <% end %>
+      <% else %>
+        <%= button_to user_chatrooms_path(@user), class: "btn-indigo-profile" do %>
+          <i class="fa-regular fa-comments"></i> Chat with <%= @user.first_name %>
+        <% end %>
+      <% end %>
      <br>
   </div>
 
