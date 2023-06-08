@@ -35,7 +35,6 @@ gem "cloudinary"
 
 # gem "faker"
 gem "faker"
-gem 'tom-select-rails'
 
 
 

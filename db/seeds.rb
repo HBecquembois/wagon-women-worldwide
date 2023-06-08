@@ -260,7 +260,7 @@ diane = User.new(
   city: 'London',
   country: 'UK',
   mentor: true,
-  title: fullstack,
+  title: titles[2],
   description: "I worked at Le Collectionist for 3 years as head of Supply - i was in charge of developing the owner network, and the portfolio of properties that we suggest on our platform. This job was also about the e-merchandising of the properties on our platform. I joined Le wagon in order to learn the technical skills to work closer to the development team and because I am looking for something more creative.",
   batch_number: 200,
   graduation_year: 2018,
