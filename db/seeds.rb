@@ -13,6 +13,7 @@ languages = ["french", "german", "italian", "english", "greek", "russian", "japa
 
 # Cleaning DB
 puts "Cleaning up database..."
+Chatroom.destroy_all
 Project.destroy_all
 User.destroy_all
 puts "Database cleaned"
