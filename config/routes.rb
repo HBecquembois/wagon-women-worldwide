@@ -4,11 +4,13 @@ Rails.application.routes.draw do
   resources :users, only: [:index, :show] do
     resources :chatrooms, only: :create
   end
+  post "/users/:id", to: "users#favorite", as: "user_favorite"
   get "/dashboard", to: "pages#dashboard"
   get "/pages", to: "pages#index"
   resources :chatrooms, only: :show do
     resources :messages, only: :create
   end
+
 
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
 
