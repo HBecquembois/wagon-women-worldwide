@@ -17,7 +17,7 @@ href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.1/css/all.min.css
   <div class="user-cards-container">
     <% @users.each do |user| %>
       <% next if user == current_user %>
-      <% next if user.mentor == false %>
+
       <%= link_to user_path(user) do %>
         <div class="user-card mt-4">
           <div class="show-more">
@@ -40,7 +40,3 @@ href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.1/css/all.min.css
     <% end %>
   </div>
 </div>
-
-
-
-<%# link_to "", user_path(user) %>
