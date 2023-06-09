@@ -20,6 +20,9 @@ href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.1/css/all.min.css
 
       <%= link_to user_path(user) do %>
         <div class="user-card mt-4">
+          <div class="show-more">
+            <i class="fa-regular fa-eye"></i>
+          </div>
           <%= cl_image_tag user.photo.key, class: "user-card-image" %>
           <div class="user-card-content">
             <h3><%= user.first_name %> <%= user.last_name%>
