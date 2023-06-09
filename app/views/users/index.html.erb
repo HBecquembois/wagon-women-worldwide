@@ -25,7 +25,11 @@ href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.1/css/all.min.css
           </div>
           <%= cl_image_tag user.photo.key, class: "user-card-image" %>
           <div class="user-card-content">
-            <h3><%= user.first_name %> <%= user.last_name%></h3>
+            <h3><%= user.first_name %> <%= user.last_name%>
+            <% if user.mentor == true %>
+              <i class="fa-solid fa-wand-sparkles"></i>
+            <% end %>
+            </h3>
             <p class="fw-bold"><%= user.title %></p>
             <% user.competence_list.first(3).each do |competence| %>
               <span class="badge"><%= competence %></span>
