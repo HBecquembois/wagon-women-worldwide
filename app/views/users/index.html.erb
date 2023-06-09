@@ -17,19 +17,28 @@ href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.1/css/all.min.css
   <div class="user-cards-container">
     <% @users.each do |user| %>
       <% next if user == current_user %>
-      <div class="user-card mt-4">
-        <%= cl_image_tag user.photo.key, class: "user-card-image" %>
-        <div class="user-card-content">
-          <h3><%= user.first_name %> <%= user.last_name%></h3>
-          <p class="fw-bold"><%= user.title %></p>
-          <% user.competence_list.first(3).each do |competence| %>
-            <span class="badge"><%= competence %></span>
-          <% end %>
-          <div class="user-button d-flex justify-content-end">
-            <%= link_to "See profile", user_path(user), class: "btn-indigo-index mt-4" %>
+
+      <% next if user.mentor == false %>
+      <%= link_to user_path(user) do %>
+        <div class="user-card mt-4">
+          <%= cl_image_tag user.photo.key, class: "user-card-image" %>
+          <div class="user-card-content">
+            <h3><%= user.first_name %> <%= user.last_name%></h3>
+            <p class="fw-bold"><%= user.title %></p>
+            <% user.competence_list.first(3).each do |competence| %>
+              <span class="badge"><%= competence %></span>
+            <% end %>
+            <div class="user-button d-flex justify-content-end">
+
+            </div>
+
           </div>
         </div>
-      </div>
+      <% end %>
     <% end %>
   </div>
 </div>
+
+
+
+<%# link_to "", user_path(user) %>
