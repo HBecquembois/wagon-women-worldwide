@@ -218,6 +218,7 @@ GEM
       thor (~> 1.0)
       zeitwerk (~> 2.5)
     rake (13.0.6)
+    redis (4.8.1)
     regexp_parser (2.8.0)
     reline (0.3.5)
       io-console (~> 0.5)
@@ -255,7 +256,6 @@ GEM
     thor (1.2.2)
     tilt (2.1.0)
     timeout (0.3.2)
-    tom-select-rails (2.2.2)
     turbo-rails (1.4.0)
       actionpack (>= 6.0.0)
       activejob (>= 6.0.0)
@@ -307,12 +307,12 @@ DEPENDENCIES
   pg_search
   puma (~> 5.0)
   rails (~> 7.0.5)
+  redis (~> 4.0)
   sassc-rails
   selenium-webdriver
   simple_form!
   sprockets-rails
   stimulus-rails
-  tom-select-rails
   turbo-rails
   tzinfo-data
   web-console
