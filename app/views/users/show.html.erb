@@ -39,6 +39,10 @@
  <%= render "shared/mentors" if @user.mentor == true %>
   </ul>
     <h3 class="smaller-h3">Her projects:</h3>
-      <%= render "projects/show" %>
+      <% if @user_projects.exists? %>
+        <%= render "projects/show" %>
+      <% else %>
+        <%= "No projects yet..."  %>
+      <% end %>
   </div>
 </div>

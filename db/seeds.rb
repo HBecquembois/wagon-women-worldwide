@@ -272,8 +272,8 @@ diane = User.new(
 diane.competence_list.add(fullstack)
 diane.language_list.add("french", "english", "german")
 diane.photo.attach(io: file, filename: "diane", content_type: "image/jpeg")
-diane.save
 diane.mentor_skill_list.add(fullstack.sample(5))
+diane.save
 puts "User 10 created"
 
 puts "Creating user 11"
