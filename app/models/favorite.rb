@@ -5,6 +5,7 @@ class Favorite < ApplicationRecord
 
   belongs_to :favoritable, polymorphic: true
   belongs_to :favoritor, polymorphic: true
+  # belongs_to :user
 
   def block!
     update!(blocked: true)
