@@ -4,23 +4,20 @@ rel="stylesheet"
 href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.1/css/all.min.css"
 /><div class="m-5">
 <div class ="form">
-  <h1 class="my-9" class="my-5">Find your mentor</h1>
+  <h1 class="my-9" class="my-5">Find a profile</h1>
+  <h4>There are <%= @mentors.count %> marraines <i class="fa-solid fa-wand-sparkles"></i> using the app!</h4>
     <%= form_with url: users_path, method: :get, class: "d-flex" do %>
-      <%#= text_field_tag :query,
-        params[:query],
-        class: "form-control",
-        placeholder: "Search"
-      %>
-      <%= select_tag :choices, options_for_select(@competences, ""), data: {controller: "autocomplete"} %>
+      <%= select_tag :choices, options_for_select(@competences, ""), multiple: true, data: {controller: "autocomplete"} %>
       <%= submit_tag "Search", class: "btn btn-primary" %>
     <% end %>
   </div>
 
 
-  <h2>We've found <%= @users.count %> <%= "mentor".pluralize(@users.count) %></h2>
+  <h4>We've got <%= @users.count %> <%= "profile".pluralize(@users.count) %></h4>
   <div class="user-cards-container">
     <% @users.each do |user| %>
       <% next if user == current_user %>
+
       <% next if user.mentor == false %>
       <%= link_to user_path(user) do %>
         <div class="user-card mt-4">
@@ -34,6 +31,7 @@ href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.1/css/all.min.css
             <div class="user-button d-flex justify-content-end">
 
             </div>
+
           </div>
         </div>
       <% end %>
