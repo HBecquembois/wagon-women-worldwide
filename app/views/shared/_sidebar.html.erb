@@ -7,8 +7,15 @@
   <div class="my-mentors">
     <h3>My mentors:</h3>
     <% @favorited.each do |f| %>
-<li> <%= link_to f.first_name, user_path(f) %> </li>
+<li> <%= cl_image_tag f.photo.key, width: 20, height: 20, crop: :thumb, gravity: :face, class: "rounded" %> <%= link_to f.first_name, user_path(f) %> </li>
       <% end %>
+  </div>
+
+  <div class="my-competences">
+  <h3>My competences:</h3>
+  <% current_user.competence_list.each do |c| %>
+  <%= c %>
+  <% end %>
   </div>
   </div>
   <ul>
@@ -18,4 +25,3 @@
     <li><i class="fa-solid fa-arrow-right"></i> <%= link_to "My projects", "#" %></li>
   </ul>
 </div>
-

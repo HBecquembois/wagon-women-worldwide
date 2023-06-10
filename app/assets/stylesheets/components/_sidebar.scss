@@ -5,18 +5,15 @@
 .sidebar {
   background-color: $light-red;
   height: 85vh;
-
   flex: 0 0 290px;
-
   width: 15%;
-
   border-radius: 10px;
   margin-left: 20px;
   margin-top: 60px;
   margin-bottom: 50px;
   text-align: center;
 
-  img {
+  .user-side-bar-image {
     position: relative;
     width: 100px;
     height: 100px;
@@ -56,4 +53,5 @@
 
 .my-mentors {
   margin-top: 90px;
+  list-style-type: none;
 }
