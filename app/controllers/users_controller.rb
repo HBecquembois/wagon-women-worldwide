@@ -22,9 +22,7 @@ class UsersController < ApplicationController
   def favorite
     @user = User.find(params[:id])
     @current_user = current_user
-
     @current_user.favorite(@user)
-
     redirect_to user_path(@user)
   end
 

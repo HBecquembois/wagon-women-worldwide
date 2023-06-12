@@ -43,22 +43,20 @@
   }
 }
 
-
-.btn-indigo-profile {
-  color: $indigo;
+.btn-red-profile {
+  color: $white;
   position: right;
-  font-size: 14px;
-  padding: 7px 8px;
-  margin: 50px;
-  border: solid 1px $light-indigo;
+  font-size: 16px;
+  padding: 8px 10px;
+  border: solid 1px $red;
   border-radius: 10px;
-  background: $light-indigo;
+  background: $red;
   transition: background 0.3s ease;
   text-decoration: none;
 
   &:hover {
-    color: $light-indigo;
-    background: $indigo;
+    color: $red;
+    background: $white;
   }
 }
 
