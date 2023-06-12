@@ -93,3 +93,25 @@
     background: $indigo;
   }
 }
+
+.btn-red-sidebar {
+  width: 29%;
+  font-size: 9px;
+  padding: 1px 5px;
+  border-radius: 40px;
+  border: solid 1px $red;
+  transition: background 0.3s ease;
+  text-decoration: none;
+  color: $red !important;
+
+  &:hover {
+    color: $white !important;
+    width: 29%;
+    font-size: 9px;
+    padding: 1px 5px;
+    border-radius: 40px;
+    background: $red;
+    transition: background 0.3s ease;
+    text-decoration: none;
+  }
+}

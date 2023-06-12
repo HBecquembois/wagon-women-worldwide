@@ -6,7 +6,7 @@
       <div class="name-city">
         <h1><%= @user.first_name %> <%= @user.last_name %></h1>
         <p><%= @user.city %> - <%= @user.country %></p>
-      <p><i class="fa-solid fa-lightbulb"></i> She was part of the batch n°<strong><%= @user.batch_number %></strong> in <%= @user.graduation_year %></p>
+      <p><i class="fa-solid fa-lightbulb"></i> She was part of the batch #<strong><%= @user.batch_number %></strong> in <%= @user.graduation_year %></p>
    <%= link_to 'Add as a mentor', user_favorite_path(@user), data: { turbo_method: :post } %>
 
       </div>
