@@ -11,7 +11,7 @@
     <li><i class="fa-solid fa-arrow-right"></i> <%= link_to "My mentors", users_path %></li>
     <div class="my-mentors">
     <% @favorited.each do |f| %>
-      <li><i class="fa-solid fa-wand-sparkles"></i>  <%= cl_image_tag f.photo.key, width: 25, height: 25, crop: :thumb, gravity: :face, class: "rounded" %> <%= link_to f.first_name, user_path(f) %>
+      <li><i class="fa-solid sidebar-wand fa-wand-sparkles"></i>  <%= cl_image_tag f.photo.key, width: 25, height: 25, crop: :thumb, gravity: :face, class: "rounded" %> <%= link_to f.first_name, user_path(f) %>
         <%= link_to "Profile", user_path(f), class: "btn-red-sidebar" %>
         <%= link_to "Chat", user_path(f), class: "btn-red-sidebar" %>
         <%= link_to 'x', user_unfavorite_path(f), class: "btn-red-sidebar", data: { turbo_method: :patch } %>
