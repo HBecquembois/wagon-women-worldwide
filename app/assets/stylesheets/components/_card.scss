@@ -15,9 +15,6 @@
   a:hover {
     color: #4f5050e0;
  }
-
-
-
 }
 
 .user-card {
@@ -79,11 +76,14 @@
   width: 500px;
   box-shadow: 0 0 4px rgba(0,0,0,0.2);
   border-radius: 15px;
+  .fa-solid {
+    color: red
+  }
 }
 
 .testimony-card-content {
   align-items: center;
-  margin-top: 11px;
+  margin-top: 20px;
   width: 55%;
   h3 {
     font-size: 18px;
@@ -103,11 +103,19 @@
     width: 160px;
     height: 80%;
     border-radius: 10px;
-    margin: 10px;
+    margin: 20px;
   }
 }
 
-
 .card-container-profile {
   margin-top: 55px;
+}
+
+ul {
+  list-style-type: none;
+  line-height: 1.7em;
+  font-size: 18px;
+  .fa-solid {
+    color: red;
+  }
 }
