@@ -1,0 +1,5 @@
+meta_product_name: "Wagon Women Worldwide"
+meta_title: "Wagon Women Worldwide - Connecting women from Le Wagon"
+meta_description: "Wagon Women Worldwide is the first professional social network dedicated to women from Le Wagon coding school. General guidance, career advices, job infos and exciting new opportunities open up to you!"
+meta_image: "cover.jpg" # should exist in `app/assets/images/`
+twitter_account: "@Lewagonparis"   # required for Twitter Cards
