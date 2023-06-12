@@ -7,7 +7,7 @@
     height: 200px;
     object-fit: cover;
   }
-  a{
+  a {
     text-decoration: auto;
     color: black;
   }
@@ -67,6 +67,12 @@
   text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
   border-radius: 15px;
   box-shadow: 0 0 15px rgba(0,0,0,0.2);
+  span {
+    text-decoration: none;
+  }
+}
+.home-card-link {
+  text-decoration: none;
 }
 
 .testimony-card {
@@ -117,5 +123,25 @@ ul {
   font-size: 18px;
   .fa-solid {
     color: red;
+    font-size: larger;
   }
+  a {
+    text-decoration: none;
+    color: black;
+    &:hover {
+      color: red;
+    }
+  }
+}
+
+.user-card-img-container {
+  // position: relative;
+  i {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+  }
+  &:hover {
+    color: #4f5050e0;
+ }
 }
