@@ -110,9 +110,11 @@ text-align: center;
 .add-mentor {
   text-decoration: none;
   color: $red;
+  margin-top: 20px;
   &:hover {
     text-decoration: none;
     color: $red;
+    margin-top: 20px;
   }
 
 }
@@ -120,8 +122,4 @@ text-align: center;
 .cta {
   margin-top: 20px;
   text-align: center;
-
-  p {
-    margin-top: 20px;
-  }
 }
