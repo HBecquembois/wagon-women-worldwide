@@ -26,6 +26,13 @@ class UsersController < ApplicationController
     redirect_to user_path(@user)
   end
 
+  def unfavorite
+    @user = User.find(params[:id])
+    @current_user = current_user
+    @current_user.unfavorite(@user)
+    redirect_to user_path(@user)
+  end
+
   private
 
   def user_params

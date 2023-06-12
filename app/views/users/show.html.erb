@@ -21,11 +21,11 @@
       <% end %>
 
       <% if @user.favorited_by?(current_user) %>
-      <p> <i class="fa-solid fa-wand-sparkles"></i><%= @user.first_name %> is your mentor</p>
+        <p> <i class="fa-solid fa-wand-sparkles"></i><%= @user.first_name %> is your mentor</p>
       <% else %>
-    <i class="fa-solid wand-profile fa-wand-sparkles"></i><%= link_to 'Add as a mentor', user_favorite_path(@user), class: "add-mentor" ,data: { turbo_method: :post } %>
-   <% end %>
-     <br>
+         <i class="fa-solid wand-profile fa-wand-sparkles"></i><%= link_to 'Add as a mentor', user_favorite_path(@user), class: "add-mentor", data: { turbo_method: :post } %>
+        <br>
+      <% end %>
      </div>
     </div>
 

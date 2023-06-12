@@ -2,7 +2,7 @@
  <%= cl_image_tag current_user.photo.key, width: 150, height: 150, crop: :thumb, gravity: :face, class: "user-side-bar-image" %>
   <h3><%= current_user.first_name  %> <%= current_user.last_name  %></h3>
   <div class="button-center">
-    <button class="btn-indigo-sidebar align-center">View my dashboard</button>
+    <%= button_to "My dashboard", user_path(current_user), class:"btn-indigo-sidebar align-center"%>
 
   </div>
   <ul>
@@ -14,6 +14,7 @@
       <li><i class="fa-solid fa-wand-sparkles"></i>  <%= cl_image_tag f.photo.key, width: 25, height: 25, crop: :thumb, gravity: :face, class: "rounded" %> <%= link_to f.first_name, user_path(f) %>
         <%= link_to "Profile", user_path(f), class: "btn-red-sidebar" %>
         <%= link_to "Chat", user_path(f), class: "btn-red-sidebar" %>
+        <%= link_to 'x', user_unfavorite_path(f), class: "btn-red-sidebar", data: { turbo_method: :patch } %>
           <% end %>
           </li>
     </div>
