@@ -9,7 +9,7 @@ fullstack = fronttwo + back
 analyst = ["digital marketing", "product management", "python", "SQL"]
 scientist = ["aws", "docker", "css", "html", "cloud", "javascript"]
 allskills = fullstack + analyst + scientist
-languages = ["french", "german", "italian", "english", "greek", "russian", "japanese", "portugese", "esperanto", "vietnamese", "wolof"]
+languages = ["french", "german", "italian", "english", "greek", "russian", "japanese", "portuguese", "esperanto", "vietnamese", "wolof"]
 
 # Cleaning DB
 puts "Cleaning up database..."
@@ -181,7 +181,7 @@ stephanie = User.new(
   email: Faker::Internet.unique.email,
   password: 'azerty',
   password_confirmation: 'azerty',
-  city: 'Paris',
+  city: 'Marseille',
   country: 'France',
   mentor: false,
   title: titles[1],
@@ -206,8 +206,8 @@ nelbi = User.new(
   email: Faker::Internet.unique.email,
   password: 'azerty',
   password_confirmation: 'azerty',
-  city: 'Paris',
-  country: 'France',
+  city: 'Madrid',
+  country: 'Spain',
   mentor: true,
   title: titles[1],
   description: "I love solving problems, fixing, understanding stuff and value creativity as well as teamwork. Other interests : Cycling, yoga, music, adventure and much more",
@@ -232,8 +232,8 @@ lisa = User.new(
   email: Faker::Internet.unique.email,
   password: 'azerty',
   password_confirmation: 'azerty',
-  city: 'Paris',
-  country: 'France',
+  city: 'London',
+  country: 'UK',
   mentor: true,
   title: titles[1],
   description: "Hello, my name is Lisa! Passionate about craftsmanship, for the past 5 years I have been focused on supporting artisans and developing solutions for them. In addition to my future web development job, I am the president of the association 'Histoires d'Artisans,' which works towards promoting their expertise, including through the eponymous podcast.",
@@ -255,13 +255,13 @@ file = URI.open("https://kitt.lewagon.com/placeholder/users/dianejroussillon")
 diane = User.new(
   first_name: 'Diane',
   last_name: 'Johnston Roussillon',
-  email: Faker::Internet.unique.email,
+  email: 'diane@diane.fr',
   password: 'azerty',
   password_confirmation: 'azerty',
-  city: 'London',
-  country: 'UK',
+  city: 'Paris',
+  country: 'France',
   mentor: true,
-  title: titles[2],
+  title: titles[1],
   description: "I worked at Le Collectionist for 3 years as head of Supply - i was in charge of developing the owner network, and the portfolio of properties that we suggest on our platform. This job was also about the e-merchandising of the properties on our platform. I joined Le wagon in order to learn the technical skills to work closer to the development team and because I am looking for something more creative.",
   batch_number: 200,
   graduation_year: 2018,
@@ -336,8 +336,8 @@ mylene = User.new(
   email: Faker::Internet.unique.email,
   password: 'azerty',
   password_confirmation: 'azerty',
-  city: 'Toulon',
-  country: 'France',
+  city: 'Barcelona',
+  country: 'Spain',
   mentor: true,
   title: titles[2],
   description: "Artistic director in print graphic design, I choose web development to improve my digital skills and be able to create and develop applications",
@@ -354,7 +354,7 @@ mylene.mentor_skill_list.add(fronttwo.sample(3))
 mylene.save
 puts "User 13 created"
 
-puts "Creating user 15"
+puts "Creating user 14"
 file = URI.open("https://kitt.lewagon.com/placeholder/users/sabrinaassya")
 sabrina = User.new(
   first_name: 'Sabrina',
@@ -378,38 +378,165 @@ sabrina.language_list.add("french", "english")
 sabrina.photo.attach(io: file, filename: "sabrina", content_type: "image/jpeg")
 sabrina.mentor_skill_list.add(frontone.sample(3))
 sabrina.save
+puts "User 14 created"
+
+puts "Creating user 15"
+file = URI.open("https://kitt.lewagon.com/placeholder/users/LauraPerson")
+laura = User.new(
+  first_name: 'Laura',
+  last_name: 'Person',
+  email: Faker::Internet.unique.email,
+  password: 'azerty',
+  password_confirmation: 'azerty',
+  city: 'Rio de Janeiro',
+  country: 'Brazil',
+  mentor: true,
+  title: titles[2],
+  description: "Freelance Web-Developer & Visual Artist",
+  batch_number: 354,
+  graduation_year: 2020,
+  github_url: 'https://github.com/',
+  linkedin_url: 'https://linkedin.com/',
+  kitt_username: 'LauraPerson'
+)
+laura.competence_list.add(frontone)
+laura.language_list.add("french", "english", "portuguese")
+laura.photo.attach(io: file, filename: "laura", content_type: "image/jpeg")
+laura.mentor_skill_list.add(frontone.sample(3))
+laura.save
 puts "User 15 created"
+
+puts "Creating user 16"
+file = URI.open("https://kitt.lewagon.com/placeholder/users/nadiaauger")
+nadia = User.new(
+  first_name: 'Nadia',
+  last_name: 'Auger',
+  email: Faker::Internet.unique.email,
+  password: 'azerty',
+  password_confirmation: 'azerty',
+  city: 'Paris',
+  country: 'France',
+  mentor: true,
+  title: titles[3],
+  description: "After being graduated from an engineering school I worked in an Investment Bank in New York during two years. I always wanted to work as a freelancer this is why I attempted Le Wagon Paris.",
+  batch_number: 321,
+  graduation_year: 2019,
+  github_url: 'https://github.com/',
+  linkedin_url: 'https://linkedin.com/',
+  kitt_username: 'nadiaauger'
+)
+nadia.competence_list.add(frontone)
+nadia.language_list.add("french", "english")
+nadia.photo.attach(io: file, filename: "nadia", content_type: "image/jpeg")
+nadia.mentor_skill_list.add(frontone.sample(3))
+nadia.save
+puts "User 16 created"
+
+puts "Creating user 17"
+file = URI.open("https://kitt.lewagon.com/placeholder/users/MagaMares")
+magali = User.new(
+  first_name: 'Magali',
+  last_name: 'Mares',
+  email: Faker::Internet.unique.email,
+  password: 'azerty',
+  password_confirmation: 'azerty',
+  city: 'Paris',
+  country: 'France',
+  mentor: false,
+  title: titles[1],
+  description: "I was a consultant in Innovation funding for 14 years, assisting researchers to build innovative projects. I want to learn to code to become the one creating.",
+  batch_number: 1211,
+  graduation_year: 2023,
+  github_url: 'https://github.com/',
+  linkedin_url: 'https://www.linkedin.com/',
+  kitt_username: 'MagaMares'
+)
+magali.competence_list.add(fullstack)
+magali.language_list.add("french", "english")
+magali.photo.attach(io: file, filename: "magali", content_type: "image/jpeg")
+magali.save
+puts "User 17 created"
+
+puts "Creating user 18"
+file = URI.open("https://kitt.lewagon.com/placeholder/users/karenpariii")
+karen = User.new(
+  first_name: 'Karen',
+  last_name: 'Kouassi',
+  email: Faker::Internet.unique.email,
+  password: 'azerty',
+  password_confirmation: 'azerty',
+  city: 'Paris',
+  country: 'France',
+  mentor: false,
+  title: titles[1],
+  description: "I was a functionnal test consultant in a consulting firm. I want to learn to code because i want to have technical skills, and also want to change my career to become a developer.",
+  batch_number: 1211,
+  graduation_year: 2023,
+  github_url: 'https://github.com/',
+  linkedin_url: 'https://www.linkedin.com/',
+  kitt_username: 'karenpariii'
+)
+karen.competence_list.add(fullstack)
+karen.language_list.add("french", "english")
+karen.photo.attach(io: file, filename: "karen", content_type: "image/jpeg")
+karen.save
+puts "User 18 created"
+
+puts "Creating user 19"
+file = URI.open("https://kitt.lewagon.com/placeholder/users/kenzabouachik")
+kenza = User.new(
+  first_name: 'Kenza',
+  last_name: 'Bouachik',
+  email: Faker::Internet.unique.email,
+  password: 'azerty',
+  password_confirmation: 'azerty',
+  city: 'Paris',
+  country: 'France',
+  mentor: false,
+  title: titles[1],
+  description: "I am a business school student. Coding seems hard but fun. I love to challenge myself. My purpose is to work as a freelance after the bootcamp. Maybe, I will find a business partner during this batch, who knows?",
+  batch_number: 1211,
+  graduation_year: 2023,
+  github_url: 'https://github.com/',
+  linkedin_url: 'https://www.linkedin.com/',
+  kitt_username: 'kenzabouachik'
+)
+kenza.competence_list.add(fullstack)
+kenza.language_list.add("french", "english")
+kenza.photo.attach(io: file, filename: "kenza", content_type: "image/jpeg")
+kenza.save
+puts "User 19 created"
 
 puts "Created real users"
 
-puts "Creating fake users"
+# puts "Creating fake users"
 
-30.times do
-  file = URI.open(fake_avatar_url)
-  user = User.new(
-    first_name: Faker::Name.unique.female_first_name,
-    last_name: Faker::Name.unique.last_name,
-    email: Faker::Internet.unique.email,
-    password: 'azerty',
-    password_confirmation: 'azerty',
-    city: Faker::Address.city,
-    country: Faker::Address.country,
-    mentor: false,
-    title: titles.sample,
-    description: Faker::Quote.yoda,
-    batch_number: rand(1212),
-    graduation_year: rand(2014..2023),
-    github_url: 'https://github.com/',
-    linkedin_url: 'https://linkedin.com/',
-    kitt_username: :first_name
-  )
-  user.competence_list.add(allskills.sample(4))
-  user.language_list.add(languages.sample(3))
-  user.photo.attach(io: file, filename: :first_name, content_type: "image/jpeg")
-  user.save
-end
+# 300.times do
+#   file = URI.open(fake_avatar_url)
+#   user = User.new(
+#     first_name: Faker::Name.unique.female_first_name,
+#     last_name: Faker::Name.unique.last_name,
+#     email: Faker::Internet.unique.email,
+#     password: 'azerty',
+#     password_confirmation: 'azerty',
+#     city: Faker::Address.city,
+#     country: Faker::Address.country,
+#     mentor: false,
+#     title: titles.sample,
+#     description: Faker::Quote.yoda,
+#     batch_number: rand(1212),
+#     graduation_year: rand(2014..2023),
+#     github_url: 'https://github.com/',
+#     linkedin_url: 'https://linkedin.com/',
+#     kitt_username: :first_name
+#   )
+#   user.competence_list.add(allskills.sample(4))
+#   user.language_list.add(languages.sample(3))
+#   user.photo.attach(io: file, filename: :first_name, content_type: "image/jpeg")
+#   user.save
+# end
 
-puts "30 fake users created"
+# puts "300 fake users created"
 
 # seeding projects
 
@@ -456,7 +583,7 @@ peer_programming = Project.new(
   description: "Hi! As a wagon alumni and junior dev I'm looking for an experienced developper for peer-programming sessions in order to keep enhancing my coding skills in ruby",
   repo_url: "",
   type_of_mission: 2,
-  user_id: lesly.id
+  user_id: amal.id
 )
 peer_programming.requested_skill_list.add(allskills.sample(6))
 peer_programming.save
@@ -473,5 +600,17 @@ code_review_two = Project.new(
 code_review_two.requested_skill_list.add(allskills.sample(8))
 code_review_two.save
 puts "Project 5 created"
+
+puts "Creating project 6"
+internship_two = Project.new(
+  title: "1 month internship at Le Wagon Paris",
+  description: "Come to Paris and test your coding and teaching skills at Le Wagon Paris. As an alumni, you will have to review code and teach coding skills. Ideal for a fresh student who wants to improve her skills in rails while teaching!",
+  repo_url: 'https://github.com/Lewagon',
+  type_of_mission: 0,
+  user_id: diane.id
+)
+internship_two.requested_skill_list.add(allskills.sample(4))
+internship_two.save
+puts "Project 6 created"
 
 puts "Seeding done"
