@@ -1,0 +1,48 @@
+<div class="container">
+  <h1 class="text-center my-5">Dashboard</i></h1>
+
+  <div class="d-flex justify-content-center m-3">
+    <div class="container-photo-title">
+      <br>  <br>  <br>
+      <%= cl_image_tag @user.photo.key, width: 100, height: 100, crop: :thumb, gravity: :face, class: "user-photo" %>
+      <div class="name-city">
+        <h3><%= @user.first_name %> <%= @user.last_name %></h3>
+        <p><%= @user.city %> - <%= @user.country %></p>
+        <p><i class="fa-solid fa-lightbulb"></i>batch #<strong><%= @user.batch_number %></strong> in <%= @user.graduation_year %></p>
+      </div>
+        <br>  <br>  <br>
+    </div>
+  </div>
+
+  <div class="card-container d-flex justify-content-between">
+
+    <div class="testimony-card d-block text-center m-3">
+
+      <h2 class="m-2">My <%= @user.mentor ? "mentorees" : "mentors" %></h2>
+      <% @user_mentors.each do |m| %>
+          <div class="d-flex">
+            <%= cl_image_tag m.photo.key, width: 50, height: 50, crop: :thumb, gravity: :face %>
+            <%= link_to "Go to #{m.first_name}'s profile", user_path(m.id) %>
+          </div>
+      <% end %>
+    </div>
+
+    <div class="testimony-card d-block text-center m-3">
+      <h2 class="m-2">My projects</h2>
+      <% @user_projects.each do |p| %>
+        <p><%= p.title %></p>
+      <% end %>
+    </div>
+
+    <div class="testimony-card d-block text-center m-3">
+      <h2 class="m-2">My messages</h2>
+      <% @user_chats.each do |c| %>
+        <%= link_to chatroom_path(current_user.chatroom_with(c.user_b)), class: "btn-red-profile m-1" do %>
+          <i class="fa-regular fa-comments"></i><%= c.user_b.first_name %>
+        <% end %>
+      <% end %>
+    </div>
+
+  </div>
+
+</div>
