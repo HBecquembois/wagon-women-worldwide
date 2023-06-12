@@ -9,12 +9,13 @@
 
 <div class="container-fluid p-3">
   <div class="container my-4">
-    <h2 class="text-center">Advantages of our mentoring program</h2>
+    <h2 class="text-center">Advantages of our mentoring program <i class="fa-solid fa-wand-sparkles"></i>
+    </h2>
     <div class="d-flex justify-content-between">
       <div class="list">
         <ul>
           <br>
-          <li><i class="fa-solid fa-arrow-right fa-beat"></i>  Rejoin a support community of the Le Wagon's women!</li>
+          <li><i class="fa-solid fa-arrow-right fa-beat"></i>  Join a support community of the <a href="https://www.lewagon.com/" target="_blank">Le Wagon</a>'s women!</li>
           <li><i class="fa-solid fa-arrow-right fa-beat"></i>  As a junior, benefit from other women experiences!</li>
           <li><i class="fa-solid fa-arrow-right fa-beat"></i>  As a senior, share your experience or look for a collaborator!</li>
           <li><i class="fa-solid fa-arrow-right fa-beat"></i>  Exchange and chat!</li>
@@ -35,21 +36,25 @@
   </div>
 </div>
 
-
 <div class="container-fluid bg-lightred p-3">
   <div class="container my-4">
     <h2 class="text-center">Join the program!</h2>
     <div class="d-flex justify-content-between">
-      <div class="home-card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(<%= image_path("card_home2.jpg") %>)">
-        <div class="home-card-btn">
-          <%= link_to "Need a mentor?", users_path, class: "btn-card-home" %>
+      <%= link_to users_path, class: 'home-card-link' do %>
+        <div class="home-card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(<%= image_path("card_home2.jpg") %>)">
+          <div class="home-card-btn">
+            <span class="btn-card-home">Need a mentor?</span>
+          </div>
         </div>
-      </div>
-      <div class="home-card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(<%= image_path("card_home5.jpg") %>)">
-        <div class="home-card-btn">
-          <%= link_to "Want to be a mentor?", users_path, class: "btn-card-home" %>
+      <% end %>
+      <%= link_to dashboard_path, class: 'home-card-link' do %>
+        <div class="home-card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(<%= image_path("card_home5.jpg") %>)">
+          <div class="home-card-btn">
+            <span class="btn-card-home">Want to be a mentor?</span>
+          </div>
         </div>
-      </div>
+      <% end %>
     </div>
   </div>
+
 </div>
