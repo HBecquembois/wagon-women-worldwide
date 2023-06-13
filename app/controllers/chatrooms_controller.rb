@@ -3,7 +3,6 @@ class ChatroomsController < ApplicationController
     @favorited = current_user.all_favorited
     @chatroom = Chatroom.find(params[:id])
     @message = Message.new
-    
   end
 
   def create
