@@ -1,18 +1,26 @@
 <div class="sidebar">
- <%= cl_image_tag current_user.photo.key, width: 150, height: 150, crop: :thumb, gravity: :face, class: "user-side-bar-image" %>
-  <h3><%= current_user.first_name  %> <%= current_user.last_name  %></h3>
-  <div class="button-center">
-    <button class="btn-indigo-sidebar align-center">View my dashboard</button>
-
+  <%= cl_image_tag current_user.photo.key, width: 150, height: 150, crop: :thumb, gravity: :face, class: "user-side-bar-image" %>
+  <div class="sidebar-name">
+    <h3><%= current_user.first_name  %></h3>
+    <h3><%= current_user.last_name  %></h3>
   </div>
   <ul>
-    <li><i class="fa-solid fa-arrow-right"></i> <%= link_to "Find a mentor", users_path %></li>
-    <li><i class="fa-solid fa-arrow-right"></i> <%= link_to "My messages", "#" %></li>
-    <li><i class="fa-solid fa-arrow-right"></i> <%= link_to "My mentors", users_path %></li>
-    <div class="my-mentors">
-    <% @favorited.each do |f| %>
-      <li><i class="fa-solid fa-wand-sparkles"></i>  <%= cl_image_tag f.photo.key, width: 25, height: 25, crop: :thumb, gravity: :face, class: "rounded" %> <%= link_to f.first_name, user_path(f) %> </li>
-          <% end %>
-    </div>
+    <li> <i class="fa-solid fa-arrow-right"></i>
+    <%= link_to "My dashboard", dashboard_path, class:"#{'active-sidebar' if controller_name == '' && action_name == ''}" %> </li>
+
+    <li> <i class="fa-solid fa-arrow-right"></i>
+    <%= link_to "My messages", users_path, class:"#{'active-sidebar' if controller_name == '' && action_name == ''}" %></li>
+    <% if @favorited.present? %>
+
+      <div class="spacer"></div>
+        <li><i class="fa-solid fa-graduation-cap"></i> My mentors:</li>
+
+            <div class="my-mentors">
+            <% @favorited.each do |f| %>
+
+              <li><%= cl_image_tag f.photo.key, width: 25, height: 25, crop: :thumb, gravity: :face, class: "rounded" %>  <%= link_to f.first_name, user_path(f), class:"name" %></li>
+                <% end %>
+            </div>
+    <% end %>
   </ul>
 </div>

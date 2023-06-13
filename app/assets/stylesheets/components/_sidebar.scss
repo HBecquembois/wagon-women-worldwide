@@ -5,8 +5,7 @@
 .sidebar {
   background-color: $light-red;
   height: 85vh;
-  flex: 0 0 290px;
-  width: 15%;
+  flex: 0 0 230px;
   border-radius: 10px;
   margin-left: 20px;
   margin-top: 60px;
@@ -14,6 +13,7 @@
   text-align: center;
 
   .user-side-bar-image {
+    border: 3px solid $white;
     position: relative;
     width: 100px;
     height: 100px;
@@ -24,11 +24,16 @@
     top: -50px;
   }
 
-  h3 {
-    font-size: 22px;
-    text-align: center;
+  .sidebar-name {
     margin-bottom: 30px;
     margin-top: -46px;
+    font-weight: 600;
+    h3 {
+
+      font-size: 22px;
+      text-align: center;
+      font-weight: 600;
+    }
   }
   ul {
     margin-top: 50px;
@@ -37,7 +42,8 @@
     text-align: left;
   }
   li {
-    margin-top: 20px;
+    margin-top: 30px;
+    color: black;
   }
   .button-center {
     text-align: center;
@@ -45,24 +51,48 @@
   a {
     text-decoration: none;
     color: black;
+    &:hover {
+    color: black;
+    }
   }
-  .fa-arrow-right {
+  .fa-arrow-right, .fa-graduation-cap {
     color: $indigo;
-    font-size: 15px;
+    font-size: 18px;
   }
 }
 
-.fa-wand-sparkles {
+.sidebar-wand {
   background-color: $red;
   padding: 5px;
   margin-right: 6px;
   border-radius: 50%;
-  color: $white;
+  color: $white !important;
 }
+
 
 .my-mentors {
   list-style-type: none;
   font-size: 14px;
-  margin-top: 20px;
-  margin-left: 15px;
+  margin-top: 10px;
+  margin-left: 27px;
+  .name {
+    padding: 8px;
+  }
+  li {
+    margin-top: 5px !important;
+  }
+}
+
+.active-sidebar {
+  color: $indigo !important;
+  font-size: 24px;
+}
+
+.big-arrow {
+  font-size: 22px !important;
+}
+
+.spacer {
+  margin: 39px 47px 39px 18px;
+  border-top: solid 2px $indigo;
 }

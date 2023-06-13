@@ -1,26 +1,36 @@
 <div class="card-container-profile">
 
-  <div class="container-photo-title justify-content-around">
+  <div class="container-photo-title">
     <br>
       <%= cl_image_tag @user.photo.key, width: 150, height: 150, crop: :thumb, gravity: :face, class: "user-photo" %>
       <div class="name-city">
         <h1><%= @user.first_name %> <%= @user.last_name %></h1>
         <p><%= @user.city %> - <%= @user.country %></p>
-      <p><i class="fa-solid fa-lightbulb"></i> She was part of the batch n°<strong><%= @user.batch_number %></strong> in <%= @user.graduation_year %></p>
-   <%= link_to 'Add as a mentor', user_favorite_path(@user), data: { turbo_method: :post } %>
+
+      <p><i class="fa-solid fa-lightbulb"></i> She was part of the batch #<strong><%= @user.batch_number %></strong> in <%= @user.graduation_year %></p>
 
       </div>
+      <div class="cta">
       <% if current_user.chatroom_with(@user) %>
-        <%= link_to chatroom_path(current_user.chatroom_with(@user)), class: "btn-indigo-profile" do %>
+        <%= link_to chatroom_path(current_user.chatroom_with(@user)), class: "btn-red-profile" do %>
           <i class="fa-regular fa-comments"></i> Chat with <%= @user.first_name %>
         <% end %>
       <% else %>
-        <%= button_to user_chatrooms_path(@user), class: "btn-indigo-profile" do %>
+        <%= button_to user_chatrooms_path(@user), class: "btn-red-profile" do %>
           <i class="fa-regular fa-comments"></i> Chat with <%= @user.first_name %>
         <% end %>
       <% end %>
-     <br>
-  </div>
+
+      <% if @user.favorited_by?(current_user) %>
+        <p> <i class="fa-solid fa-wand-sparkles"></i><%= @user.first_name %> is your mentor</p>
+      <% else %>
+        <%= link_to user_favorite_path(@user) do %>
+         <i class="fa-solid wand-profile fa-wand-sparkles"></i><%= link_to 'Add as a mentor', user_favorite_path(@user), class: "add-mentor", data: { turbo_method: :post } %>
+        <br>
+          <% end %>
+      <% end %>
+     </div>
+    </div>
 
   <div class="card-profile">
     <div class="card-profile-infos">

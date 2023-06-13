@@ -3,21 +3,20 @@
   grid-template-columns: repeat(3, 1fr);
   grid-gap: 2em;
   img {
-    width: 100%;
+    width: 71%;
     height: 200px;
     object-fit: cover;
+    border-radius: 10px;
+    margin: 19px 2px 20px 49px;
   }
-  a{
+  a {
     text-decoration: auto;
     color: black;
   }
-
-  a:hover {
-    color: #bbbfbfe0;
+  a:hover .batch-badge {
+    color: #4f5050e0;
+    background-color: #840c0c;
  }
-
-
-
 }
 
 .user-card {
@@ -45,13 +44,14 @@
 }
 
 .user-card-content {
-  padding: 7px;
+  padding: 0px 0px 18px 30px;
 
   h3 {
-    font-size: 18px;
+    font-size: 22px;
+    font-weight: 600;
   }
   p {
-    font-size: 10px;
+    font-size: 16px;
   }
   .competence {
     font-size: 10px;
@@ -70,6 +70,12 @@
   text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
   border-radius: 15px;
   box-shadow: 0 0 15px rgba(0,0,0,0.2);
+  span {
+    text-decoration: none;
+  }
+}
+.home-card-link {
+  text-decoration: none;
 }
 
 .testimony-card {
@@ -79,11 +85,14 @@
   width: 500px;
   box-shadow: 0 0 4px rgba(0,0,0,0.2);
   border-radius: 15px;
+  .fa-solid {
+    color: red
+  }
 }
 
 .testimony-card-content {
   align-items: center;
-  margin-top: 11px;
+  margin-top: 20px;
   width: 55%;
   h3 {
     font-size: 18px;
@@ -103,11 +112,51 @@
     width: 160px;
     height: 80%;
     border-radius: 10px;
-    margin: 10px;
+    margin: 20px;
   }
 }
 
-
 .card-container-profile {
   margin-top: 55px;
+}
+
+ul {
+  list-style-type: none;
+  line-height: 1.7em;
+  font-size: 18px;
+  .card-wand {
+    color: $red;
+    font-size: larger;
+  }
+  a {
+    text-decoration: none;
+    color: black;
+    &:hover {
+      color: red;
+    }
+  }
+}
+
+.user-card-img-container {
+  // position: relative;
+  i {
+    position: absolute;
+    top: 11px;
+    right: 31px;
+  }
+  &:hover {
+    color: #4f5050e0;
+ }
+}
+
+.card-modal {
+  overflow: hidden;
+  width: 80%;
+  padding: 20px;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 20px;
+  border-radius: 10px;
+  box-shadow: 0px 0px 4px 0px $red;
+  background: white;
 }

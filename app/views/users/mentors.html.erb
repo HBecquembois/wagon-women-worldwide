@@ -1,0 +1,45 @@
+
+<link
+rel="stylesheet"
+href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.1/css/all.min.css"
+/><div class="m-5">
+<div class ="form">
+  <h3 class="my-9" class="my-5">Find a profile</h3>
+    <%= form_with url: mentors_path, method: :get, class: "d-flex" do %>
+      <%= select_tag :choices, options_for_select(@competences, ""), multiple: true, data: {controller: "autocomplete"} %>
+      <%= submit_tag "Search", class: "btn btn-primary" %>
+    <% end %>
+  </div>
+
+
+  <p>We've got <%= @users.count %> <%= "mentor".pluralize(@users.count) %></p>
+  <div class="user-cards-container">
+    <% @users.each do |user| %>
+      <% next if user == current_user %>
+
+      <%= link_to user_path(user) do %>
+        <div class="user-card mt-4">
+          <div class="show-more">
+            <i class="fa-regular fa-eye"></i>
+          </div>
+          <%# début code helene %>
+          <div class="user-card-img-container">
+            <%= cl_image_tag user.photo.key, class: "user-card-image", crop: :thumb, gravity: :face %>
+            <% if user.mentor == true %>
+              <i class="fa-solid card-cap fa-graduation-cap" style="color: red;"></i>
+            <% end %>
+          </div>
+          <%# fin code helene %>
+          <div class="user-card-content">
+            <h3><%= user.first_name %> <%= user.last_name%>
+            </h3>
+            <p class="fw-bold"><%= user.title %></p>
+            <% user.competence_list.first(3).each do |competence| %>
+              <span class="badge"><%= competence %></span>
+            <% end %>
+          </div>
+        </div>
+      <% end %>
+    <% end %>
+  </div>
+</div>

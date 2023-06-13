@@ -1,5 +1,6 @@
 class ChatroomsController < ApplicationController
   def show
+    @favorited = current_user.all_favorited
     @chatroom = Chatroom.find(params[:id])
     @message = Message.new
     
