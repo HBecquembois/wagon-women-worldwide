@@ -71,3 +71,16 @@
 .navbar-site .navbar-brand img {
   width: 40px;
 }
+
+.title {
+  display: flex;
+  margin-top: 5px;
+  margin-left: 10px;
+  align-items: center;
+}
+
+.indigo {
+  font-weight: 600;
+  color: $indigo;
+  margin-left: 5px;
+}
