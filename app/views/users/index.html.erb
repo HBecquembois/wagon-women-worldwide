@@ -6,11 +6,28 @@ href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.1/css/all.min.css
 <div class ="form">
   <h1 class="my-9" class="my-5">Find a profile</h1>
   <h4>There are <%= @mentors.count %> marraines <i class="fa-solid fa-wand-sparkles"></i> using the app!</h4>
-    <%= form_with url: users_path, method: :get, class: "d-flex" do %>
-      <%= select_tag :choices, options_for_select(@competences, ""), multiple: true, data: {controller: "autocomplete"} %>
-      <%= submit_tag "Search", class: "btn btn-primary" %>
+   <div class="mb-3">
+    <%= form_with  url: users_path, method: :get, class: "d-flex row" do %>
+      <div class="col-5 pe-0">
+        <%= select_tag :choices, options_for_select(@competences, params[:choices]), multiple: true, data: {controller: "autocomplete"} %>
+      </div>
+
+      <div class="col-2 pe-0">
+        <%= select_tag :languages, options_for_select(User::LANGUAGES, params[:languages]), prompt: "languages", class: "form-select"  %>
+      </div>
+
+      <div class="col-2 pe-0">
+        <%= select_tag :competences, options_for_select(ActsAsTaggableOn::Tag.for_context(:competences).order(:name).pluck(:name).uniq, params[:competences]),
+        prompt: "skill", class: "form-select"%>
+      </div>
+
+      <div class="col-2">
+        <%= select_tag :countries , options_for_select(User::COUNTRIES), prompt: "countries",class: "form-select" %>
+      </div>
+      <%= submit_tag "Search", class: "btn-btn-primary col-1" %>
     <% end %>
   </div>
+
 
 
   <h4>We've got <%= @users.count %> <%= "profile".pluralize(@users.count) %></h4>
@@ -31,7 +48,7 @@ href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.1/css/all.min.css
             <% end %>
             </h3>
             <p class="fw-bold"><%= user.title %></p>
-            <% user.competence_list.first(3).each do |competence| %>
+            <% user.competence_list.first(13).each do |competence| %>
               <span class="badge"><%= competence %></span>
             <% end %>
             <div class="user-button d-flex justify-content-end">

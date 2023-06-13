@@ -93,3 +93,21 @@
     background: $indigo;
   }
 }
+
+.btn-btn-primary {
+
+  color: $white;
+  font-size: 16px;
+  padding: 7px 9px;
+  border: 1px solid $red;
+  border-radius: 6px;
+  background: $red;
+  transition: background 0.3s ease;
+  text-decoration: none;
+  &:hover {
+    color: $red;
+    background: $white;
+  }
+
+
+}

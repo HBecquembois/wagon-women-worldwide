@@ -3,14 +3,32 @@ class UsersController < ApplicationController
   def index
     @favorited = current_user.all_favorited
     @competences = ActsAsTaggableOn::Tag.for_context(:competences).map{ |tag| tag.name }
-    if params[:choices].present?
-      @mentors = User.where(mentor: true)
-      @users = User.search_by_competences_and_users(params[:choices])
-    else
-      @users = User.all
-      @mentors = User.where(mentor: true)
-    end
+
+    @users = User.all
+    @users = @users.search_by_competences_and_users(params[:choices]) if params[:choices].present?
+    @users = @users.tagged_with(params[:languages], :on => :languages, :any => true) if params[:languages].present?
+    @users = @users.tagged_with(params[:competences], :on =>:competences, :any => true) if params[:competences].present?
+    @users = @users.where(country: params[:countries]) if params[:countries].present?
+
+
+    @mentors = @users.where(mentor: true)
+
+    # if params[:choices].present?
+    #   @mentors = User.where(mentor: true)
+    #   @users = User.search_by_competences_and_users(params[:choices])
+
+    # else
+    #   @users = User.all
+    #   @mentors = User.where(mentor: true)
+    #   # raise
+    #   if params[:languages].present?
+    #     @users = User.where(language: params[:languages])
+
+    #   end
+    # end
   end
+
+
 
   def show
     @user = User.new
