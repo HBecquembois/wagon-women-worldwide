@@ -34,6 +34,7 @@ href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.1/css/all.min.css
             <h3><%= user.first_name %> <%= user.last_name%>
             </h3>
             <p class="fw-bold"><%= user.title %></p>
+            <p class="batch-badge">Batch #<strong><%= user.batch_number %></strong></p>
             <% user.competence_list.first(3).each do |competence| %>
               <span class="badge"><%= competence %></span>
             <% end %>
