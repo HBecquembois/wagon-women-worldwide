@@ -1,0 +1,25 @@
+#offcanvasRight {
+  padding-top: 10px;
+  width: 40%;
+  border-left: solid 20px $light-red;
+  padding-left: 10px;
+  p {
+    font-size: 16px
+  }
+}
+
+.offer {
+  font-size: 14px !important;
+  margin-top: -16px !important;
+  margin-bottom: 10px !important;
+}
+
+.interested {
+  font-size: 20px !important;
+}
+
+.modal-footer {
+  display: block;
+  align-items: center;
+  margin-top: 20px;
+}

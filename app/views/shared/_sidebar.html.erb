@@ -13,7 +13,7 @@
       <% else %>
       <i class="fa-solid fa-arrow-right"></i>
       <% end %>
-      <%= link_to "Find a mentor", users_path, class:"#{'active' if controller_name == 'users' && action_name == 'index'}" %>
+      <%= link_to "Find a mentor", users_path, class:"#{'active-sidebar' if controller_name == 'users' && action_name == 'index'}" %>
     </li>
 
     <li><% if controller_name == 'users' && action_name == '' %>
@@ -21,7 +21,7 @@
       <% else %>
       <i class="fa-solid fa-arrow-right"></i>
       <% end %>
-      <%= link_to "My messages", users_path, class:"#{'active' if controller_name == '' && action_name == ''}" %>
+      <%= link_to "My messages", users_path, class:"#{'active-sidebar' if controller_name == '' && action_name == ''}" %>
     </li>
 
     <li><% if controller_name == 'users' && action_name == '' %>
@@ -29,7 +29,7 @@
       <% else %>
       <i class="fa-solid fa-arrow-right"></i>
       <% end %>
-      <%= link_to "My mentors", users_path, class:"#{'active' if controller_name == '' && action_name == ''}" %>
+      <%= link_to "My mentors", users_path, class:"#{'active-sidebar' if controller_name == '' && action_name == ''}" %>
     </li>
 
     <div class="my-mentors">

@@ -76,20 +76,21 @@
   }
 }
 
-.btn-indigo-modal {
-  color: $indigo;
+.btn-red-modal {
+  margin-top: 30px;
+  color: $white;
   position: right;
   font-size: 16px;
   padding: 8px 10px;
-  border: solid 1px $light-indigo;
+  border: solid 1px transparent;
   border-radius: 10px;
-  background: $light-indigo;
+  background: $red;
   transition: background 0.3s ease;
   text-decoration: none;
 
   &:hover {
-    color: $light-indigo;
-    background: $indigo;
+    color: $red;
+    background: $white;
   }
 }
 
