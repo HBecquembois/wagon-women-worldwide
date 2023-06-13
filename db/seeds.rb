@@ -24,259 +24,6 @@ puts "Creating real users"
 fake_avatar_url = "https://xsgames.co/randomusers/avatar.php?g=female"
 
 puts "Creating user 1"
-file = URI.open("https://kitt.lewagon.com/placeholder/users/lesly75")
-lesly = User.new(
-  first_name: 'Lesly',
-  last_name: 'Urie',
-  email: 'lesly75019@gmail.com',
-  password: 'azerty',
-  password_confirmation: 'azerty',
-  city: 'Paris',
-  country: 'France',
-  mentor: false,
-  title: titles[1],
-  description: "Hi everyone! I'm Lesly, a junior dev specialized in Ruby and I'm looking for a marraine!",
-  batch_number: 1210,
-  graduation_year: 2023,
-  github_url: 'https://github.com/lesly75',
-  linkedin_url: 'https://linkedin.com/',
-  kitt_username: 'lesly75'
-)
-lesly.competence_list.add(frontone)
-lesly.language_list.add("french", "english")
-lesly.photo.attach(io: file, filename: "lesly", content_type: "image/jpeg")
-lesly.save
-puts "User 1 created"
-
-puts "Creating user 2"
-file = File.open(Rails.root.join('app/assets/images/Ketty1.jpg'))
-eugenie = User.new(
-  first_name: 'Eugénie',
-  last_name: 'Dami',
-  email: 'eugene.dami@yahoo.fr',
-  password: 'azerty',
-  password_confirmation: 'azerty',
-  city: 'Bastia',
-  country: 'France',
-  mentor: false,
-  title: titles[1],
-  description: "Hi I'm Eugénie, I recently followed a fullstack course at Le Wagon and I'm planning to build my own business in tech!",
-  batch_number: 1210,
-  graduation_year: 2023,
-  github_url: 'https://github.com/effendir',
-  linkedin_url: 'https://linkedin.com/',
-  kitt_username: 'Effendir'
-)
-eugenie.competence_list.add(back)
-eugenie.language_list.add("french", "english", "italian")
-eugenie.photo.attach(io: file, filename: "eugenie", content_type: "image/jpeg")
-eugenie.save
-puts "User 2 created"
-
-puts "Creating user 3"
-file = URI.open("https://kitt.lewagon.com/placeholder/users/hbecquembois")
-helene = User.new(
-  first_name: 'Hélène',
-  last_name: 'Becquembois',
-  email: 'hbecquembois@gmail.com',
-  password: 'azerty',
-  password_confirmation: 'azerty',
-  city: 'Paris',
-  country: 'France',
-  mentor: false,
-  title: titles[1],
-  description: "Hi I'm Hélène, I'm a junior dev and I'm looking forward to collaborate on exciting new challenges!",
-  batch_number: 1210,
-  graduation_year: 2023,
-  github_url: 'https://github.com/HBecquembois',
-  linkedin_url: 'https://www.linkedin.com/in/h%C3%A9l%C3%A8ne-becquembois-66592a118/',
-  kitt_username: 'Hbecquembois'
-)
-helene.competence_list.add(fullstack)
-helene.language_list.add("french", "english", "greek")
-helene.photo.attach(io: file, filename: "helene", content_type: "image/jpeg")
-helene.save
-puts "User 3 created"
-
-puts "Creating user 4"
-file = URI.open("https://kitt.lewagon.com/placeholder/users/luciegaget")
-lucie = User.new(
-  first_name: 'Lucie',
-  last_name: 'Gaget',
-  email: 'lucie-gaget@orange.fr',
-  password: 'azerty',
-  password_confirmation: 'azerty',
-  city: 'Paris',
-  country: 'France',
-  mentor: false,
-  title: titles[1],
-  description: "Hello! I'm Lucie, a junior web dev and part-time musician. Feel free to contact me for collabs!",
-  batch_number: 1210,
-  graduation_year: 2023,
-  github_url: 'https://github.com/luciegaget',
-  linkedin_url: 'https://www.linkedin.com/in/lucie-gaget-03a0b196/',
-  kitt_username: 'luciegaget'
-)
-lucie.competence_list.add(fullstack)
-lucie.language_list.add("french", "english")
-lucie.photo.attach(io: file, filename: "lucie", content_type: "image/jpeg")
-lucie.save
-puts "User 4 created"
-
-puts "Creating user 5"
-file = URI.open("https://kitt.lewagon.com/placeholder/users/AmalRabbani")
-amal = User.new(
-  first_name: 'Amal',
-  last_name: 'Rabbani',
-  email: Faker::Internet.unique.email,
-  password: 'azerty',
-  password_confirmation: 'azerty',
-  city: 'Paris',
-  country: 'France',
-  mentor: false,
-  title: titles[1],
-  description: "Hello, I'm planning to go freelance but I did Le Wagon to reinforce some skills before start. I've worked 7 year in com/marketing and I've learn code on the job.",
-  batch_number: 1210,
-  graduation_year: 2023,
-  github_url: 'https://github.com/',
-  linkedin_url: 'https://linkedin.com/',
-  kitt_username: 'AmalRabbani'
-)
-amal.competence_list.add(analyst)
-amal.language_list.add("french", "english", "spanish")
-amal.photo.attach(io: file, filename: "amal", content_type: "image/jpeg")
-amal.save
-puts "User 5 created"
-
-puts "Creating user 6"
-file = URI.open("https://kitt.lewagon.com/placeholder/users/celine-chader")
-celine = User.new(
-  first_name: 'Céline',
-  last_name: 'Chader',
-  email: Faker::Internet.unique.email,
-  password: 'azerty',
-  password_confirmation: 'azerty',
-  city: 'Paris',
-  country: 'France',
-  mentor: false,
-  title: titles[1],
-  description: "After 6 years of marketing, communication and event planning, I decided to embark on a new challenge : learning to code. Let's see how it goes !",
-  batch_number: 1210,
-  graduation_year: 2023,
-  github_url: 'https://github.com/',
-  linkedin_url: 'https://linkedin.com/',
-  kitt_username: 'celine-chader'
-)
-celine.competence_list.add(scientist)
-celine.language_list.add("french", "english", "german")
-celine.photo.attach(io: file, filename: "celine", content_type: "image/jpeg")
-celine.save
-puts "User 6 created"
-
-puts "Creating user 7"
-file = URI.open("https://kitt.lewagon.com/placeholder/users/Boubouboubs")
-stephanie = User.new(
-  first_name: 'Stéphanie',
-  last_name: 'Bourdillon',
-  email: Faker::Internet.unique.email,
-  password: 'azerty',
-  password_confirmation: 'azerty',
-  city: 'Marseille',
-  country: 'France',
-  mentor: false,
-  title: titles[1],
-  description: "Having worked mostly for the food industry in roles in corporate finance and management, I'm excited to learn coding skills that will help me support or create new (more flexible) businesses hopefully.",
-  batch_number: 1210,
-  graduation_year: 2023,
-  github_url: 'https://github.com/',
-  linkedin_url: 'https://linkedin.com/',
-  kitt_username: 'boubouboubs'
-)
-stephanie.competence_list.add(frontone)
-stephanie.language_list.add("french", "english", "russian")
-stephanie.photo.attach(io: file, filename: "stephanie", content_type: "image/jpeg")
-stephanie.save
-puts "User 7 created"
-
-puts "Creating user 8"
-file = URI.open("https://kitt.lewagon.com/placeholder/users/bineleon")
-nelbi = User.new(
-  first_name: 'Nelbi',
-  last_name: 'Léon',
-  email: Faker::Internet.unique.email,
-  password: 'azerty',
-  password_confirmation: 'azerty',
-  city: 'Madrid',
-  country: 'Spain',
-  mentor: true,
-  title: titles[1],
-  description: "I love solving problems, fixing, understanding stuff and value creativity as well as teamwork. Other interests : Cycling, yoga, music, adventure and much more",
-  batch_number: 1000,
-  graduation_year: 2022,
-  github_url: 'https://github.com/',
-  linkedin_url: 'https://linkedin.com/',
-  kitt_username: 'bineleon'
-)
-nelbi.competence_list.add(fronttwo)
-nelbi.language_list.add("french", "english")
-nelbi.photo.attach(io: file, filename: "nelbi", content_type: "image/jpeg")
-nelbi.mentor_skill_list.add(frontone.sample(2))
-nelbi.save
-puts "User 8 created"
-
-puts "Creating user 9"
-file = URI.open("https://kitt.lewagon.com/placeholder/users/lisamillet")
-lisa = User.new(
-  first_name: 'Lisa',
-  last_name: 'Millet',
-  email: Faker::Internet.unique.email,
-  password: 'azerty',
-  password_confirmation: 'azerty',
-  city: 'London',
-  country: 'UK',
-  mentor: true,
-  title: titles[1],
-  description: "Hello, my name is Lisa! Passionate about craftsmanship, for the past 5 years I have been focused on supporting artisans and developing solutions for them. In addition to my future web development job, I am the president of the association 'Histoires d'Artisans,' which works towards promoting their expertise, including through the eponymous podcast.",
-  batch_number: 1115,
-  graduation_year: 2023,
-  github_url: 'https://github.com/',
-  linkedin_url: 'https://linkedin.com/',
-  kitt_username: 'lisamillet'
-)
-lisa.competence_list.add(fullstack)
-lisa.language_list.add("french", "english", "spanish")
-lisa.photo.attach(io: file, filename: "lisa", content_type: "image/jpeg")
-lisa.mentor_skill_list.add(frontone.sample(3))
-lisa.save
-puts "User 9 created"
-
-puts "Creating user 10"
-file = URI.open("https://kitt.lewagon.com/placeholder/users/dianejroussillon")
-diane = User.new(
-  first_name: 'Diane',
-  last_name: 'Johnston Roussillon',
-  email: 'diane@diane.fr',
-  password: 'azerty',
-  password_confirmation: 'azerty',
-  city: 'Paris',
-  country: 'France',
-  mentor: true,
-  title: titles[1],
-  description: "I worked at Le Collectionist for 3 years as head of Supply - i was in charge of developing the owner network, and the portfolio of properties that we suggest on our platform. This job was also about the e-merchandising of the properties on our platform. I joined Le wagon in order to learn the technical skills to work closer to the development team and because I am looking for something more creative.",
-  batch_number: 200,
-  graduation_year: 2018,
-  github_url: 'https://github.com/',
-  linkedin_url: 'https://linkedin.com/',
-  kitt_username: 'dianejroussillon'
-)
-diane.competence_list.add(fullstack)
-diane.language_list.add("french", "english", "german")
-diane.photo.attach(io: file, filename: "diane", content_type: "image/jpeg")
-diane.mentor_skill_list.add(fullstack.sample(5))
-diane.save
-puts "User 10 created"
-
-puts "Creating user 11"
 file = URI.open("https://kitt.lewagon.com/placeholder/users/cveneziani")
 cecile = User.new(
   first_name: 'Cécile',
@@ -300,6 +47,259 @@ cecile.language_list.add("french", "english", "italian")
 cecile.photo.attach(io: file, filename: "cecile", content_type: "image/jpeg")
 cecile.mentor_skill_list.add(back.sample(4))
 cecile.save
+puts "User 1 created"
+
+puts "Creating user 2"
+file = URI.open("https://kitt.lewagon.com/placeholder/users/dianejroussillon")
+diane = User.new(
+  first_name: 'Diane',
+  last_name: 'Johnston Roussillon',
+  email: 'diane@diane.fr',
+  password: 'azerty',
+  password_confirmation: 'azerty',
+  city: 'Paris',
+  country: 'France',
+  mentor: true,
+  title: titles[1],
+  description: "I worked at Le Collectionist for 3 years as head of Supply - i was in charge of developing the owner network, and the portfolio of properties that we suggest on our platform. This job was also about the e-merchandising of the properties on our platform. I joined Le wagon in order to learn the technical skills to work closer to the development team and because I am looking for something more creative.",
+  batch_number: 200,
+  graduation_year: 2018,
+  github_url: 'https://github.com/',
+  linkedin_url: 'https://linkedin.com/',
+  kitt_username: 'dianejroussillon'
+)
+diane.competence_list.add(fullstack)
+diane.language_list.add("french", "english", "german")
+diane.photo.attach(io: file, filename: "diane", content_type: "image/jpeg")
+diane.mentor_skill_list.add(fullstack.sample(5))
+diane.save
+puts "User 2 created"
+
+puts "Creating user 3"
+file = URI.open("https://kitt.lewagon.com/placeholder/users/lisamillet")
+lisa = User.new(
+  first_name: 'Lisa',
+  last_name: 'Millet',
+  email: Faker::Internet.unique.email,
+  password: 'azerty',
+  password_confirmation: 'azerty',
+  city: 'London',
+  country: 'UK',
+  mentor: true,
+  title: titles[1],
+  description: "Hello, my name is Lisa! Passionate about craftsmanship, for the past 5 years I have been focused on supporting artisans and developing solutions for them. In addition to my future web development job, I am the president of the association 'Histoires d'Artisans,' which works towards promoting their expertise, including through the eponymous podcast.",
+  batch_number: 1115,
+  graduation_year: 2023,
+  github_url: 'https://github.com/',
+  linkedin_url: 'https://linkedin.com/',
+  kitt_username: 'lisamillet'
+)
+lisa.competence_list.add(fullstack)
+lisa.language_list.add("french", "english", "spanish")
+lisa.photo.attach(io: file, filename: "lisa", content_type: "image/jpeg")
+lisa.mentor_skill_list.add(frontone.sample(3))
+lisa.save
+puts "User 3 created"
+
+puts "Creating user 4"
+file = URI.open("https://kitt.lewagon.com/placeholder/users/lesly75")
+lesly = User.new(
+  first_name: 'Lesly',
+  last_name: 'Urie',
+  email: 'lesly75019@gmail.com',
+  password: 'azerty',
+  password_confirmation: 'azerty',
+  city: 'Paris',
+  country: 'France',
+  mentor: false,
+  title: titles[1],
+  description: "Hi everyone! I'm Lesly, a junior dev specialized in Ruby and I'm looking for a marraine!",
+  batch_number: 1210,
+  graduation_year: 2023,
+  github_url: 'https://github.com/lesly75',
+  linkedin_url: 'https://linkedin.com/',
+  kitt_username: 'lesly75'
+)
+lesly.competence_list.add(frontone)
+lesly.language_list.add("french", "english")
+lesly.photo.attach(io: file, filename: "lesly", content_type: "image/jpeg")
+lesly.save
+puts "User 4 created"
+
+puts "Creating user 5"
+file = File.open(Rails.root.join('app/assets/images/Ketty1.jpg'))
+eugenie = User.new(
+  first_name: 'Eugénie',
+  last_name: 'Dami',
+  email: 'eugene.dami@yahoo.fr',
+  password: 'azerty',
+  password_confirmation: 'azerty',
+  city: 'Bastia',
+  country: 'France',
+  mentor: false,
+  title: titles[1],
+  description: "Hi I'm Eugénie, I recently followed a fullstack course at Le Wagon and I'm planning to build my own business in tech!",
+  batch_number: 1210,
+  graduation_year: 2023,
+  github_url: 'https://github.com/effendir',
+  linkedin_url: 'https://linkedin.com/',
+  kitt_username: 'Effendir'
+)
+eugenie.competence_list.add(back)
+eugenie.language_list.add("french", "english", "italian")
+eugenie.photo.attach(io: file, filename: "eugenie", content_type: "image/jpeg")
+eugenie.save
+puts "User 5 created"
+
+puts "Creating user 6"
+file = URI.open("https://kitt.lewagon.com/placeholder/users/hbecquembois")
+helene = User.new(
+  first_name: 'Hélène',
+  last_name: 'Becquembois',
+  email: 'hbecquembois@gmail.com',
+  password: 'azerty',
+  password_confirmation: 'azerty',
+  city: 'Paris',
+  country: 'France',
+  mentor: false,
+  title: titles[1],
+  description: "Hi I'm Hélène, I'm a junior dev and I'm looking forward to collaborate on exciting new challenges!",
+  batch_number: 1210,
+  graduation_year: 2023,
+  github_url: 'https://github.com/HBecquembois',
+  linkedin_url: 'https://www.linkedin.com/in/h%C3%A9l%C3%A8ne-becquembois-66592a118/',
+  kitt_username: 'Hbecquembois'
+)
+helene.competence_list.add(fullstack)
+helene.language_list.add("french", "english", "greek")
+helene.photo.attach(io: file, filename: "helene", content_type: "image/jpeg")
+helene.save
+puts "User 6 created"
+
+puts "Creating user 7"
+file = URI.open("https://kitt.lewagon.com/placeholder/users/luciegaget")
+lucie = User.new(
+  first_name: 'Lucie',
+  last_name: 'Gaget',
+  email: 'lucie-gaget@orange.fr',
+  password: 'azerty',
+  password_confirmation: 'azerty',
+  city: 'Paris',
+  country: 'France',
+  mentor: false,
+  title: titles[1],
+  description: "Hello! I'm Lucie, a junior web dev and part-time musician. Feel free to contact me for collabs!",
+  batch_number: 1210,
+  graduation_year: 2023,
+  github_url: 'https://github.com/luciegaget',
+  linkedin_url: 'https://www.linkedin.com/in/lucie-gaget-03a0b196/',
+  kitt_username: 'luciegaget'
+)
+lucie.competence_list.add(fullstack)
+lucie.language_list.add("french", "english")
+lucie.photo.attach(io: file, filename: "lucie", content_type: "image/jpeg")
+lucie.save
+puts "User 7 created"
+
+puts "Creating user 8"
+file = URI.open("https://kitt.lewagon.com/placeholder/users/AmalRabbani")
+amal = User.new(
+  first_name: 'Amal',
+  last_name: 'Rabbani',
+  email: Faker::Internet.unique.email,
+  password: 'azerty',
+  password_confirmation: 'azerty',
+  city: 'Paris',
+  country: 'France',
+  mentor: false,
+  title: titles[1],
+  description: "Hello, I'm planning to go freelance but I did Le Wagon to reinforce some skills before start. I've worked 7 year in com/marketing and I've learn code on the job.",
+  batch_number: 1210,
+  graduation_year: 2023,
+  github_url: 'https://github.com/',
+  linkedin_url: 'https://linkedin.com/',
+  kitt_username: 'AmalRabbani'
+)
+amal.competence_list.add(analyst)
+amal.language_list.add("french", "english", "spanish")
+amal.photo.attach(io: file, filename: "amal", content_type: "image/jpeg")
+amal.save
+puts "User 8 created"
+
+puts "Creating user 9"
+file = URI.open("https://kitt.lewagon.com/placeholder/users/celine-chader")
+celine = User.new(
+  first_name: 'Céline',
+  last_name: 'Chader',
+  email: Faker::Internet.unique.email,
+  password: 'azerty',
+  password_confirmation: 'azerty',
+  city: 'Paris',
+  country: 'France',
+  mentor: false,
+  title: titles[1],
+  description: "After 6 years of marketing, communication and event planning, I decided to embark on a new challenge : learning to code. Let's see how it goes !",
+  batch_number: 1210,
+  graduation_year: 2023,
+  github_url: 'https://github.com/',
+  linkedin_url: 'https://linkedin.com/',
+  kitt_username: 'celine-chader'
+)
+celine.competence_list.add(scientist)
+celine.language_list.add("french", "english", "german")
+celine.photo.attach(io: file, filename: "celine", content_type: "image/jpeg")
+celine.save
+puts "User 9 created"
+
+puts "Creating user 10"
+file = URI.open("https://kitt.lewagon.com/placeholder/users/Boubouboubs")
+stephanie = User.new(
+  first_name: 'Stéphanie',
+  last_name: 'Bourdillon',
+  email: Faker::Internet.unique.email,
+  password: 'azerty',
+  password_confirmation: 'azerty',
+  city: 'Marseille',
+  country: 'France',
+  mentor: false,
+  title: titles[1],
+  description: "Having worked mostly for the food industry in roles in corporate finance and management, I'm excited to learn coding skills that will help me support or create new (more flexible) businesses hopefully.",
+  batch_number: 1210,
+  graduation_year: 2023,
+  github_url: 'https://github.com/',
+  linkedin_url: 'https://linkedin.com/',
+  kitt_username: 'boubouboubs'
+)
+stephanie.competence_list.add(frontone)
+stephanie.language_list.add("french", "english", "russian")
+stephanie.photo.attach(io: file, filename: "stephanie", content_type: "image/jpeg")
+stephanie.save
+puts "User 10 created"
+
+puts "Creating user 11"
+file = URI.open("https://kitt.lewagon.com/placeholder/users/bineleon")
+nelbi = User.new(
+  first_name: 'Nelbi',
+  last_name: 'Léon',
+  email: Faker::Internet.unique.email,
+  password: 'azerty',
+  password_confirmation: 'azerty',
+  city: 'Madrid',
+  country: 'Spain',
+  mentor: true,
+  title: titles[1],
+  description: "I love solving problems, fixing, understanding stuff and value creativity as well as teamwork. Other interests : Cycling, yoga, music, adventure and much more",
+  batch_number: 1000,
+  graduation_year: 2022,
+  github_url: 'https://github.com/',
+  linkedin_url: 'https://linkedin.com/',
+  kitt_username: 'bineleon'
+)
+nelbi.competence_list.add(fronttwo)
+nelbi.language_list.add("french", "english")
+nelbi.photo.attach(io: file, filename: "nelbi", content_type: "image/jpeg")
+nelbi.mentor_skill_list.add(frontone.sample(2))
+nelbi.save
 puts "User 11 created"
 
 puts "Creating user 12"
