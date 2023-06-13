@@ -116,12 +116,21 @@
   }
 }
 
+
 .btn-btn-primary {
 
   color: $white;
   font-size: 16px;
   padding: 7px 9px;
   border: 1px solid $red;
+
+.btn-red-chatroom {
+  height: 37px;
+  color: $white;
+  font-size: 18px;
+  font-weight: 600;
+  padding: 6px 7px;
+
   border-radius: 6px;
   background: $red;
   transition: background 0.3s ease;
@@ -130,6 +139,4 @@
     color: $red;
     background: $white;
   }
-
-
-}
+  
