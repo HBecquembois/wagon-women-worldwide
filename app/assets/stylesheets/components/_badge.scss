@@ -1,11 +1,12 @@
 .badge {
   color: $indigo;
-  font-size: 11px;
+  font-size: 12px;
   padding: 6px 7px;
-  border-radius: 6px;
+  border-radius: 10px;
   background: $light-indigo;
   transition: background 0.3s ease;
   text-decoration: none;
+  font-weight: 600;
 }
 
 .fa-wand-sparkles {
@@ -23,4 +24,17 @@
   margin-right: 6px;
   border-radius: 50%;
   color: $red;
+}
+
+.batch-badge {
+  background-color: #E60F05;
+  color: white;
+  width: -moz-fit-content;
+  width: fit-content;
+  padding: 1px 5px;
+  border-radius: 20px;
+  font-size: 12px !important;
+  position: absolute;
+  bottom: 114px;
+  right: 33px;
 }

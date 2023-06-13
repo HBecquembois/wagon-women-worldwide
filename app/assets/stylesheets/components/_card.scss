@@ -3,17 +3,19 @@
   grid-template-columns: repeat(3, 1fr);
   grid-gap: 2em;
   img {
-    width: 100%;
+    width: 71%;
     height: 200px;
     object-fit: cover;
+    border-radius: 10px;
+    margin: 19px 2px 20px 49px;
   }
   a {
     text-decoration: auto;
     color: black;
   }
-
-  a:hover {
+  a:hover .batch-badge {
     color: #4f5050e0;
+    background-color: #840c0c;
  }
 }
 
@@ -42,13 +44,14 @@
 }
 
 .user-card-content {
-  padding: 7px;
+  padding: 0px 0px 18px 30px;
 
   h3 {
-    font-size: 18px;
+    font-size: 22px;
+    font-weight: 600;
   }
   p {
-    font-size: 10px;
+    font-size: 16px;
   }
   .competence {
     font-size: 10px;
@@ -138,8 +141,8 @@ ul {
   // position: relative;
   i {
     position: absolute;
-    top: 10px;
-    right: 10px;
+    top: 11px;
+    right: 31px;
   }
   &:hover {
     color: #4f5050e0;
