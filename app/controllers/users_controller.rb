@@ -33,6 +33,12 @@ class UsersController < ApplicationController
     redirect_to user_path(@user)
   end
 
+  def mentors
+    @favorited = current_user.all_favorited
+    @users = User.where(mentor: true)
+    @competences = ActsAsTaggableOn::Tag.for_context(:competences).map{ |tag| tag.name }
+  end
+
   private
 
   def user_params
