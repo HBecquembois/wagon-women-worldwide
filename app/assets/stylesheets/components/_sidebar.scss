@@ -46,6 +46,10 @@
   a {
     text-decoration: none;
     color: black;
+    &:hover {
+    color: black;
+
+    }
   }
 
   .fa-arrow-right {
