@@ -27,7 +27,7 @@ href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.1/css/all.min.css
           <div class="user-card-img-container">
             <%= cl_image_tag user.photo.key, class: "user-card-image", crop: :thumb, gravity: :face %>
             <% if user.mentor == true %>
-              <i class="fa-solid fa-wand-sparkles"></i>
+              <i class="fa-solid card-wand fa-wand-sparkles"></i>
             <% end %>
           </div>
           <%# fin code helene %>

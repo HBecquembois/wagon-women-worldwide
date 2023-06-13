@@ -121,8 +121,8 @@ ul {
   list-style-type: none;
   line-height: 1.7em;
   font-size: 18px;
-  .fa-solid {
-    color: red;
+  .card-wand {
+    color: $red;
     font-size: larger;
   }
   a {
@@ -144,4 +144,16 @@ ul {
   &:hover {
     color: #4f5050e0;
  }
+}
+
+.card-modal {
+  overflow: hidden;
+  width: 80%;
+  padding: 20px;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 20px;
+  border-radius: 10px;
+  box-shadow: 0px 0px 4px 0px $red;
+  background: white;
 }
