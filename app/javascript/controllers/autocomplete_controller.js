@@ -9,10 +9,7 @@ export default class extends Controller {
         createOnBlur: true,
         create: true
     });
-    lesly.settings.placeholder = " Ada Lovelace ";
+    lesly.settings.placeholder = "css,ruby,sql..";
     lesly.inputState();
   }
 }
-
-
-

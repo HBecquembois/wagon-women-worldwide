@@ -4,9 +4,7 @@ rel="stylesheet"
 href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.1/css/all.min.css"
 /><div class="m-5">
 <div class ="form">
-  <h1 class="my-9" class="my-5">Find a profile</h1>
-  <h4>There are <%= @mentors.count %> marraines <i class="fa-solid fa-wand-sparkles"></i> using the app!</h4>
-   <div class="mb-3">
+  <h3 class="my-9" class="my-5">Find a profile</h3>
     <%= form_with  url: users_path, method: :get, class: "d-flex row" do %>
       <div class="col-5 pe-0">
         <%= select_tag :choices, options_for_select(@competences, params[:choices]), multiple: true, data: {controller: "autocomplete"} %>
@@ -16,10 +14,6 @@ href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.1/css/all.min.css
         <%= select_tag :languages, options_for_select(User::LANGUAGES, params[:languages]), prompt: "languages", class: "form-select"  %>
       </div>
 
-      <div class="col-2 pe-0">
-        <%= select_tag :competences, options_for_select(ActsAsTaggableOn::Tag.for_context(:competences).order(:name).pluck(:name).uniq, params[:competences]),
-        prompt: "skill", class: "form-select"%>
-      </div>
 
       <div class="col-2">
         <%= select_tag :countries , options_for_select(User::COUNTRIES), prompt: "countries",class: "form-select" %>
@@ -30,7 +24,7 @@ href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.1/css/all.min.css
 
 
 
-  <h4>We've got <%= @users.count %> <%= "profile".pluralize(@users.count) %></h4>
+  <P>We've got <%= @users.count %> <%= "profile".pluralize(@users.count) %><P>
   <div class="user-cards-container">
     <% @users.each do |user| %>
       <% next if user == current_user %>
@@ -44,7 +38,7 @@ href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.1/css/all.min.css
           <div class="user-card-img-container">
             <%= cl_image_tag user.photo.key, width: 500, height: 500, class: "user-card-image", crop: :thumb, gravity: :face %>
             <% if user.mentor == true %>
-              <i class="fa-solid card-wand fa-wand-sparkles"></i>
+            <i class="fa-solid card-cap fa-graduation-cap" style="color: red;"></i>
             <% end %>
           </div>
           <%# fin code helene %>
