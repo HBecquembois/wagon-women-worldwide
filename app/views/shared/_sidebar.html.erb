@@ -2,7 +2,7 @@
  <%= cl_image_tag current_user.photo.key, width: 150, height: 150, crop: :thumb, gravity: :face, class: "user-side-bar-image" %>
   <h3><%= current_user.first_name  %> <%= current_user.last_name  %></h3>
   <div class="button-center">
-    <%= button_to "My dashboard", user_path(current_user), class:"btn-indigo-sidebar align-center"%>
+    <%= link_to "My dashboard", dashboard_path, class:"btn-indigo-sidebar align-center" %>
 
   </div>
   <ul>
