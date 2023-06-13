@@ -160,3 +160,56 @@ ul {
   box-shadow: 0px 0px 4px 0px $red;
   background: white;
 }
+
+.dashxboard-card {
+  display: flex;
+  align-items: center;
+  overflow: hidden;
+  width: 500px;
+  box-shadow: 0 0 4px rgba(0,0,0,0.2);
+  border-radius: 15px;
+  .fa-solid {
+    color: red
+  }
+  img {
+    border-radius: 10px;
+  }
+}
+
+.card-dashboard {
+  width: 80%;
+  margin-bottom: 10px;
+  margin-top: 20px;
+  overflow: hidden;
+  height: 120px;
+  background: white;
+  box-shadow: 0 0 6px rgba(0,0,0,0.2);
+  display: flex;
+  align-items: center;
+  border-radius: 10px;
+}
+
+.card-dashboard img {
+  height: 100%;
+  width: 120px;
+  object-fit: cover;
+  border-radius: 10px;
+}
+
+.card-dashboard h2 {
+  font-size: 18px;
+  font-weight: bold;
+  margin: 0;
+}
+
+.card-dashboard p {
+  font-size: 17px;
+  line-height: 1.4;
+  opacity: .7;
+  margin-bottom: 0;
+  margin-top: 8px;
+}
+
+.card-dashboard .card-dashboard-infos {
+  padding: 16px;
+}

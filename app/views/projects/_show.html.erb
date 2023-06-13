@@ -4,6 +4,7 @@
   </button></li>
 
 
+
 <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasRight" aria-labelledby="offcanvasRightLabel">
   <div class="offcanvas-header">
     <h5 class="offcanvas-title" id="offcanvasRightLabel"><i class="fa-solid fa-computer"></i> <%= project.title %></h5>
@@ -22,7 +23,6 @@
       <% project.requested_skill_list.each do |projectskill| %>
         <li class="tag-list"><%= projectskill %></li>
         <% end %>
-<% end %>
       </ul>
       <div class="modal-footer justifty-content-center">
         <div>
@@ -31,10 +31,21 @@
         <div class="card-modal">
           <p class="interested"><strong>Interested by this project?</strong></p>
 
-          <button class="btn-red-modal"><i class="fa-regular fa-comments"></i> Let <%= @user.first_name %> know</button>
+
+           <% if current_user.chatroom_with(@user) %>
+        <%= link_to chatroom_path(current_user.chatroom_with(@user)), class: "btn-red-profile" do %>
+          <i class="fa-regular fa-comments"></i> Chat with <%= @user.first_name %>
+          <% end %>
+          <% else %>
+        <%= button_to user_chatrooms_path(@user), class: "btn-red-profile" do %>
+
+          <i class="fa-regular fa-comments"></i> Let <%= @user.first_name %> know
+          <% end %>
+        <% end %>
          </div>
         </div>
       </div>
   </div>
   </div>
+ <% end %>
 </ul>
