@@ -1,5 +1,6 @@
 // Import page-specific CSS files here.
 @import "home";
+@import "home";
 @import "dashboard";
 
 .users-index {
@@ -7,7 +8,6 @@
     margin: 1.5em 0;
     font-weight: 700;
   }
-
   .main-content {
     height: 100%;
   }

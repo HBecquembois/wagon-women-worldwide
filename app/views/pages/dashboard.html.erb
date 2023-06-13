@@ -15,10 +15,8 @@
   </div>
 
 <div class="dashboard-card d-block text-center m-3">
-
      <h2 class="m-2">My <%= @user.mentor ? "mentorees" : "mentors" %></h2>
-
-      <% @favorited.each do |m| %>
+     <% @favorited.each do |m| %>
 
       <div class="card-dashboard">
         <%= cl_image_tag m.photo.key, width: 150, height: 150, crop: :thumb, gravity: :face %>
@@ -28,9 +26,9 @@
           <%= link_to "#{m.first_name}'s profile", user_path(m.id), class:"profile-mentor" %>
           <br>
           <%= link_to 'Remove this mentor', user_unfavorite_path(m), class:"remove-mentor", data: { turbo_method: :patch } %>
-        </div>
       </div>
       <% end %>
+    </div>
   </div>
   <div class="card-container d-flex justify-content-around">
 
@@ -57,4 +55,5 @@
         <% end %>
       <% end %>
     </div>
+
 </div>
