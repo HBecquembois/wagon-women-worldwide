@@ -30,7 +30,6 @@ class UsersController < ApplicationController
     @current_user = current_user
     @current_user.unfavorite(@user)
     redirect_to user_path(@user)
-    redirect_to '/dashboard'
   end
 
   def mentors
