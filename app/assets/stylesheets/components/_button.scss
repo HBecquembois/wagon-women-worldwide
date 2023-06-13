@@ -12,7 +12,6 @@
     background: $light-red;
   }
 }
-
 .btn-card-home {
   color: $white;
   font-size: 18px;
@@ -27,7 +26,6 @@
     background: $white;
   }
 }
-
 .btn-indigo-sidebar {
   color: $light-red;
   font-size: 16px;
@@ -42,7 +40,6 @@
     background: $light-red;
   }
 }
-
 .btn-red-profile {
   color: $white;
   position: right;
@@ -54,13 +51,11 @@
   transition: background 0.3s ease;
   text-decoration: none;
   margin-bottom: 20px;
-
   &:hover {
     color: $red;
     background: $white;
   }
 }
-
 .btn-indigo-projects {
   color: $indigo;
   font-size: 18px;
@@ -75,7 +70,6 @@
     background: white;
   }
 }
-
 .btn-red-modal {
   margin-top: 30px;
   color: $white;
@@ -87,13 +81,11 @@
   background: $red;
   transition: background 0.3s ease;
   text-decoration: none;
-
   &:hover {
     color: $red;
     background: $white;
   }
 }
-
 .btn-red-sidebar {
   width: 29%;
   font-size: 9px;
@@ -103,7 +95,6 @@
   transition: background 0.3s ease;
   text-decoration: none;
   color: $red !important;
-
   &:hover {
     color: $white !important;
     width: 29%;
@@ -116,12 +107,22 @@
   }
 }
 
+
+.btn-btn-primary {
+
+  color: $white;
+  font-size: 16px;
+  padding: 7px 9px;
+  border: 1px solid $red;
+}
+
 .btn-red-chatroom {
   height: 37px;
   color: $white;
   font-size: 18px;
   font-weight: 600;
   padding: 6px 7px;
+
   border-radius: 6px;
   background: $red;
   transition: background 0.3s ease;
