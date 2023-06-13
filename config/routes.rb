@@ -7,6 +7,7 @@ Rails.application.routes.draw do
   post "/users/:id", to: "users#favorite", as: "user_favorite"
   patch "/users/:id", to: "users#unfavorite", as: "user_unfavorite"
 
+  get "/mentors", to: "users#mentors"
   get "/dashboard", to: "pages#dashboard"
   get "/pages", to: "pages#index"
   resources :chatrooms, only: :show do
