@@ -1,21 +1,18 @@
 <div class="sidebar">
  <%= cl_image_tag current_user.photo.key, width: 150, height: 150, crop: :thumb, gravity: :face, class: "user-side-bar-image" %>
-
   <h3><%= current_user.first_name  %> <%= current_user.last_name  %></h3>
   <div class="button-center">
-    <button class="btn-indigo-sidebar align-center">View my profile</button>
-  <div class="my-mentors">
-    <h3>My mentors:</h3>
-    <% @favorited.each do |f| %>
-<li> <%= link_to f.first_name, user_path(f) %> </li>
-      <% end %>
-  </div>
+    <button class="btn-indigo-sidebar align-center">View my dashboard</button>
+
   </div>
   <ul>
-    <li><i class="fa-solid fa-arrow-right"></i> <%= link_to "My dashboard", "#" %></li>
     <li><i class="fa-solid fa-arrow-right"></i> <%= link_to "Find a mentor", users_path %></li>
-    <li><i class="fa-solid fa-arrow-right"></i> <%= link_to "My inbox", "#" %></li>
-    <li><i class="fa-solid fa-arrow-right"></i> <%= link_to "My projects", "#" %></li>
+    <li><i class="fa-solid fa-arrow-right"></i> <%= link_to "My messages", "#" %></li>
+    <li><i class="fa-solid fa-arrow-right"></i> <%= link_to "My mentors", users_path %></li>
+    <div class="my-mentors">
+    <% @favorited.each do |f| %>
+      <li><i class="fa-solid fa-wand-sparkles"></i>  <%= cl_image_tag f.photo.key, width: 25, height: 25, crop: :thumb, gravity: :face, class: "rounded" %> <%= link_to f.first_name, user_path(f) %> </li>
+          <% end %>
+    </div>
   </ul>
 </div>
-
