@@ -19,7 +19,6 @@
      </div>
     </div>
 
-
   <ul class="nav nav-tabs" id="myTab" role="tablist">
   <li class="nav-item" role="presentation">
     <button class="nav-link active" id="home-tab" data-bs-toggle="tab" data-bs-target="#home" type="button" role="tab" aria-controls="home" aria-selected="true">My Mentors</button>
@@ -32,9 +31,11 @@
   <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
   <div class="dashboard-card d-block text-center m-3">
 
-     <h2 class="m-2">My <%= @user.mentor ? "mentorees" : "mentors" %></h2>
 
-      <% @favorited.each do |m| %>
+<div class="dashboard-card d-block text-center m-3">
+
+     <h2 class="m-2">My <%= @user.mentor ? "mentorees" : "mentors" %></h2>
+     <% @favorited.each do |m| %>
 
       <div class="card-dashboard">
         <%= cl_image_tag m.photo.key, width: 150, height: 150, crop: :thumb, gravity: :face %>
@@ -44,10 +45,13 @@
           <div class="links-mentor">
           <%= link_to "#{m.first_name}'s profile", user_path(m.id), class:"profile-mentor" %>
           <%= link_to 'Remove this mentor', user_unfavorite_path(m), class:"remove-mentor", data: { turbo_method: :patch } %>
+
           </div>
         </div>
+
       </div>
       <% end %>
+    </div>
   </div>
   </div>
   <div class="tab-pane fade" id="profile" role="tabpanel" aria-labelledby="profile-tab">
@@ -77,3 +81,7 @@
         <% end %>
       <% end %>
     </div>
+
+
+</div>
+

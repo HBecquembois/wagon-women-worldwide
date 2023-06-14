@@ -18,7 +18,6 @@
     background-color: #840c0c;
  }
 }
-
 .user-card {
   flex-direction: column;
   overflow: hidden;
@@ -42,10 +41,8 @@
     display:flex;
   }
 }
-
 .user-card-content {
   padding: 0px 0px 18px 30px;
-
   h3 {
     font-size: 22px;
     font-weight: 600;
@@ -57,7 +54,6 @@
     font-size: 10px;
   }
  }
-
 .home-card {
   background-size: cover;
   background-position: center;
@@ -77,7 +73,6 @@
 .home-card-link {
   text-decoration: none;
 }
-
 .testimony-card {
   display: flex;
   align-items: center;
@@ -89,7 +84,6 @@
     color: red
   }
 }
-
 .testimony-card-content {
   align-items: center;
   margin-top: 20px;
@@ -102,11 +96,9 @@
     font-size: 15px;
   }
 }
-
 .testimony-text {
   font-style: italic;
 }
-
 .testimony-card-image {
   img {
     width: 160px;
@@ -115,11 +107,9 @@
     margin: 20px;
   }
 }
-
 .card-container-profile {
   margin-top: 55px;
 }
-
 ul {
   list-style-type: none;
   line-height: 1.7em;
@@ -136,7 +126,6 @@ ul {
     }
   }
 }
-
 .user-card-img-container {
   // position: relative;
   i {
@@ -148,7 +137,6 @@ ul {
     color: #4f5050e0;
  }
 }
-
 .card-modal {
   overflow: hidden;
   width: 80%;

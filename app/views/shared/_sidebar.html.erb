@@ -7,16 +7,15 @@
   <ul>
     <li> <i class="fa-solid fa-arrow-right"></i>
     <%= link_to "My dashboard", dashboard_path, class:"#{'active-sidebar' if controller_name == '' && action_name == ''}" %> </li>
-
     <li> <i class="fa-solid fa-arrow-right"></i>
     <%= link_to "My messages", users_path, class:"#{'active-sidebar' if controller_name == '' && action_name == ''}" %></li>
     <% if @favorited.present? %>
-
       <div class="spacer"></div>
         <li><i class="fa-solid fa-graduation-cap"></i> My mentors:</li>
 
             <div class="my-mentors">
             <% @favorited.each do |f| %>
+
               <li><%= cl_image_tag f.photo.key, width: 25, height: 25, crop: :thumb, gravity: :face, class: "rounded" %>  <%= link_to f.first_name, user_path(f), class:"name" %></li>
                 <% end %>
             </div>
