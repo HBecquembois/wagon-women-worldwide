@@ -1,19 +1,23 @@
 <div class="container">
-  <h1 class="text-center my-5">My dashboard</i></h1>
+
 
 
 <div class="card-container-profile">
-
-  <div class="container-photo-title">
-    <br>
+<div class="container-photo-title">
       <%= cl_image_tag @user.photo.key, width: 150, height: 150, crop: :thumb, gravity: :face, class: "user-photo" %>
       <div class="name-city">
-        <h2><%= @user.first_name %> <%= @user.last_name %></h2>
-        <p><%= @user.city %> - <%= @user.country %></p>
-
+      <h2 class="welcome">Welcome to your dashboard</h2>
+        <h3><%= @user.first_name %> <%= @user.last_name %></h3>
       <p><i class="fa-solid fa-lightbulb"></i> Batch #<strong><%= @user.batch_number %></strong> in <%= @user.graduation_year %></p>
-
+        <% @user.competence_list.each do |skill| %>
+          <li class="tag-list"><%= skill %></li>
+            <% end %>
       </div>
+      <div class="cta">
+
+     </div>
+    </div>
+
       <div class="cta">
 
      </div>
@@ -21,20 +25,24 @@
 
   <ul class="nav nav-tabs" id="myTab" role="tablist">
   <li class="nav-item" role="presentation">
-    <button class="nav-link active" id="home-tab" data-bs-toggle="tab" data-bs-target="#home" type="button" role="tab" aria-controls="home" aria-selected="true">My Mentors</button>
+    <button class="nav-link active" id="home-tab" data-bs-toggle="tab" data-bs-target="#home" type="button" role="tab" aria-controls="home" aria-selected="true">My <%= @user.mentor ? "mentorees" : "mentors" %>
+</button>
   </li>
   <li class="nav-item" role="presentation">
-    <button class="nav-link" id="profile-tab" data-bs-toggle="tab" data-bs-target="#profile" type="button" role="tab" aria-controls="profile" aria-selected="false">My Projects</button>
+    <button class="nav-link" id="profile-tab" data-bs-toggle="tab" data-bs-target="#profile" type="button" role="tab" aria-controls="profile" aria-selected="false">My projects</button>
+  </li>
+    <li class="nav-item" role="presentation">
+    <button class="nav-link" id="message-tab" data-bs-toggle="tab" data-bs-target="#message" type="button" role="tab" aria-controls="message" aria-selected="false">My messages</button>
   </li>
 </ul>
 <div class="tab-content" id="myTabContent">
   <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
-  <div class="dashboard-card d-block text-center m-3">
+  <div class="d-block text-center m-3">
 
 
-<div class="dashboard-card d-block text-center m-3">
+<div class="d-block m-3">
 
-     <h2 class="m-2">My <%= @user.mentor ? "mentorees" : "mentors" %></h2>
+
      <% @favorited.each do |m| %>
 
       <div class="card-dashboard">
@@ -43,45 +51,43 @@
           <h2><%= m.first_name  %> <%= m.last_name  %></h2>
           <p><%= m.title  %></p>
           <div class="links-mentor">
-          <%= link_to "#{m.first_name}'s profile", user_path(m.id), class:"profile-mentor" %>
-          <%= link_to 'Remove this mentor', user_unfavorite_path(m), class:"remove-mentor", data: { turbo_method: :patch } %>
-
+            <%= link_to "#{m.first_name}'s profile", user_path(m.id), class:"profile-mentor" %>
+            <%= link_to 'Remove this mentor', user_unfavorite_path(m), class:"remove-mentor", data: { turbo_method: :patch } %>
           </div>
         </div>
-
       </div>
       <% end %>
     </div>
   </div>
   </div>
-  <div class="tab-pane fade" id="profile" role="tabpanel" aria-labelledby="profile-tab">
-   <h2 class="m-2">My projects</h2>
-      <% @user_projects.each do |p| %>
-        <p><%= p.title %></p>
-      <% end %>
-  </div>
+    <div class="tab-pane fade" id="profile" role="tabpanel" aria-labelledby="profile-tab">
+    <div class="project-nav d-block m-3">
 
-</div>
-
+      <h2 class="m-2">My projects</h2>
+          <% @user_projects.each do |p| %>
+            <p><%= p.title %></p>
+            <p><%= p.description %></p>
 
 
-
-
-
-
-
-
-
-
-    <div class="testimony-card d-block text-center m-3">
-      <h2 class="m-2">My messages</h2>
-      <% @user_chats.each do |c| %>
-        <%= link_to chatroom_path(current_user.chatroom_with(c.user_b)), class: "btn-red-profile m-1" do %>
-          <i class="fa-regular fa-comments"></i><%= c.user_b.first_name %>
-        <% end %>
-      <% end %>
+          <% end %>
     </div>
 
+    <div class="tab-pane fade" id="message" role="tabpanel" aria-labelledby="message-tab">
+    <div class="dashboard-card d-block text-center m-3">
+
+      <h2 class="m-2">My messages</h2>
+        <div class="testimony-card d-block text-center m-3">
+            <h2 class="m-2">My messages</h2>
+            <% @user_chats.each do |c| %>
+              <%= link_to chatroom_path(current_user.chatroom_with(c.user_b)), class: "btn-red-profile m-1" do %>
+                <i class="fa-regular fa-comments"></i><%= c.user_b.first_name %>
+              <% end %>
+            <% end %>
+          </div>
+    </div>
+    </div>
 
 </div>
 
+
+</div>

@@ -26,10 +26,10 @@
           <br>
           <div class="card-modal">
             <p class="interested"><strong>Interested by this project?</strong></p>
-            <% if current_user.chatroom_with(@user) %>
-              <%= link_to chatroom_path(current_user.chatroom_with(@user)), class: "btn-red-profile" do %>
-            <i class="fa-regular fa-comments"></i> Chat with <%= @user.first_name %>
-                 <% end %>
+            <% if chatroom %>
+              <%= button_tag class: "btn-red-profile", data: {bs_toggle: "offcanvas", bs_target: "#offcanvasRight"} do %>
+                <i class="fa-regular fa-comments"></i> Chat with <%= @user.first_name %>
+              <% end %>
             <% else %>
                <%= button_to user_chatrooms_path(@user), class: "btn-red-profile" do %>
               <i class="fa-regular fa-comments"></i> Let <%= @user.first_name %> know
