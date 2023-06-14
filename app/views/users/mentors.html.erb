@@ -1,18 +1,24 @@
-
-<link
-rel="stylesheet"
-href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.1/css/all.min.css"
-/><div class="m-5">
+<div class="m-5">
 <div class ="form">
-  <h3 class="my-9" class="my-5">Find a profile</h3>
-    <%= form_with url: mentors_path, method: :get, class: "d-flex" do %>
-      <%= select_tag :choices, options_for_select(@competences, ""), multiple: true, data: {controller: "autocomplete"} %>
-      <%= submit_tag "Search", class: "btn btn-primary" %>
-    <% end %>
+  <h3 class="my-9" class="my-5">Find a mentor</h3>
+  <%= form_with  url: mentors_path, method: :get, class: "d-flex row" do %>
+    <div class="col-5 pe-0">
+      <%= select_tag :choices, options_for_select(@mentor_skills, params[:choices]), multiple: true, data: {controller: "autocomplete"} %>
+    </div>
+
+    <div class="col-2 pe-0">
+      <%= select_tag :languages, options_for_select(User::LANGUAGES, params[:languages]), prompt: "languages", class: "form-select"  %>
+    </div>
+
+
+    <div class="col-2">
+      <%= select_tag :countries , options_for_select(User::COUNTRIES), prompt: "countries",class: "form-select" %>
+    </div>
+    <%= submit_tag "Search", class: "btn-btn-primary col-1" %>
+  <% end %>
   </div>
 
-
-  <p>We've got <%= @users.count %> <%= "mentor".pluralize(@users.count) %></p>
+  <p>We've got <%= @users.count %> <%= "profile".pluralize(@users.count) %></p>
   <div class="user-cards-container">
     <% @users.each do |user| %>
       <% next if user == current_user %>
@@ -22,14 +28,14 @@ href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.1/css/all.min.css
           <div class="show-more">
             <i class="fa-regular fa-eye"></i>
           </div>
-          <%# début code helene %>
+
           <div class="user-card-img-container">
-            <%= cl_image_tag user.photo.key, class: "user-card-image", crop: :thumb, gravity: :face %>
+            <%= cl_image_tag user.photo.key, width: 500, height: 500, class: "user-card-image", crop: :thumb, gravity: :face %>
             <% if user.mentor == true %>
-              <i class="fa-solid card-cap fa-graduation-cap" style="color: red;"></i>
+              <i class="fa-solid card-graduation fa-graduation-cap"></i>
             <% end %>
           </div>
-          <%# fin code helene %>
+
           <div class="user-card-content">
             <h3><%= user.first_name %> <%= user.last_name%>
             </h3>
