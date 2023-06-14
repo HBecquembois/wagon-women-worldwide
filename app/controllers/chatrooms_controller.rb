@@ -11,6 +11,6 @@ class ChatroomsController < ApplicationController
     user_b_id = @user.id
     @chatroom = Chatroom.new(user_a_id: user_a_id, user_b_id: user_b_id)
     @chatroom.save
-    redirect_to chatroom_path(@chatroom)
+    redirect_to user_path(@user)
   end
 end
