@@ -1,18 +1,18 @@
 <div class="m-5">
 <div class ="form">
   <h3 class="my-9" class="my-5">Find a mentor</h3>
-  <%= form_with  url: mentors_path, method: :get, class: "d-flex row" do %>
+  <%= form_with  url: mentors_path, method: :get, class: "d-flex row search-form me-0" do %>
     <div class="col-5 pe-0">
       <%= select_tag :choices, options_for_select(@mentor_skills, params[:choices]), multiple: true, data: {controller: "autocomplete"} %>
     </div>
 
-    <div class="col-2 pe-0">
-      <%= select_tag :languages, options_for_select(User::LANGUAGES, params[:languages]), prompt: "languages", class: "form-select"  %>
+    <div class="col-3 pe-0">
+      <%= select_tag :languages, options_for_select(User::LANGUAGES, params[:languages]), prompt: "Languages", class: "form-select"  %>
     </div>
 
 
-    <div class="col-2">
-      <%= select_tag :countries , options_for_select(User::COUNTRIES), prompt: "countries",class: "form-select" %>
+    <div class="col-3">
+      <%= select_tag :countries , options_for_select(User::COUNTRIES), prompt: "Countries",class: "form-select" %>
     </div>
     <%= submit_tag "Search", class: "btn-btn-primary col-1" %>
   <% end %>
@@ -22,7 +22,6 @@
   <div class="user-cards-container">
     <% @users.each do |user| %>
       <% next if user == current_user %>
-
       <%= link_to user_path(user) do %>
         <div class="user-card mt-4">
           <div class="show-more">
@@ -39,7 +38,7 @@
           <div class="user-card-content">
             <h3><%= user.first_name %> <%= user.last_name%>
             </h3>
-            <p class="fw-bold"><%= user.title %></p>
+            <%= user.title %></p>
             <p class="batch-badge">Batch #<strong><%= user.batch_number %></strong></p>
             <% user.competence_list.first(3).each do |competence| %>
               <span class="badge"><%= competence %></span>
