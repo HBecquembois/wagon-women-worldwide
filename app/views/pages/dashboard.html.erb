@@ -1,17 +1,14 @@
 <div class="container">
-  <div class="card-container-profile">
-    <div class="container-photo-title">
-      <%= cl_image_tag @user.photo.key, width: 150, height: 150, crop: :thumb, gravity: :face, class: "user-photo" %>
-        <div class="name-city">
+    <div class="container-photo-title-dashboard">
+        <div class="name-city-dash">
           <h2 class="welcome">Welcome to your dashboard</h2>
-            <h3><%= @user.first_name %> <%= @user.last_name %></h3>
+            <h3><%= @user.first_name %>!</h3>
           <p><i class="fa-solid fa-lightbulb"></i> Batch #<strong><%= @user.batch_number %></strong> in <%= @user.graduation_year %></p>
             <% @user.competence_list.each do |skill| %>
               <li class="tag-list"><%= skill %></li>
                 <% end %>
           </div>
         <div class="cta">
-        </div>
         </div>
      </div>
 
@@ -29,54 +26,49 @@
 </ul>
 <div class="tab-content" id="myTabContent">
   <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
-  <div class="d-block text-center m-3">
+  <div class="d-block m-3">
 
 
 <div class="d-block m-3">
 
-
      <% @favorited.each do |m| %>
-
       <div class="card-dashboard">
+       <%= link_to user_path(m.id) do %>
         <%= cl_image_tag m.photo.key, width: 150, height: 150, crop: :thumb, gravity: :face %>
+        <% end %>
+
         <div class="card-dashboard-infos">
-          <h2><%= m.first_name  %> <%= m.last_name  %></h2>
+        <%= link_to "#{m.first_name} #{m.last_name}", user_path(m.id), class: "mentor-name-card-dash" %>
           <p><%= m.title  %></p>
-          <div class="links-mentor">
-            <%= link_to "#{m.first_name}'s profile", user_path(m.id), class:"profile-mentor" %>
-            <%= link_to 'Remove this mentor', user_unfavorite_path(m), class:"remove-mentor", data: { turbo_method: :patch } %>
+        </div>
+          <div class="close-icon">
+          <%= link_to user_unfavorite_path(m), data: { turbo_method: :patch } do %>
+          <i class="fa-solid fa-xmark"></i>
+          <% end %>
           </div>
         </div>
-      </div>
       <% end %>
     </div>
+
+
   </div>
   </div>
     <div class="tab-pane fade" id="profile" role="tabpanel" aria-labelledby="profile-tab">
     <div class="project-nav d-block m-3">
-
-      <h2 class="m-2">My projects</h2>
+      <div class="card-dashboard-project">
           <% @user_projects.each do |p| %>
-            <p><%= p.title %></p>
+            <h5><%= p.title %></h5>
             <p><%= p.description %></p>
           <% end %>
+        </div>
     </div>
     </div>
     <div class="tab-pane fade" id="message" role="tabpanel" aria-labelledby="message-tab">
-    <div class="d-block text-center m-3">
+      <div class="d-block m-3 card-message">
 
-        <div class="testimony-card d-block text-center m-3">
-            <h2 class="m-2">My messages</h2>
-            <% @user_chats.each do |c| %>
-              <%= link_to chatroom_path(current_user.chatroom_with(c.user_b)), class: "btn-red-profile m-1" do %>
-                <i class="fa-regular fa-comments"></i><%= c.user_b.first_name %>
-              <% end %>
-            <% end %>
-          </div>
+          <div class="raid-block m-3">
+           
+      </div>
     </div>
-    </div>
-
 </div>
-
-
 </div>

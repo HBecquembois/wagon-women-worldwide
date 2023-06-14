@@ -140,3 +140,20 @@
     }
   }
 }
+
+.btn-red-dashboard {
+  color: $white;
+  display: block;
+  font-size: 16px;
+  padding: 8px 10px;
+  border: solid 1px $red;
+  border-radius: 10px;
+  background: $red;
+  transition: background 0.3s ease;
+  text-decoration: none;
+  margin-bottom: 20px;
+  &:hover {
+    color: $red;
+    background: $white;
+  }
+}

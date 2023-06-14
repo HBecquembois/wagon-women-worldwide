@@ -166,8 +166,8 @@ ul {
 
 .card-dashboard {
   padding: 7px;
-  width: 76%;
-  margin: 11px 12px 13px 143px;
+  width: 63%;
+  margin: 12px auto;
   overflow: hidden;
   height: 120px;
   background: white;
@@ -179,7 +179,7 @@ ul {
 
 .card-dashboard img {
   height: 100%;
-  width: 120px;
+  width: 109px;
   object-fit: cover;
   border-radius: 10px;
 }
@@ -191,15 +191,28 @@ ul {
   text-align: left;
 }
 
-.card-dashboard p {
-  text-align: left;
-  font-size: 17px;
-  line-height: 1.4;
-  opacity: .7;
-  margin-bottom: 0;
-  margin-top: 8px;
-}
+
 
 .card-dashboard .card-dashboard-infos {
   padding: 16px;
+}
+
+.card-dashboard-infos {
+  line-height: 2.2;
+}
+
+.card-dashboard-project {
+  padding: 19px;
+  width: 80%;
+  margin: 12px auto;
+  overflow: hidden;
+  box-shadow: 0 0 6px rgba(0, 0, 0, 0.2);
+  align-items: center;
+  border-radius: 10px;
+}
+
+
+.card-message {
+  width: fit-content;
+  margin: 0 auto;
 }
