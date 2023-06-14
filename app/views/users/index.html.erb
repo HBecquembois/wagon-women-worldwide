@@ -24,9 +24,7 @@
       <% next if user == current_user %>
       <%= link_to user_path(user) do %>
         <div class="user-card mt-4">
-          <div class="show-more">
-            <i class="fa-regular fa-eye"></i>
-          </div>
+         
           <%# début code helene %>
           <div class="user-card-img-container">
             <%= cl_image_tag user.photo.key, width: 500, height: 500, class: "user-card-image", crop: :thumb, gravity: :face %>
