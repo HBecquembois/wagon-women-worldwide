@@ -13,11 +13,8 @@
     text-decoration: auto;
     color: black;
   }
-  a:hover .batch-badge {
-    color: #4f5050e0;
-    background-color: #840c0c;
- }
 }
+
 .user-card {
   display: flex;
   flex-direction: column;
@@ -29,19 +26,20 @@
   .show-more {
     display: none;
     position: absolute;
-    top: 0;
     left: 0;
     right: 0;
-    bottom: 0;
-    background-color: rgba(0, 0, 0, 0.6);
+    bottom: 65%;
     color: white;
     font-size: 2em;
     align-items: center;
     justify-content: center;
+
   }
   &:hover .show-more {
     display:flex;
   }
+  &:hover {
+   box-shadow: 5px 5px 5px rgba(104, 0, 250, .99);  }
 }
 .user-card-content {
   flex-grow: 1;
