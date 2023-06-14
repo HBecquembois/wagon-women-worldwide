@@ -58,11 +58,11 @@
 <div class="card-profile">
  <%= render "shared/mentors" if @user.mentor == true %>
   </ul>
-    <h3 class="smaller-h3">Her projects:</h3>
+    <h3 class="smaller-h3">Her offers:</h3>
       <% if @user_projects.exists? %>
         <%= render "projects/show", chatroom: @chatroom %>
       <% else %>
-        <%= "No projects yet..."  %>
+        <%= "No offers yet..."  %>
       <% end %>
   </div>
 </div>
