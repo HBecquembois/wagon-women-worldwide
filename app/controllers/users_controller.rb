@@ -15,13 +15,14 @@ class UsersController < ApplicationController
     @user = User.find(params[:id])
     @user_projects = Project.where(user_id: @user.id)
     @favorited = current_user.all_favorited
+    @chatroom = current_user.chatroom_with(@user)
   end
 
   def favorite
     @user = User.find(params[:id])
     @current_user = current_user
     @current_user.favorite(@user)
-    redirect_to user_path(@user)
+    redirect_to dashboard_path
   end
 
   def unfavorite

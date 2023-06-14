@@ -10,12 +10,21 @@
 
       </div>
       <div class="cta">
-      <% if current_user.chatroom_with(@user) %>
-        <%= link_to chatroom_path(current_user.chatroom_with(@user)), class: "btn-red-profile" do %>
+      <% if @chatroom %>
+        <div class="offcanvas offcanvas-end modal-chatroom" tabindex="-1" id="offcanvasRight" aria-labelledby="offcanvasRightLabel">
+          <div class="offcanvas-header">
+            <h5 class="offcanvas-title" id="offcanvasRightLabel">Chat with <%= @user.first_name %></h5>
+            <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+          </div>
+          <div class="offcanvas-body">
+            <%= render "chatrooms/chatroom", chatroom: @chatroom %>
+          </div>
+        </div>
+        <%= button_tag class: "btn-red-profile", data: {bs_toggle: "offcanvas", bs_target: "#offcanvasRight"} do %>
           <i class="fa-regular fa-comments"></i> Chat with <%= @user.first_name %>
         <% end %>
       <% else %>
-        <%= link_to user_chatrooms_path(@user), class: "btn-red-profile" do %>
+        <%= link_to user_chatrooms_path(@user), data: { turbo_method: :post }, class: "btn-red-profile" do %>
           <i class="fa-regular fa-comments"></i> Chat with <%= @user.first_name %>
         <% end %>
       <% end %>
@@ -51,7 +60,7 @@
   </ul>
     <h3 class="smaller-h3">Her projects:</h3>
       <% if @user_projects.exists? %>
-        <%= render "projects/show" %>
+        <%= render "projects/show", chatroom: @chatroom %>
       <% else %>
         <%= "No projects yet..."  %>
       <% end %>
