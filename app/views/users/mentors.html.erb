@@ -3,7 +3,7 @@
   <h3 class="my-9" class="my-5">Find a mentor</h3>
   <%= form_with  url: mentors_path, method: :get, class: "d-flex row search-form me-0" do %>
     <div class="col-5 pe-0">
-      <%= select_tag :choices, options_for_select(@mentor_skills, params[:choices]), multiple: true, data: {controller: "autocomplete"} %>
+      <%= select_tag :choices, options_for_select(@search_collection, params[:choices]), multiple: true, data: {controller: "autocomplete"} %>
     </div>
 
     <div class="col-3 pe-0">

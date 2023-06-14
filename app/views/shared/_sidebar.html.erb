@@ -11,7 +11,7 @@
     <%= link_to "My messages", users_path, class:"#{'active-sidebar' if controller_name == '' && action_name == ''}" %></li>
     <% if @favorited.present? %>
       <div class="spacer"></div>
-        <li><i class="fa-solid fa-graduation-cap"></i> My mentors:</li>
+        <li><i class="fa-solid fa-graduation-cap"></i> My mentors</li>
 
             <div class="my-mentors">
             <% @favorited.each do |f| %>

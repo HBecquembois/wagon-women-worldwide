@@ -13,44 +13,39 @@
     text-decoration: auto;
     color: black;
   }
+  a:hover .batch-badge {
+    color: #4f5050e0;
+    background-color: #840c0c;
+ }
 }
-
 .user-card {
-  display: flex;
   flex-direction: column;
   overflow: hidden;
   box-shadow: 0 0 4px rgba(0,0,0,0.2);
   border-radius: 5px;
   position: relative;
-  height: 95%;
   .show-more {
     display: none;
     position: absolute;
+    top: 0;
     left: 0;
     right: 0;
-    bottom: 65%;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.6);
     color: white;
     font-size: 2em;
     align-items: center;
     justify-content: center;
-
   }
   &:hover .show-more {
     display:flex;
   }
-  &:hover {
-   box-shadow: 5px 5px 5px rgba(104, 0, 250, .99);  }
 }
 .user-card-content {
-  flex-grow: 1;
-  display: flex;
-  flex-direction: column;
-  position: relative;
   padding: 0px 0px 18px 30px;
   h3 {
     font-size: 22px;
     font-weight: 600;
-    flex-grow: 1;
   }
   p {
     font-size: 16px;
@@ -83,7 +78,7 @@
   align-items: center;
   overflow: hidden;
   width: 500px;
-  box-shadow: 0 0 4px rgba(0,0,0,0.2);
+  box-shadow: 3px 3px 3px rgba(0,0,0,0.2);
   border-radius: 15px;
   .fa-solid {
     color: red
@@ -154,7 +149,7 @@ ul {
   background: white;
 }
 
-.dashboard-card {
+.dashbojùoard-card {
   display: flex;
   align-items: center;
   overflow: hidden;
