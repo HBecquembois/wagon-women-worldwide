@@ -4,11 +4,39 @@
 }
 
 .profile-mentor {
+  font-size: 12px;
+  background-color: $white;
+  border-radius: 20px;
+  border: solid 1px $indigo;
+  padding: 6px 7px;
   text-decoration: none;
   color: $indigo;
+  &:hover {
+   font-size: 12px;
+   background-color: $indigo;
+   color: $white;
+  }
 }
 
 .remove-mentor {
+  font-size: 12px;
+  background-color: $white;
+  border-radius: 20px;
+  border: solid 1px $red;
+  padding: 6px 7px;
   text-decoration: none;
   color: $red;
+  &:hover {
+    font-size: 12px;
+    background-color: $red;
+    color: $white;
+  }
+}
+
+.links-mentor {
+  margin-top: 15px;
+}
+
+.nav-item {
+  color: black;
 }

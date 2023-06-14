@@ -1,9 +1,6 @@
 <ul class="project-list">
   <% @user_projects.each do |project| %>
-  <li><button class="btn btn-indigo-projects" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight" aria-controls="offcanvasRight"><i class="fa-solid fa-computer"></i> <%= project.title %>
-  </button></li>
-
-
+  <li><button class="btn btn-indigo-projects" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight" aria-controls="offcanvasRight"><i class="fa-solid fa-computer"></i> <%= project.title %></button></li>
 
 <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasRight" aria-labelledby="offcanvasRightLabel">
   <div class="offcanvas-header">
@@ -12,7 +9,7 @@
   </div>
   <div class="offcanvas-body">
     <p class="offer"> Offer made by <%= @user.first_name %> <%= @user.last_name  %>  <%= cl_image_tag @user.photo.key, width: 20, height: 20, crop: :thumb, gravity: :face, class: "rounded" %></p>
-    <p><strong><i class="fa-solid fa-briefcase"></i> Type of mission</strong></p>
+      <p><strong><i class="fa-solid fa-briefcase"></i> Type of mission</strong></p>
       <p><%= project.type_of_mission %></p>
       <p><strong><i class="fa-regular fa-pen-to-square"></i> Description</strong></p>
       <p><%= project.description %></p>
@@ -20,32 +17,28 @@
       <p><%= project.repo_url %></p>
       <p><strong><i class="fa-solid fa-user-gear"></i> Resquested competences for this mission</strong></p>
       <ul class="tags">
-      <% project.requested_skill_list.each do |projectskill| %>
-        <li class="tag-list"><%= projectskill %></li>
-        <% end %>
-
+        <% project.requested_skill_list.each do |projectskill| %>
+          <li class="tag-list"><%= projectskill %></li>
+            <% end %>
       </ul>
       <div class="modal-footer justifty-content-center">
         <div>
-        <br>
-        <div class="card-modal">
-          <p class="interested"><strong>Interested by this project?</strong></p>
-
-
-           <% if current_user.chatroom_with(@user) %>
-        <%= link_to chatroom_path(current_user.chatroom_with(@user)), class: "btn-red-profile" do %>
-          <i class="fa-regular fa-comments"></i> Chat with <%= @user.first_name %>
+          <br>
+          <div class="card-modal">
+            <p class="interested"><strong>Interested by this project?</strong></p>
+            <% if current_user.chatroom_with(@user) %>
+              <%= link_to chatroom_path(current_user.chatroom_with(@user)), class: "btn-red-profile" do %>
+            <i class="fa-regular fa-comments"></i> Chat with <%= @user.first_name %>
+                 <% end %>
+            <% else %>
+               <%= button_to user_chatrooms_path(@user), class: "btn-red-profile" do %>
+              <i class="fa-regular fa-comments"></i> Let <%= @user.first_name %> know
+            <% end %>
           <% end %>
-          <% else %>
-        <%= button_to user_chatrooms_path(@user), class: "btn-red-profile" do %>
-
-          <i class="fa-regular fa-comments"></i> Let <%= @user.first_name %> know
-          <% end %>
-        <% end %>
          </div>
         </div>
       </div>
-  </div>
-  </div>
- <% end %>
+   </div>
+</div>
+  <% end %>
 </ul>

@@ -4,7 +4,7 @@
     <br>
       <%= cl_image_tag @user.photo.key, width: 150, height: 150, crop: :thumb, gravity: :face, class: "user-photo" %>
       <div class="name-city">
-        <h1><%= @user.first_name %> <%= @user.last_name %></h1>
+        <h2><%= @user.first_name %> <%= @user.last_name %></h2>
         <p><%= @user.city %> - <%= @user.country %></p>
 
       <p><i class="fa-solid fa-lightbulb"></i> She was part of the batch #<strong><%= @user.batch_number %></strong> in <%= @user.graduation_year %></p>
