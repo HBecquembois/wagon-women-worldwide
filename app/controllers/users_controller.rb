@@ -15,6 +15,7 @@ class UsersController < ApplicationController
     @user = User.find(params[:id])
     @user_projects = Project.where(user_id: @user.id)
     @favorited = current_user.all_favorited
+    @chatroom = current_user.chatroom_with(@user)
   end
 
   def favorite
