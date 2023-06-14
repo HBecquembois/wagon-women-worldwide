@@ -13,25 +13,21 @@
     text-decoration: auto;
     color: black;
   }
-  a:hover .batch-badge {
-    color: #4f5050e0;
-    background-color: #840c0c;
- }
 }
 .user-card {
+  display: flex;
   flex-direction: column;
   overflow: hidden;
   box-shadow: 0 0 4px rgba(0,0,0,0.2);
   border-radius: 5px;
   position: relative;
+  height: 95%;
   .show-more {
     display: none;
     position: absolute;
-    top: 0;
     left: 0;
     right: 0;
-    bottom: 0;
-    background-color: rgba(0, 0, 0, 0.6);
+    bottom: 65%;
     color: white;
     font-size: 2em;
     align-items: center;
@@ -40,12 +36,21 @@
   &:hover .show-more {
     display:flex;
   }
+  &:hover {
+    box-shadow:  3px 3px 3px $indigo;
+
+}
 }
 .user-card-content {
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+  position: relative;
   padding: 0px 0px 18px 30px;
   h3 {
     font-size: 22px;
     font-weight: 600;
+    flex-grow: 1;
   }
   p {
     font-size: 16px;
@@ -148,8 +153,7 @@ ul {
   box-shadow: 0px 0px 4px 0px $red;
   background: white;
 }
-
-.dashbojùoard-card {
+.dashboard-card {
   display: flex;
   align-items: center;
   overflow: hidden;
@@ -163,10 +167,9 @@ ul {
     border-radius: 10px;
   }
 }
-
 .card-dashboard {
   padding: 7px;
-  width: 63%;
+  width: 76%;
   margin: 12px auto;
   overflow: hidden;
   height: 120px;
@@ -176,43 +179,26 @@ ul {
   align-items: center;
   border-radius: 10px;
 }
-
 .card-dashboard img {
   height: 100%;
-  width: 109px;
+  width: 120px;
   object-fit: cover;
   border-radius: 10px;
 }
-
 .card-dashboard h2 {
   font-size: 18px;
   font-weight: bold;
   margin: 0;
   text-align: left;
 }
-
-
-
+.card-dashboard p {
+  text-align: left;
+  font-size: 17px;
+  line-height: 1.4;
+  opacity: .7;
+  margin-bottom: 0;
+  margin-top: 8px;
+}
 .card-dashboard .card-dashboard-infos {
   padding: 16px;
-}
-
-.card-dashboard-infos {
-  line-height: 2.2;
-}
-
-.card-dashboard-project {
-  padding: 19px;
-  width: 80%;
-  margin: 12px auto;
-  overflow: hidden;
-  box-shadow: 0 0 6px rgba(0, 0, 0, 0.2);
-  align-items: center;
-  border-radius: 10px;
-}
-
-
-.card-message {
-  width: fit-content;
-  margin: 0 auto;
 }
