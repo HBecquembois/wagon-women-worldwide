@@ -121,22 +121,27 @@
     background: $white;
 
   }
-
 }
 
 .btn-red-chatroom {
   height: 37px;
+  width: 37px;
   color: $white;
-  font-size: 18px;
-  font-weight: 600;
+  font-weight: bolder;
   padding: 6px 7px;
-
-  border-radius: 6px;
+  border-radius: 50px;
   background: $red;
   transition: background 0.3s ease;
   text-decoration: none;
   &:hover {
     color: $red;
     background: $white;
+  }
+}
+
+.fa-paper-plane {
+  color: white;
+  &:hover {
+    color: red;
   }
 }

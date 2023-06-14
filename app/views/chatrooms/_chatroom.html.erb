@@ -24,6 +24,8 @@
       label: false,
       placeholder: "Write your message",
       wrapper_html: {class: "flex-grow-1"} %>
-    <%= f.submit "Send", class: "btn btn-red-chatroom" %>
+    <%= button_tag class: "btn btn-red-chatroom" do %>
+      <i class="fa-solid fa-paper-plane"></i>
+    <% end %>
   <% end %>
 </div>
