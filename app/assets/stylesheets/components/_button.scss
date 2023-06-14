@@ -134,14 +134,9 @@
   transition: background 0.3s ease;
   text-decoration: none;
   &:hover {
-    color: $red;
     background: $white;
-  }
-}
-
-.fa-paper-plane {
-  color: white;
-  &:hover {
-    color: red;
+    .fa-paper-plane {
+      color: red;
+    }
   }
 }
