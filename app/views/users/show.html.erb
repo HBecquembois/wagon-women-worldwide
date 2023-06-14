@@ -1,7 +1,6 @@
 <div class="card-container-profile">
 
   <div class="container-photo-title">
-    <br>
       <%= cl_image_tag @user.photo.key, width: 150, height: 150, crop: :thumb, gravity: :face, class: "user-photo" %>
       <div class="name-city">
         <h2><%= @user.first_name %> <%= @user.last_name %></h2>
@@ -16,7 +15,7 @@
           <i class="fa-regular fa-comments"></i> Chat with <%= @user.first_name %>
         <% end %>
       <% else %>
-        <%= button_to user_chatrooms_path(@user), class: "btn-red-profile" do %>
+        <%= link_to user_chatrooms_path(@user), class: "btn-red-profile" do %>
           <i class="fa-regular fa-comments"></i> Chat with <%= @user.first_name %>
         <% end %>
       <% end %>

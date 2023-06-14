@@ -1,8 +1,8 @@
 <ul class="project-list">
   <% @user_projects.each do |project| %>
-  <li><button class="btn btn-indigo-projects" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight" aria-controls="offcanvasRight"><i class="fa-solid fa-computer"></i> <%= project.title %></button></li>
+  <li><button class="btn btn-indigo-projects" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight<%=project.id%>" aria-controls="offcanvasRight"><i class="fa-solid fa-computer"></i> <%= project.title %></button></li>
 
-<div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasRight" aria-labelledby="offcanvasRightLabel">
+<div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasRight<%=project.id%>" aria-labelledby="offcanvasRightLabel">
   <div class="offcanvas-header">
     <h5 class="offcanvas-title" id="offcanvasRightLabel"><i class="fa-solid fa-computer"></i> <%= project.title %></h5>
     <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
