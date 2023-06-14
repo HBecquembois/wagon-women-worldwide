@@ -35,12 +35,11 @@
 .batch-badge {
   background-color: #E60F05;
   color: white;
-  width: -moz-fit-content;
   width: fit-content;
   padding: 1px 5px;
   border-radius: 20px;
   font-size: 12px !important;
   position: absolute;
-  bottom: 114px;
+  top: -32px;
   right: 33px;
 }
