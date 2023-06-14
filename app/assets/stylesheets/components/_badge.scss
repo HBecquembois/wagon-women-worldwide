@@ -9,29 +9,29 @@
   font-weight: 600;
 }
 
-.card-graduation {
-  background-color: $red;
-  padding: 5px;
-  margin-right: 6px;
-  border-radius: 50%;
-  color: $white !important;
-}
-
-.fa-wand-sparkles {
-  background-color: $red;
-  padding: 5px;
-  margin-right: 6px;
-  border-radius: 50%;
-  color: $white;
-}
-.wand-profile {
+.card-graduation-unfavorited {
   background-color: $white;
   border: solid 1px $red;
-  padding: 5px;
   margin-right: 6px;
   border-radius: 50%;
   color: $red;
+  padding-left: 5px;
+  padding-right: 5px;
+  padding-bottom: 7px;
+  padding-top: 7px;
 }
+
+.card-graduation {
+  background-color: $red;
+  margin-right: 6px;
+  border-radius: 50%;
+  color: $white;
+  padding-left: 5px;
+  padding-right: 5px;
+  padding-bottom: 7px;
+  padding-top: 7px;
+}
+
 .batch-badge {
   background-color: #E60F05;
   color: white;
