@@ -39,7 +39,9 @@
     display:flex;
   }
   &:hover {
-   box-shadow: 5px 5px 5px rgba(104, 0, 250, .99);  }
+  box-shadow:  3px 3px 3px $indigo;
+
+}
 }
 .user-card-content {
   flex-grow: 1;
