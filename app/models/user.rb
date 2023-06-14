@@ -21,7 +21,7 @@ class User < ApplicationRecord
                     base_tags: [:name]
                   }
 
-  LANGUAGES = ["french", "german", "italian", "english", "greek", "russian", "japanese", "portugese", "esperanto", "vietnamese", "wolof"]
+  LANGUAGES = ["french", "german", "italian", "english", "greek", "russian", "japanese", "portuguese", "esperanto", "vietnamese", "wolof"]
   COUNTRIES = User.all.map(&:country).uniq
 
   def chatroom_with(another_user)
