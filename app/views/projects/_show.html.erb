@@ -21,6 +21,26 @@
           <li class="tag-list"><%= projectskill %></li>
             <% end %>
       </ul>
+      <div>
+        <% if @chatroom %>
+          <div class="offcanvas offcanvas-end modal-chatroom" tabindex="-1" id="offcanvasRight" aria-labelledby="offcanvasRightLabel">
+            <div class="offcanvas-header">
+              <h5 class="offcanvas-title" id="offcanvasRightLabel">Chat with <%= @user.first_name %></h5>
+              <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+            </div>
+            <div class="offcanvas-body">
+              <%= render "chatrooms/chatroom", chatroom: @chatroom %>
+            </div>
+          </div>
+          <%= button_tag class: "btn-red-profile", data: {bs_toggle: "offcanvas", bs_target: "#offcanvasRight"} do %>
+            <i class="fa-regular fa-comments"></i> Chat with <%= @user.first_name %>
+          <% end %>
+        <% else %>
+          <%= link_to user_chatrooms_path(@user), data: { turbo_method: :post }, class: "btn-red-profile" do %>
+            <i class="fa-regular fa-comments"></i> Chat with <%= @user.first_name %>
+          <% end %>
+        <% end %>
+      </div>
       <%# <div class="modal-footer justifty-content-center"> %>
         <%# <div> %>
           <%# <br> %>
