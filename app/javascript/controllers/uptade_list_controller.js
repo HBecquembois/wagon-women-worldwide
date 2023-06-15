@@ -7,12 +7,14 @@ export default class extends Controller {
 
 
   send() {
+
+    let formData = new FormData(this.formTarget);
     fetchWithToken("/users/search", {
       method: "POST", // Could be dynamic with Stimulus values
       headers: {
         "Accept": "application/json"
       },
-      body: new FormData(this.formTarget)
+      body: formData
     })
       .then(response => response.json())
       .then((data) => {
