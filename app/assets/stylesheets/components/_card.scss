@@ -223,3 +223,18 @@ ul {
 .no-offer {
   margin-left: 20px;
 }
+
+.card-dashboard-messages {
+  padding: 16px;
+  width: 80%;
+  margin: 12px auto;
+  overflow: hidden;
+  background: white;
+  box-shadow: 0 0 6px rgba(0,0,0,0.2);
+  border-radius: 10px;
+  position: relative;
+
+  h5 {
+    margin-bottom: 20px;
+  }
+}
