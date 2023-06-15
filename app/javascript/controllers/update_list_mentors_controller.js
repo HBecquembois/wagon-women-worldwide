@@ -1,13 +1,12 @@
 import { Controller } from "@hotwired/stimulus"
 import fetchWithToken from "../utils/fetch_with_token"
 
-// Connects to data-controller="uptade-list"
+// Connects to data-controller="update-list-mentors"
 export default class extends Controller {
   static targets = ["users", "form", "counter"]
 
-
   send() {
-    fetchWithToken("/users/search", {
+    fetchWithToken("/mentors/mentor_search", {
       method: "POST", // Could be dynamic with Stimulus values
       headers: {
         "Accept": "application/json"

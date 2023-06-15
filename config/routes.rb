@@ -4,6 +4,7 @@ Rails.application.routes.draw do
   resources :users, only: [:index, :show] do
     collection do
       post "search"
+      post "mentor_search"
     end
     resources :chatrooms, only: :create
   end
