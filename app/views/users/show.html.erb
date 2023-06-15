@@ -48,21 +48,19 @@
         <li class="tag-list"><%= skill %></li>
           <% end %>
       </ul>
-      <br>
-      <h3 class="smaller-h3"><%= @user.first_name  %>'s description:</h3>
       <p><%= @user.description %></p>
     </div>
     </div>
   </div>
 
 <div class="card-profile">
- <%= render "shared/mentors" if @user.mentor == true %>
-  </ul>
-    <h3 class="smaller-h3">Her offers:</h3>
+    <h3><%= @user.first_name %>'s offers:</h3>
       <% if @user_projects.exists? %>
         <%= render "projects/show", chatroom: @chatroom %>
       <% else %>
         <%= "No offers yet..."  %>
       <% end %>
+ <%= render "shared/mentors" if @user.mentor == true %>
+  </ul>
   </div>
 </div>
