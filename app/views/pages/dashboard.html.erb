@@ -40,6 +40,7 @@
         <div class="card-dashboard-infos">
         <%= link_to "#{m.first_name} #{m.last_name}", user_path(m.id), class: "mentor-name-card-dash" %>
           <p><%= m.title  %></p>
+           <p><i class="fa-solid fa-lightbulb"></i> Batch #<strong><%= m.batch_number %></strong> in <%= m.graduation_year %></p>
         </div>
           <div class="close-icon">
           <%= link_to user_unfavorite_path(m), data: { turbo_method: :patch } do %>
@@ -49,8 +50,6 @@
         </div>
       <% end %>
     </div>
-
-
   </div>
   </div>
     <div class="tab-pane fade" id="profile" role="tabpanel" aria-labelledby="profile-tab">
@@ -67,7 +66,7 @@
       <div class="d-block m-3 card-message">
 
           <div class="raid-block m-3">
-           
+
       </div>
     </div>
 </div>
