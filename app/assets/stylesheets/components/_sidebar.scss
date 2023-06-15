@@ -3,6 +3,8 @@
 }
 
 .sidebar {
+  position: sticky;
+  top: 60px;
   background-color: $light-red;
   height: 85vh;
   flex: 0 0 230px;
