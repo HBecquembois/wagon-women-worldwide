@@ -48,7 +48,7 @@
 
 .nav-tabs .nav-link {
   color: black;
-  font-size: 18px;  
+  font-size: 18px;
   &:hover {
     border-top-left-radius: 10px 10px;
     border-top-right-radius: 10px 10px;
@@ -101,4 +101,8 @@
 
 .name {
   color: black;
+}
+
+.list-chat {
+  margin-left: 50px;
 }
