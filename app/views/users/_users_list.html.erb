@@ -1,18 +1,14 @@
-<p>We've got <%= users.count %> <%= "profile".pluralize(users.count)  %></p>
 <div class="user-cards-container">
   <% users.each do |user| %>
     <% next if user == current_user %>
     <%= link_to user_path(user) do %>
       <div class="user-card mt-4">
-
-        <%# début code helene %>
         <div class="user-card-img-container">
           <%= cl_image_tag user.photo.key, width: 500, height: 500, class: "user-card-image", crop: :thumb, gravity: :face %>
           <% if user.mentor == true %>
           <i class="fa-solid card-graduation fa-graduation-cap"></i>
           <% end %>
         </div>
-        <%# fin code helene %>
         <div class="user-card-content">
           <h3><%= user.first_name %> <%= user.last_name%>
           </h3>

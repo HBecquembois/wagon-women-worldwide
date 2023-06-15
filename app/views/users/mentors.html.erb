@@ -1,6 +1,7 @@
 <div class="mx-5">
 <div class ="form">
   <h3 class="my-9" class="my-5">Find a mentor</h3>
+  <p data-update-list-mentors-target="counter"><%= @users.count %> <%= "mentor".pluralize(@users.count) %></p>
   <%= form_with  url: mentors_path, method: :get, class: "d-flex row search-form me-0" do %>
     <div class="col-5 pe-0">
       <%= select_tag :choices, options_for_select(@search_collection, params[:choices]), multiple: true, data: {controller: "autocomplete"} %>
@@ -18,7 +19,6 @@
   <% end %>
   </div>
 
-  <p>We've got <%= @users.count %> <%= "profile".pluralize(@users.count) %></p>
   <div class="user-cards-container">
     <% @users.each do |user| %>
       <% next if user == current_user %>
