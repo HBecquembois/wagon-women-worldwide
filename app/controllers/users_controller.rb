@@ -13,6 +13,7 @@ class UsersController < ApplicationController
   def mentors
     @favorited = current_user.all_favorited
     @users = User.where(mentor: true)
+    @mentor = true
     @mentor_skills = ActsAsTaggableOn::Tag.for_context(:mentor_skills).map{ |tag| tag.name }
     @search_collection = Project::MISSIONS + @mentor_skills
     @users = @users.search_by_competences_and_users(params[:choices]) if params[:choices].present?
@@ -26,6 +27,7 @@ class UsersController < ApplicationController
     @favorited = current_user.all_favorited
     @competences = ActsAsTaggableOn::Tag.for_context(:competences).map{ |tag| tag.name }
     @users = params[:page] == "mentors" ? User.where(mentor: true) : User.all
+    @mentor = (params[:page] == "mentors")
     @users = @users.search_by_competences_and_users(params[:choices]) if params[:choices].present?
     @users = @users.tagged_with(params[:languages], :on => :languages, :any => true) if params[:languages].present?
     @users = @users.tagged_with(params[:competences], :on =>:competences, :any => true) if params[:competences].present?
@@ -79,7 +81,7 @@ class UsersController < ApplicationController
       format.json
     end
   end
-  
+
   private
 
   def user_params

@@ -6,8 +6,7 @@ export default class extends Controller {
   static targets = ["users", "form", "counter"]
 
 
-  send() {
-
+  send(e) {
     let formData = new FormData(this.formTarget);
     fetchWithToken("/users/search", {
       method: "POST", // Could be dynamic with Stimulus values
@@ -19,7 +18,6 @@ export default class extends Controller {
       .then(response => response.json())
       .then((data) => {
         this.usersTarget.innerHTML = data.inserted_items
-        this.counterTarget.innerHTML = data.counter
       })
   }
 }
