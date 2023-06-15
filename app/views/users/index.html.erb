@@ -1,7 +1,9 @@
-<div class="mx-5">
+
+<div class="mx-5" data-controller="uptade-list">
 <div class ="form">
   <h3 class="my-9" class="my-5">Find a profile</h3>
-  <%= form_with  url: users_path, method: :get, class: "d-flex row search-form me-0" do %>
+  <%= form_with  url: users_path, method: :get, class: "d-flex row search-form me-0", data:{ uptade_list_target:"form",
+      action: "change->uptade-list#send"} do %>
     <div class="col-5 pe-0 " >
       <%= select_tag :choices, options_for_select(@competences, params[:choices]), multiple: true, data: {controller: "autocomplete"} %>
     </div>
@@ -14,38 +16,13 @@
     <div class="col-3">
       <%= select_tag :countries , options_for_select(User::COUNTRIES), prompt: "Countries",class: "form-select" %>
     </div>
-    <%= submit_tag "Search", class: "btn-btn-primary col-1" %>
+    <%= button_tag class: "btn-btn-primary col-1"  do  %>
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <% end %>
   <% end %>
   </div>
-
-  <p>We've got <%= @users.count %> <%= "profile".pluralize(@users.count) %></p>
-  <div class="user-cards-container">
-    <% @users.each do |user| %>
-      <% next if user == current_user %>
-      <%= link_to user_path(user) do %>
-        <div class="user-card mt-4">
-
-          <%# début code helene %>
-          <div class="user-card-img-container">
-            <%= cl_image_tag user.photo.key, width: 500, height: 500, class: "user-card-image", crop: :thumb, gravity: :face %>
-            <% if user.mentor == true %>
-            <i class="fa-solid card-graduation fa-graduation-cap"></i>
-            <% end %>
-          </div>
-          <%# fin code helene %>
-          <div class="user-card-content">
-            <h3><%= user.first_name %> <%= user.last_name%>
-            </h3>
-            <p><%= user.title %></p>
-            <p class="batch-badge">Batch #<strong><%= user.batch_number %></strong></p>
-            <div class="skill-badges">
-              <% user.competence_list.first(3).each do |competence| %>
-                <span class="badge"><%= competence %></span>
-              <% end %>
-            </div>
-          </div>
-        </div>
-      <% end %>
-    <% end %>
+  <div data-uptade-list-target="users">
+    <%= render "users_list", users:@users %>
   </div>
+
 </div>
