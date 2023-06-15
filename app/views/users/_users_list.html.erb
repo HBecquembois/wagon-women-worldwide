@@ -9,7 +9,7 @@
         <div class="user-card-img-container">
           <%= cl_image_tag user.photo.key, width: 500, height: 500, class: "user-card-image", crop: :thumb, gravity: :face %>
           <% if user.mentor == true %>
-          <i class="fa-solid card-graduation fa-graduation-cap"></i>
+            <i class="fa-solid card-graduation fa-graduation-cap"></i>
           <% end %>
         </div>
         <%# fin code helene %>
