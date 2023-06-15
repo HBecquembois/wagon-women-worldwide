@@ -18,8 +18,6 @@ Project.destroy_all
 User.destroy_all
 puts "Database cleaned"
 
-fake_avatar_url = "https://xsgames.co/randomusers/avatar.php?g=female"
-
 # Creating real Wagon users
 puts "Creating real users..."
 
@@ -535,10 +533,14 @@ puts "User 20 created"
 puts "Real users created!"
 
 # Creating fake users
+
+# fake_avatar_url = "https://xsgames.co/randomusers/avatar.php?g=female"
+fake_photos = ["http://xsgames.co/randomusers/assets/avatars/female/65.jpg", "http://xsgames.co/randomusers/assets/avatars/female/10.jpg", "http://xsgames.co/randomusers/assets/avatars/female/15.jpg", "http://xsgames.co/randomusers/assets/avatars/female/16.jpg", "http://xsgames.co/randomusers/assets/avatars/female/18.jpg", "http://xsgames.co/randomusers/assets/avatars/female/19.jpg", "http://xsgames.co/randomusers/assets/avatars/female/21.jpg", "http://xsgames.co/randomusers/assets/avatars/female/22.jpg", "http://xsgames.co/randomusers/assets/avatars/female/32.jpg", "http://xsgames.co/randomusers/assets/avatars/female/34.jpg", "http://xsgames.co/randomusers/assets/avatars/female/36.jpg", "http://xsgames.co/randomusers/assets/avatars/female/51.jpg", "http://xsgames.co/randomusers/assets/avatars/female/54.jpg", "http://xsgames.co/randomusers/assets/avatars/female/55.jpg", "http://xsgames.co/randomusers/assets/avatars/female/62.jpg"]
+
 puts "Creating fake marraines users..."
 
-5.times do
-  file = URI.open(fake_avatar_url)
+fake_photos.take(5).each do |photo|
+  file = URI.open(photo)
   user = User.new(
     first_name: Faker::Name.unique.female_first_name,
     last_name: Faker::Name.unique.last_name,
@@ -566,8 +568,8 @@ puts "5 fake marraines users created!"
 
 puts "Creating fake filleules users..."
 
-10.times do
-  file = URI.open(fake_avatar_url)
+fake_photos.last(10).each do |photo|
+  file = URI.open(photo)
   user = User.new(
     first_name: Faker::Name.unique.female_first_name,
     last_name: Faker::Name.unique.last_name,
@@ -674,7 +676,7 @@ peer_programming_two = Project.new(
   description: "Hi! As a Wagon alumni and junior dev I'm looking for an experienced developper for peer-programming sessions in order to keep enhancing my coding skills in Ruby",
   repo_url: "",
   type_of_mission: 2,
-  user_id: helene.id
+  user_id: lucie.id
 )
 peer_programming_two.requested_skill_list.add(["Ruby", "Rails", "Javascript"])
 peer_programming_two.save
