@@ -9,9 +9,9 @@
       <p><i class="fa-solid fa-lightbulb"></i> She was part of the batch #<strong><%= @user.batch_number %></strong> in <%= @user.graduation_year %></p>
 
       </div>
-      <div data-controller="chat-click" class="cta">
+      <div class="cta">
       <% if @chatroom %>
-        <div data-chat-click-target="displayChat" class="offcanvas offcanvas-end modal-chatroom" tabindex="-1" id="offcanvasRight" aria-labelledby="offcanvasRightLabel">
+        <div class="offcanvas offcanvas-end modal-chatroom" tabindex="-1" id="offcanvasRight" aria-labelledby="offcanvasRightLabel">
           <div class="offcanvas-header">
             <h5 class="offcanvas-title" id="offcanvasRightLabel">Chat with <%= @user.first_name %></h5>
             <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
@@ -24,12 +24,9 @@
           <i class="fa-regular fa-comments"></i> Chat with <%= @user.first_name %>
         <% end %>
       <% else %>
-        <div>
-          <%= link_to user_chatrooms_path(@user), data: { chat_click_target: "chatButton",
-      action: "submit->chat-click#display" }, class: "btn-red-profile" do %>
-            <i class="fa-regular fa-comments"></i> Chat with <%= @user.first_name %>
-          <% end %>
-        </div>
+        <%= link_to user_chatrooms_path(@user), data: { turbo_method: :post }, class: "btn-red-profile" do %>
+          <i class="fa-regular fa-comments"></i> Chat with <%= @user.first_name %>
+        <% end %>
       <% end %>
 
       <% if @user.favorited_by?(current_user) %>

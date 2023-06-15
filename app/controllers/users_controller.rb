@@ -16,6 +16,12 @@ class UsersController < ApplicationController
     @user_projects = Project.where(user_id: @user.id)
     @favorited = current_user.all_favorited
     @chatroom = current_user.chatroom_with(@user)
+    if @chatroom.nil?
+      user_a_id = current_user.id
+      user_b_id = @user.id
+      @chatroom = Chatroom.new(user_a_id: user_a_id, user_b_id: user_b_id)
+      @chatroom.save
+    end
   end
 
   def favorite
