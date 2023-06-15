@@ -1,6 +1,6 @@
 <ul class="project-list">
   <% @user_projects.each do |project| %>
-  <li><button class="btn btn-indigo-projects" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight<%=project.id%>" aria-controls="offcanvasRight"><i class="fa-solid fa-computer"></i> <%= project.title %></button></li>
+  <li  id="project-animation"><button class="btn btn-indigo-projects" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight<%=project.id%>" aria-controls="offcanvasRight"><i class="fa-solid fa-computer"></i> <%= project.title %></button></li>
 
 <div class="offcanvas offcanvas-end modal-design" tabindex="-1" id="offcanvasRight<%=project.id%>" aria-labelledby="offcanvasRightLabel">
   <div class="offcanvas-header">
