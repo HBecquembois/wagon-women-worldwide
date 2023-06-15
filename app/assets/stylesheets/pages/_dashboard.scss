@@ -39,20 +39,28 @@
 }
 
 .nav {
-  width: 80%;
+  width: 86%;
   margin: 50px auto;
   font-size: 18px;
+  border-top-left-radius: 10px 10px;
+  border-top-right-radius: 10px 10px;
 }
+
 .nav-tabs .nav-link {
   color: black;
-  font-size: 20px;
+  font-size: 18px;  
+  &:hover {
+    border-top-left-radius: 10px 10px;
+    border-top-right-radius: 10px 10px;
+  }
 }
 
 .nav-tabs .nav-link.active {
   font-weight: 500;
-  color: $indigo;
+  background-color: $indigo;
+  color: $light-indigo;
   border-top-left-radius: 10px 10px;
-  font-size: 22px;
+  font-size: 20px;
   border-top-right-radius: 10px 10px;
 }
 
@@ -61,30 +69,25 @@
   margin: 0 auto !important;
 }
 
-.welcome {
-  color: $indigo;
-  text-align: center;
-}
 
 .name-city-dash {
-  text-align: center;
-
+  margin-left: 70px;
+  padding-top: 25px;
   h2 {
     color: $indigo;
   }
 }
 
+
 .container-photo-title-dashboard {
   width: 95%;
-  display: flex;
-  justify-content: center;
   margin-top: 30px;
 }
 
 .mentor-name-card-dash {
   text-decoration: none;
   color: black;
-  font-size: 18px;
+  font-size: 22px;
   font-weight: 600;
   justify-content: left;
 
@@ -96,4 +99,8 @@
   top: 0;
   right: 0;
   margin: 15px;
+}
+
+.name {
+  color: black;
 }

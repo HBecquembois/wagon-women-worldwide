@@ -18,10 +18,8 @@ Project.destroy_all
 User.destroy_all
 puts "Database cleaned"
 
-# Creating Users
-puts "Creating real users"
-
-fake_avatar_url = "https://xsgames.co/randomusers/avatar.php?g=female"
+# Creating real Wagon users
+puts "Creating real users..."
 
 puts "Creating user 1"
 file = URI.open("https://kitt.lewagon.com/placeholder/users/cveneziani")
@@ -507,38 +505,97 @@ kenza.photo.attach(io: file, filename: "kenza", content_type: "image/jpeg")
 kenza.save
 puts "User 19 created"
 
-puts "Created real users"
+puts "Creating user 20"
+file = URI.open("https://res.cloudinary.com/wagon/image/upload/c_fill,g_face,h_200,w_200/v1681491288/bv15fdyqeb7venn775z8.jpg")
+malika = User.new(
+  first_name: 'Malika',
+  last_name: 'Housni',
+  email: Faker::Internet.unique.email,
+  password: 'azerty',
+  password_confirmation: 'azerty',
+  city: 'Paris',
+  country: 'France',
+  mentor: false,
+  title: titles[1],
+  description: "I am a business school student. Coding seems hard but fun. I love to challenge myself. My purpose is to work as a freelance after the bootcamp. Maybe, I will find a business partner during this batch, who knows?",
+  batch_number: 1210,
+  graduation_year: 2023,
+  github_url: 'https://github.com/',
+  linkedin_url: 'https://www.linkedin.com/',
+  kitt_username: 'joupify'
+)
+malika.competence_list.add(fullstack)
+malika.language_list.add("french", "english")
+malika.photo.attach(io: file, filename: "kenza", content_type: "image/jpeg")
+malika.save
+puts "User 20 created"
 
-# puts "Creating fake users"
+puts "Real users created!"
 
-# 300.times do
-#   file = URI.open(fake_avatar_url)
-#   user = User.new(
-#     first_name: Faker::Name.unique.female_first_name,
-#     last_name: Faker::Name.unique.last_name,
-#     email: Faker::Internet.unique.email,
-#     password: 'azerty',
-#     password_confirmation: 'azerty',
-#     city: Faker::Address.city,
-#     country: Faker::Address.country,
-#     mentor: false,
-#     title: titles.sample,
-#     description: Faker::Quote.yoda,
-#     batch_number: rand(1212),
-#     graduation_year: rand(2014..2023),
-#     github_url: 'https://github.com/',
-#     linkedin_url: 'https://linkedin.com/',
-#     kitt_username: :first_name
-#   )
-#   user.competence_list.add(allskills.sample(4))
-#   user.language_list.add(languages.sample(3))
-#   user.photo.attach(io: file, filename: :first_name, content_type: "image/jpeg")
-#   user.save
-# end
+# Creating fake users
 
-# puts "300 fake users created"
+# fake_avatar_url = "https://xsgames.co/randomusers/avatar.php?g=female"
+fake_photos = ["http://xsgames.co/randomusers/assets/avatars/female/65.jpg", "http://xsgames.co/randomusers/assets/avatars/female/10.jpg", "http://xsgames.co/randomusers/assets/avatars/female/15.jpg", "http://xsgames.co/randomusers/assets/avatars/female/16.jpg", "http://xsgames.co/randomusers/assets/avatars/female/18.jpg", "http://xsgames.co/randomusers/assets/avatars/female/19.jpg", "http://xsgames.co/randomusers/assets/avatars/female/21.jpg", "http://xsgames.co/randomusers/assets/avatars/female/22.jpg", "http://xsgames.co/randomusers/assets/avatars/female/32.jpg", "http://xsgames.co/randomusers/assets/avatars/female/34.jpg", "http://xsgames.co/randomusers/assets/avatars/female/36.jpg", "http://xsgames.co/randomusers/assets/avatars/female/51.jpg", "http://xsgames.co/randomusers/assets/avatars/female/54.jpg", "http://xsgames.co/randomusers/assets/avatars/female/55.jpg", "http://xsgames.co/randomusers/assets/avatars/female/62.jpg"]
 
-# seeding projects
+puts "Creating fake marraines users..."
+
+fake_photos.take(5).each do |photo|
+  file = URI.open(photo)
+  user = User.new(
+    first_name: Faker::Name.unique.female_first_name,
+    last_name: Faker::Name.unique.last_name,
+    email: Faker::Internet.unique.email,
+    password: 'azerty',
+    password_confirmation: 'azerty',
+    city: Faker::Address.city,
+    country: Faker::Address.country,
+    mentor: true,
+    title: titles.sample,
+    description: Faker::Quote.yoda,
+    batch_number: rand(1212),
+    graduation_year: rand(2014..2023),
+    github_url: 'https://github.com/',
+    linkedin_url: 'https://linkedin.com/',
+    kitt_username: :first_name
+  )
+  user.competence_list.add(allskills.sample(4).uniq)
+  user.language_list.add(languages.sample(3))
+  user.photo.attach(io: file, filename: :first_name, content_type: "image/jpeg")
+  user.save
+end
+
+puts "5 fake marraines users created!"
+
+puts "Creating fake filleules users..."
+
+fake_photos.last(10).each do |photo|
+  file = URI.open(photo)
+  user = User.new(
+    first_name: Faker::Name.unique.female_first_name,
+    last_name: Faker::Name.unique.last_name,
+    email: Faker::Internet.unique.email,
+    password: 'azerty',
+    password_confirmation: 'azerty',
+    city: Faker::Address.city,
+    country: Faker::Address.country,
+    mentor: false,
+    title: titles.sample,
+    description: Faker::Quote.yoda,
+    batch_number: rand(1212),
+    graduation_year: rand(2014..2023),
+    github_url: 'https://github.com/',
+    linkedin_url: 'https://linkedin.com/',
+    kitt_username: :first_name
+  )
+  user.competence_list.add(allskills.sample(4).uniq)
+  user.language_list.add(languages.sample(3))
+  user.photo.attach(io: file, filename: :first_name, content_type: "image/jpeg")
+  user.save
+end
+
+puts "10 fake filleules users created!"
+
+# Seeding projects
 
 puts "Creating projects..."
 
@@ -550,19 +607,19 @@ internship = Project.new(
   type_of_mission: 0,
   user_id: cecile.id
 )
-internship.requested_skill_list.add(allskills.sample(4))
+internship.requested_skill_list.add(["Ruby", "Rails", "Javascript"])
 internship.save
 puts "Project 1 created"
 
 puts "Creating project 2"
 job_offer = Project.new(
-  title: "Job offer for a web-dev position in a startup",
+  title: "Job offer for a front web-dev position in a startup",
   description: "Hi, we're a young startup in Paris and we are looking for a web-dev for our project, feel free to contact me or visit our repo for more information.",
   repo_url: 'https://github.com/Effendir/bonzai-zone',
   type_of_mission: 1,
   user_id: lisa.id
 )
-job_offer.requested_skill_list.add(allskills.sample(3))
+job_offer.requested_skill_list.add(["HTML", "CSS", "React"])
 job_offer.save
 puts "Project 2 created"
 
@@ -585,32 +642,57 @@ peer_programming = Project.new(
   type_of_mission: 2,
   user_id: amal.id
 )
-peer_programming.requested_skill_list.add(allskills.sample(6))
+peer_programming.requested_skill_list.add(["Ruby", "Rails", "Javascript"])
 peer_programming.save
 puts "Project 4 created"
 
 puts "Creating project 5"
 code_review_two = Project.new(
-  title: "Looking for a fullstack senior dev",
-  description: "Hello there! I'm a junior dev from batch #1210 and I'm looking for a senior dev to review my rails app, from back to front. Feel free to contact me or take a peek at my repo",
-  repo_url: "https://github.com/luciegaget",
+  title: "Looking for a fullstack senior dev for code review!",
+  description: "Hello there! I'm a junior dev from batch #1210 and I'm looking for a senior dev to review my Rails app, from back to front. Feel free to contact me or take a peek at my repo!",
+  repo_url: "https://github.com/HBecquembois",
   type_of_mission: 3,
-  user_id: lucie.id
+  user_id: helene.id
 )
-code_review_two.requested_skill_list.add(allskills.sample(8))
+code_review_two.requested_skill_list.add(["Ruby", "Rails", "Javascript"])
 code_review_two.save
 puts "Project 5 created"
 
 puts "Creating project 6"
 internship_two = Project.new(
   title: "1 month internship at Le Wagon Paris",
-  description: "Come to Paris and test your coding and teaching skills at Le Wagon Paris. As an alumni, you will have to review code and teach coding skills. Ideal for a fresh student who wants to improve her skills in rails while teaching!",
+  description: "Come to Paris and test your coding and teaching skills at Le Wagon Paris. As a teacher assistant, you will have to review code and teach coding skills. Ideal for a fresh student who wants to improve her skills in Rails while teaching!",
   repo_url: 'https://github.com/Lewagon',
   type_of_mission: 0,
   user_id: diane.id
 )
-internship_two.requested_skill_list.add(allskills.sample(4))
+internship_two.requested_skill_list.add(["Ruby", "Rails", "Javascript"])
 internship_two.save
 puts "Project 6 created"
 
-puts "Seeding done"
+puts "Creating project 7"
+peer_programming_two = Project.new(
+  title: "Looking for a senior dev for peer-programming",
+  description: "Hi! As a Wagon alumni and junior dev I'm looking for an experienced developper for peer-programming sessions in order to keep enhancing my coding skills in Ruby",
+  repo_url: "",
+  type_of_mission: 2,
+  user_id: lucie.id
+)
+peer_programming_two.requested_skill_list.add(["Ruby", "Rails", "Javascript"])
+peer_programming_two.save
+puts "Project 7 created"
+
+puts "Creating project 8"
+code_review_three = Project.new(
+  title: "Code review offer for a young dev",
+  description: "Hello everyone! If any junior dev is looking for code reviewing from a senior dev it'll be my pleasure to help you out!",
+  repo_url: "",
+  type_of_mission: 3,
+  user_id: lisa.id
+)
+code_review_three.save
+puts "Project 8 created"
+
+puts "8 projects created!"
+
+puts "Seeding done!"

@@ -3,12 +3,13 @@
 }
 
 .sidebar {
+  position: sticky;
+  top: 60px;
   background-color: $light-red;
   height: 85vh;
   flex: 0 0 230px;
   border-radius: 10px;
   margin-left: 20px;
-  margin-top: 60px;
   margin-bottom: 50px;
   text-align: center;
 
@@ -80,6 +81,9 @@
   }
   li {
     margin-top: 5px !important;
+    &:hover img {
+      border: solid 1.5px white;
+    }
   }
 }
 

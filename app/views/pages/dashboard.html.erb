@@ -1,8 +1,6 @@
-<div class="container">
     <div class="container-photo-title-dashboard">
         <div class="name-city-dash">
-          <h2 class="welcome">Welcome to your dashboard</h2>
-            <h3><%= @user.first_name %>!</h3>
+          <h2 class="welcome">Welcome to your dashboard, <span class="name"><%= @user.first_name %></span>!</h2>
           <p><i class="fa-solid fa-lightbulb"></i> Batch #<strong><%= @user.batch_number %></strong> in <%= @user.graduation_year %></p>
             <% @user.competence_list.each do |skill| %>
               <li class="tag-list"><%= skill %></li>
@@ -14,11 +12,11 @@
 
   <ul class="nav nav-tabs" id="myTab" role="tablist">
   <li class="nav-item" role="presentation">
-    <button class="nav-link active" id="home-tab" data-bs-toggle="tab" data-bs-target="#home" type="button" role="tab" aria-controls="home" aria-selected="true">My <%= @user.mentor ? "mentorees" : "mentors" %>
+    <button class="nav-link active" id="home-tab" data-bs-toggle="tab" data-bs-target="#home" type="button" role="tab" aria-controls="home" aria-selected="true">My <%= @user.mentor ? "mentorees" : "mentors" %> (<%= @favorited.count %>)
 </button>
   </li>
   <li class="nav-item" role="presentation">
-    <button class="nav-link" id="profile-tab" data-bs-toggle="tab" data-bs-target="#profile" type="button" role="tab" aria-controls="profile" aria-selected="false">My offers</button>
+    <button class="nav-link" id="profile-tab" data-bs-toggle="tab" data-bs-target="#profile" type="button" role="tab" aria-controls="profile" aria-selected="false">My offers (<%= @user_projects.count %>)</button>
   </li>
     <li class="nav-item" role="presentation">
     <button class="nav-link" id="message-tab" data-bs-toggle="tab" data-bs-target="#message" type="button" role="tab" aria-controls="message" aria-selected="false">My messages</button>
@@ -29,27 +27,24 @@
   <div class="d-block m-3">
 
 
-<div class="d-block m-3">
-
-     <% @favorited.each do |m| %>
+   <% @favorited.each do |m| %>
+    <%= link_to user_path(m.id) do %>
       <div class="card-dashboard">
-       <%= link_to user_path(m.id) do %>
-        <%= cl_image_tag m.photo.key, width: 150, height: 150, crop: :thumb, gravity: :face %>
-        <% end %>
-
-        <div class="card-dashboard-infos">
-        <%= link_to "#{m.first_name} #{m.last_name}", user_path(m.id), class: "mentor-name-card-dash" %>
-          <p><%= m.title  %></p>
-           <p><i class="fa-solid fa-lightbulb"></i> Batch #<strong><%= m.batch_number %></strong> in <%= m.graduation_year %></p>
-        </div>
-          <div class="close-icon">
-          <%= link_to user_unfavorite_path(m), data: { turbo_method: :patch } do %>
-          <i class="fa-solid fa-xmark"></i>
-          <% end %>
+         <%= cl_image_tag m.photo.key, width: 150, height: 150, crop: :thumb, gravity: :face %>
+          <div class="card-dashboard-infos">
+            <%= link_to "#{m.first_name} #{m.last_name}", user_path(m.id), class: "mentor-name-card-dash" %>
+              <p><%= m.title  %></p>
+              <p><i class="fa-solid fa-lightbulb"></i> Batch #<strong><%= m.batch_number %></strong> in <%= m.graduation_year %></p>
           </div>
+        <div class="close-icon">
+            <%= link_to user_unfavorite_path(m), data: { turbo_method: :patch } do %>
+            <i class="fa-solid fa-xmark"></i>
+              <% end %>
         </div>
-      <% end %>
-    </div>
+      </div>
+       <% end %>
+     <% end %>
+
   </div>
   </div>
     <div class="tab-pane fade" id="profile" role="tabpanel" aria-labelledby="profile-tab">
@@ -75,5 +70,4 @@
 
       </div>
     </div>
-</div>
 </div>
