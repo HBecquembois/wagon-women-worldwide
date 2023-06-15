@@ -38,8 +38,6 @@
   }
   &:hover {
     box-shadow:  2px 2px 2px $indigo;
-    
-
 }
 }
 .user-card-content {
@@ -175,12 +173,14 @@ ul {
   overflow: hidden;
   height: 140px;
   background: white;
-  box-shadow: 0 0 6px rgba(0,0,0,0.2);
+  box-shadow: 0 0 4px rgba(0,0,0,0.2);
   display: flex;
   align-items: center;
   border-radius: 10px;
   position: relative;
-
+  &:hover {
+    box-shadow:  2px 2px 2px $indigo;
+  }
 }
 .card-dashboard img {
   height: 100%;
