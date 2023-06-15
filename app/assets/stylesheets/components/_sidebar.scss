@@ -81,6 +81,9 @@
   }
   li {
     margin-top: 5px !important;
+    &:hover img {
+      border: solid 1.5px white;
+    }
   }
 }
 
