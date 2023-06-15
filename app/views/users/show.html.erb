@@ -3,7 +3,7 @@
   <div class="container-photo-title">
       <%= cl_image_tag @user.photo.key, width: 150, height: 150, crop: :thumb, gravity: :face, class: "user-photo" %>
       <div class="name-city">
-        <h2><%= @user.first_name %> <%= @user.last_name %></h2>
+        <h2 class="highlight-name"><%= @user.first_name %> <%= @user.last_name %></h2>
         <p><%= @user.city %> - <%= @user.country %></p>
 
       <p><i class="fa-solid fa-lightbulb"></i> She was part of the batch #<strong><%= @user.batch_number %></strong> in <%= @user.graduation_year %></p>
@@ -33,7 +33,7 @@
         <p><i class="fa-solid card-graduation-unfavorited fa-graduation-cap"></i><%= @user.first_name %> is your mentor</p>
       <% else %>
         <%= link_to user_favorite_path(@user) do %>
-         <i class="fa-solid card-graduation fa-graduation-cap"></i><%= link_to 'Add as a mentor', user_favorite_path(@user), class: "add-mentor", data: { turbo_method: :post } %>
+         <i class="fa-solid card-graduation fa-graduation-cap"></i><%= link_to 'Add as a mentor', user_favorite_path(@user), class: "add-mentor", data: { turbo_method: :post, controller: "notation" } %>
         <br>
           <% end %>
       <% end %>
@@ -59,10 +59,13 @@
  <%= render "shared/mentors" if @user.mentor == true %>
   </ul>
     <h3 class="smaller-h3">Her offers:</h3>
+    <div id="project-animation">
       <% if @user_projects.exists? %>
-        <%= render "projects/show", chatroom: @chatroom %>
+        <%= render "projects/show", chatroom: @chatroom  %>
       <% else %>
         <%= "No offers yet..."  %>
       <% end %>
+    </div>
   </div>
+
 </div>

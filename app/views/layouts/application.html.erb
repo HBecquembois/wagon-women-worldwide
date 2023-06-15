@@ -10,6 +10,7 @@
     <script src="https://kit.fontawesome.com/45e38e596f.js" crossorigin="anonymous"></script>
     <script src="active.js"></script>
 
+
     <%= javascript_importmap_tags %>
     <%= favicon_link_tag "favicon.png", rel: "icon", type: "image/png" %>
     <title><%= meta_title %></title>
@@ -43,5 +44,6 @@
       </section>
     </div>
     <%= render "shared/footer" if action_name == 'home' %>
+    <script type="module" src="https://unpkg.com/rough-notation?module"></script>
   </body>
 </html>
