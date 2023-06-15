@@ -1,8 +1,6 @@
-<div class="container">
     <div class="container-photo-title-dashboard">
         <div class="name-city-dash">
-          <h2 class="welcome">Welcome to your dashboard</h2>
-            <h3><%= @user.first_name %>!</h3>
+          <h2 class="welcome">Welcome to your dashboard, <span class="name"><%= @user.first_name %></span>!</h2>
           <p><i class="fa-solid fa-lightbulb"></i> Batch #<strong><%= @user.batch_number %></strong> in <%= @user.graduation_year %></p>
             <% @user.competence_list.each do |skill| %>
               <li class="tag-list"><%= skill %></li>
@@ -29,27 +27,24 @@
   <div class="d-block m-3">
 
 
-<div class="d-block m-3">
-
-     <% @favorited.each do |m| %>
+   <% @favorited.each do |m| %>
+    <%= link_to user_path(m.id) do %>
       <div class="card-dashboard">
-       <%= link_to user_path(m.id) do %>
-        <%= cl_image_tag m.photo.key, width: 150, height: 150, crop: :thumb, gravity: :face %>
-        <% end %>
-
-        <div class="card-dashboard-infos">
-        <%= link_to "#{m.first_name} #{m.last_name}", user_path(m.id), class: "mentor-name-card-dash" %>
-          <p><%= m.title  %></p>
-           <p><i class="fa-solid fa-lightbulb"></i> Batch #<strong><%= m.batch_number %></strong> in <%= m.graduation_year %></p>
-        </div>
-          <div class="close-icon">
-          <%= link_to user_unfavorite_path(m), data: { turbo_method: :patch } do %>
-          <i class="fa-solid fa-xmark"></i>
-          <% end %>
+         <%= cl_image_tag m.photo.key, width: 150, height: 150, crop: :thumb, gravity: :face %>
+          <div class="card-dashboard-infos">
+            <%= link_to "#{m.first_name} #{m.last_name}", user_path(m.id), class: "mentor-name-card-dash" %>
+              <p><%= m.title  %></p>
+              <p><i class="fa-solid fa-lightbulb"></i> Batch #<strong><%= m.batch_number %></strong> in <%= m.graduation_year %></p>
           </div>
+        <div class="close-icon">
+            <%= link_to user_unfavorite_path(m), data: { turbo_method: :patch } do %>
+            <i class="fa-solid fa-xmark"></i>
+              <% end %>
         </div>
-      <% end %>
-    </div>
+      </div>
+       <% end %>
+     <% end %>
+
   </div>
   </div>
     <div class="tab-pane fade" id="profile" role="tabpanel" aria-labelledby="profile-tab">
@@ -75,5 +70,4 @@
 
       </div>
     </div>
-</div>
 </div>
