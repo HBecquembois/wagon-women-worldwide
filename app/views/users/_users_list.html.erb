@@ -1,4 +1,4 @@
-<p>We've got <%= users.count %> <%= "profile".pluralize(users.count) %></p>
+<p><%= users.count %> <%= (mentor ? "mentor" : "profile").pluralize(users.count) %></p>
 <div class="user-cards-container">
   <% users.each do |user| %>
     <% next if user == current_user %>
