@@ -65,23 +65,25 @@
     </div>
     <div class="tab-pane fade" id="message" role="tabpanel" aria-labelledby="message-tab">
       <div class="d-block m-3 card-message">
-              <div class="card-dashboard-messages d-flex justify-content-left mx-10">
+              <div class="d-flex justify-content-around mx-10">
                 <div class="logo">
-                <i class="fa-regular logo-message fa-comments"></i>
+                 <p class="discussion">Messages with mentors & alumni:</p>
+                <i class="fa-solid logo-message fa-user-group"></i>
                 </div>
 
         <div class= "list-chat">
                   <% @user_real_chats.each do |c| %>
                     <div class="offcanvas offcanvas-end modal-chatroom" tabindex="-1" id="offcanvasRight<%=c.id%>" aria-labelledby="offcanvasRightLabel">
                       <div class="offcanvas-header">
-                        <h5 class="offcanvas-title" id="offcanvasRightLabel">Chat with <%= c.user_b.first_name %></h5>
+                        <h5 class="offcanvas-title" id="offcanvasRightLabel"> Chat with <%= c.user_b.first_name %></h5>
                         <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
                       </div>
                       <div class="offcanvas-body">
                         <%= render "chatrooms/chatroom", chatroom: c %>
                       </div>
                     </div>
-                    <button class="btn btn-red-profile m-3" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight<%=c.id%>" aria-controls="offcanvasRight"><%= c.user_b.first_name %> <%= c.user_b.last_name %></button>
+
+                    <button class="btn btn-red-profile m-3" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight<%=c.id%>" aria-controls="offcanvasRight"> <i class="fa-regular white-bubble fa-comments"></i> <%= c.user_b.first_name %> <%= c.user_b.last_name %></button>
                   <% end %>
                 </div>
               </div>
