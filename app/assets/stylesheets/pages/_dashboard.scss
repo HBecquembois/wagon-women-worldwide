@@ -103,13 +103,25 @@
   color: black;
 }
 
-.list-chat {
-  margin-left: 50px;
-}
+
 
 .logo-message {
-  margin: auto 0;
   position: relative;
-  font-size: 100px;
+  font-size: 107px;
   color: $red;
+  padding-top: 20px;
+  margin-left: 35px;
+}
+
+.logo {
+  width: 32%;
+}
+
+.white-bubble {
+  color: $white;
+}
+
+.discussion {
+  font-size: 22px;
+  text-align: center;
 }
