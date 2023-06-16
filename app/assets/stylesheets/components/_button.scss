@@ -109,17 +109,15 @@
 
 
 .btn-btn-primary {
-
   color: $white;
   font-size: 16px;
-  padding: 7px 9px;
-  border: 1px solid;
+  // padding: 7px 9px;
+  border: 1px solid $red;
   background: $red;
   border-radius: 6px;
   &:hover {
     color: $red;
     background: $white;
-
   }
 }
 
@@ -157,3 +155,6 @@
     background: $white;
   }
 }
+
+
+

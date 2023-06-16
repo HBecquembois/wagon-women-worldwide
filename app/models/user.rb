@@ -21,8 +21,10 @@ class User < ApplicationRecord
                     base_tags: [:name]
                   }
 
-  LANGUAGES = ["french", "german", "italian", "english", "greek", "russian", "portuguese"]
+  LANGUAGES = ["French", "German", "Italian", "English", "Greek", "Russian", "Portuguese"]
+
   COUNTRIES = User.all.map(&:country).uniq
+
 
   def chatroom_with(another_user)
     Chatroom.where(user_a: self, user_b: another_user).or(Chatroom.where(user_b: self, user_a: another_user)).first
