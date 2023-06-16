@@ -1,5 +1,4 @@
 import { Controller } from "@hotwired/stimulus"
-import fetchWithToken from "../utils/fetch_with_token"
 
 // Connects to data-controller="uptade-list"
 export default class extends Controller {
@@ -7,6 +6,16 @@ export default class extends Controller {
 
 
   send(e) {
+
+    const fetchWithToken = (url, options) => {
+      options.headers = {
+        "X-CSRF-Token": document.querySelector("meta[name=csrf-token]").content,
+        ...options.headers
+      };
+
+      return fetch(url, options);
+    }
+
     let formData = new FormData(this.formTarget);
     fetchWithToken("/users/search", {
       method: "POST", // Could be dynamic with Stimulus values
