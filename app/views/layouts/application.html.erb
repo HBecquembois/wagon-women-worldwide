@@ -42,6 +42,9 @@
       <%= render "shared/sidebar" if action_name != 'home' && controller_name != 'sessions'%>
       <section class="main-content">
         <%= yield %>
+        <% if action_name != 'home' %>
+        <div class="spacing"></div>
+        <% end %>
       </section>
     </div>
     <%= render "shared/footer" if action_name == 'home' %>
