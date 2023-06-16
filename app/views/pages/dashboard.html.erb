@@ -12,18 +12,18 @@
 
   <ul class="nav nav-tabs" id="myTab" role="tablist">
   <li class="nav-item" role="presentation">
-    <button class="nav-link active" id="home-tab" data-bs-toggle="tab" data-bs-target="#home" type="button" role="tab" aria-controls="home" aria-selected="true">My <%= @user.mentor ? "mentorees" : "mentors" %> (<%= @favorited.count %>)
+    <button class="nav-link <%='active' unless @tab == 'message'%>" id="home-tab" data-bs-toggle="tab" data-bs-target="#home" type="button" role="tab" aria-controls="home" aria-selected="true">My <%= @user.mentor ? "mentorees" : "mentors" %> (<%= @favorited.count %>)
 </button>
   </li>
   <li class="nav-item" role="presentation">
-    <button class="nav-link" id="profile-tab" data-bs-toggle="tab" data-bs-target="#profile" type="button" role="tab" aria-controls="profile" aria-selected="false">My offers (<%= @user_projects.count %>)</button>
+    <button class="nav-link <%='active' if @tab == 'offer'%>" id="offer-tab" data-bs-toggle="tab" data-bs-target="#offer" type="button" role="tab" aria-controls="offer" aria-selected="false">My offers (<%= @user_projects.count %>)</button>
   </li>
     <li class="nav-item" role="presentation">
-    <button class="nav-link" id="message-tab" data-bs-toggle="tab" data-bs-target="#message" type="button" role="tab" aria-controls="message" aria-selected="false">My messages(<%= @user_real_chats.count %>)</button>
+    <button class="nav-link <%='active' if @tab == 'message'%>" id="message-tab" data-bs-toggle="tab" data-bs-target="#message" type="button" role="tab" aria-controls="message" aria-selected="false">My messages (<%= @user_real_chats.count %>)</button>
   </li>
 </ul>
 <div class="tab-content" id="myTabContent">
-  <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
+  <div class="tab-pane fade <%='show active' unless @tab == 'message' %>" id="home" role="tabpanel" aria-labelledby="home-tab">
   <div class="d-block m-3">
 
 
@@ -47,7 +47,7 @@
 
   </div>
   </div>
-    <div class="tab-pane fade" id="profile" role="tabpanel" aria-labelledby="profile-tab">
+    <div class="tab-pane fade <%='show active' if @tab == 'offer'%>" id="offer" role="tabpanel" aria-labelledby="offer-tab">
     <div class="project-nav d-block m-3">
     <% if @user_projects.present? %>
       <div class="card-dashboard-project">
@@ -63,7 +63,7 @@
       </div>
     </div>
     </div>
-    <div class="tab-pane fade" id="message" role="tabpanel" aria-labelledby="message-tab">
+    <div class="tab-pane fade <%='show active' if @tab == 'message'%>" id="message" role="tabpanel" aria-labelledby="message-tab">
       <div class="d-block m-3 card-message">
               <div class="d-flex justify-content-around mx-10">
                 <div class="logo">

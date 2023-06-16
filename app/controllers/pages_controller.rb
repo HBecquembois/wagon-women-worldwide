@@ -5,6 +5,7 @@ class PagesController < ApplicationController
   end
 
   def dashboard
+    @tab = params[:tab] if params[:tab].present?
     @favorited = current_user.all_favorited
     @user = current_user
     @user_mentors =  @user.all_favorited
