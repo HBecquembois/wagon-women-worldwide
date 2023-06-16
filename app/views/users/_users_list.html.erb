@@ -13,7 +13,7 @@
     </div>
 
     <div class="col-3">
-      <%= select_tag :countries , options_for_select(User::COUNTRIES), prompt: "Countries",class: "form-select" %>
+      <%= select_tag :countries , options_for_select(User::COUNTRIES, params[:countries]), prompt: "Countries",class: "form-select" %>
     </div>
     <%= button_tag class: "btn-btn-primary col-1"  do  %>
       <i class="fa-solid fa-magnifying-glass"></i>
