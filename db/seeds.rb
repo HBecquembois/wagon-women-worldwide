@@ -78,7 +78,7 @@ file = URI.open("https://kitt.lewagon.com/placeholder/users/lisamillet")
 lisa = User.new(
   first_name: 'Lisa',
   last_name: 'Millet',
-  email: Faker::Internet.unique.email,
+  email: 'lisa@lisa.fr',
   password: 'azerty',
   password_confirmation: 'azerty',
   city: 'London',
