@@ -5,6 +5,9 @@
       <div class="name-city">
         <h2 class="highlight-name"><%= @user.first_name %> <%= @user.last_name %></h2>
         <p><%= @user.city %> - <%= @user.country %></p>
+        <p>Fluent in <% @user.languages.each do |l| %><%= l %><% if l == @user.languages.last %><%= "." %><% else %><%=", "%><% end %>
+        <% end %>
+        </p>
 
       <p><i class="fa-solid fa-lightbulb"></i> She was part of the batch #<strong><%= @user.batch_number %></strong> in <%= @user.graduation_year %></p>
 
